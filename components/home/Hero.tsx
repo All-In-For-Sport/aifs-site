@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function Hero() {
     return (
         <div className="text-center max-w-3xl mx-auto flex flex-col items-center">
-            <h1 className="font-header text-7xl leading-[84px] font-extrabold">
+            <h1 className="font-header text-5xl md:text-6xl lg:text-7xl leading-[64px] md:leading-[72px] lg:leading-[84px] font-extrabold">
                 A <span className="text-primary">funding platform</span> for
                 community-led sports projects.
             </h1>

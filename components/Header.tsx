@@ -12,7 +12,7 @@ export default function Header() {
                 alt=""
                 className="w-12 h-12"
             />
-            <div className="flex items-center gap-3">
+            <div className="hidden md:flex items-center gap-3">
                 <Link href="/about" className="font-semibold py-2 px-3.5">
                     About
                 </Link>

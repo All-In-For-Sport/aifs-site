@@ -1,9 +1,10 @@
 import { PrimaryButton, SecondaryButton } from "@/components/common/Button";
 import Image from "next/image";
+import { ArrowRight } from "../common";
 
 export default function Hero() {
     return (
-        <div className="text-center max-w-3xl mx-auto flex flex-col items-center">
+        <section className="text-center max-w-3xl mx-auto flex flex-col items-center">
             <h1 className="font-header text-5xl md:text-6xl lg:text-7xl leading-[64px] md:leading-[72px] lg:leading-[84px] font-extrabold">
                 A <span className="text-primary">funding platform</span> for
                 community-led sports projects.
@@ -13,20 +14,11 @@ export default function Hero() {
                 projects that advance inclusion and empowerment through sport.
             </p>
             <div className="mt-12 flex gap-2.5">
-                <PrimaryButton
-                    icon={
-                        <Image
-                            src="/assets/icons/arrow-right.svg"
-                            width={17}
-                            height={11}
-                            alt=""
-                        />
-                    }
-                >
+                <PrimaryButton icon={<ArrowRight />}>
                     Our Projects
                 </PrimaryButton>
                 <SecondaryButton>Our Story</SecondaryButton>
             </div>
-        </div>
+        </section>
     );
 }

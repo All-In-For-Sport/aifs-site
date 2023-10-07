@@ -1,3 +1,4 @@
+import Header from "@/components/Header";
 import "./globals.css";
 import type { Metadata } from "next";
 import { Red_Hat_Display, DM_Sans } from "next/font/google";
@@ -35,7 +36,10 @@ export default function RootLayout({
                     height={1682}
                     alt=""
                 />
-                <div className="relative z-10">{children}</div>
+                <div className="relative z-10 max-w-7xl mx-auto">
+                    <Header />
+                    {children}
+                </div>
             </body>
         </html>
     );

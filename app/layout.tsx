@@ -27,19 +27,13 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${red_hat_display.variable} ${dm_sans.variable} bg-background max-w-screen overflow-x-hidden relative text-white font-body`}
+                className={`${red_hat_display.variable} ${dm_sans.variable} bg-background overflow-x-hidden relative text-white font-body`}
             >
-                <div className="absolute top-0 right-0 min-h-[1682px] left-0 w-full mx-auto">
-                    <Image
-                        src="/assets/noise.png"
-                        fill
-                        className="object-cover object-center"
-                        alt=""
-                    />
-                </div>
-                <div className="relative z-10 max-w-7xl mx-auto">
-                    <Header />
-                    {children}
+                <div className="max-w-screen">
+                    <div className="max-w-7xl mx-auto">
+                        <Header />
+                        {children}
+                    </div>
                 </div>
             </body>
         </html>

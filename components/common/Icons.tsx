@@ -3,9 +3,9 @@ export function Play({ className }: { className?: string }) {
         <svg
             width="43"
             height="44"
-            className={className}
             viewBox="0 0 43 44"
             fill="none"
+            className={className}
             xmlns="http://www.w3.org/2000/svg"
         >
             <path
@@ -16,7 +16,7 @@ export function Play({ className }: { className?: string }) {
     );
 }
 
-export function ArrowRight({ className }: { className?: string }) {
+export function ArrowRight() {
     return (
         <svg
             width="18"
@@ -29,6 +29,54 @@ export function ArrowRight({ className }: { className?: string }) {
                 d="M0.5 7.07024H13.7351L10.5861 10.1722L11.9224 11.5L17.5 6.00572L11.9224 0.5L10.5861 1.82778L13.7235 4.90687H0.5V7.07024Z"
                 fill="currentColor"
             />
+        </svg>
+    );
+}
+
+export function Coins() {
+    return (
+        <svg
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <g id="coins">
+                <path
+                    id="Icon"
+                    d="M8.16665 6.17157C4.79324 7.17554 2.33331 10.3005 2.33331 14C2.33331 17.6996 4.79324 20.8245 8.16665 21.8285M25.6666 14C25.6666 18.5104 22.0103 22.1667 17.5 22.1667C12.9897 22.1667 9.33331 18.5104 9.33331 14C9.33331 9.48972 12.9897 5.83337 17.5 5.83337C22.0103 5.83337 25.6666 9.48972 25.6666 14Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </g>
+        </svg>
+    );
+}
+
+export function Calendar() {
+    return (
+        <svg
+            width="28"
+            height="28"
+            viewBox="0 0 28 28"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+        >
+            <g id="calendar">
+                <path
+                    id="Icon"
+                    d="M23.3334 10.5H4.66669M8.16669 3.5V5.83333M19.8334 3.5V5.83333M6.66669 24.5H21.3334C22.4379 24.5 23.3334 23.6046 23.3334 22.5V7.83333C23.3334 6.72876 22.4379 5.83333 21.3334 5.83333H6.66669C5.56212 5.83333 4.66669 6.72876 4.66669 7.83333V22.5C4.66669 23.6046 5.56212 24.5 6.66669 24.5Z"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                />
+            </g>
         </svg>
     );
 }

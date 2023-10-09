@@ -1,4 +1,5 @@
 import Hero from "./Hero";
 import Video from "./Video";
+import CurrentProject from "./CurrentProject";
 
-export { Hero, Video };
+export { Hero, Video, CurrentProject };

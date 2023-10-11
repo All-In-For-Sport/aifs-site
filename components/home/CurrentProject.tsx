@@ -9,11 +9,11 @@ import {
 
 export default function CurrentProject() {
     return (
-        <section className="flex p-8 my-24 flex-col gap-16">
+        <section className="flex p-8 my-12 lg:my-24 flex-col gap-16">
             <div className="grid grid-cols-2 gap-8 md:gap-16 lg:grid-cols-4">
                 <div className="col-span-2">
                     <div className="flex items-center lg:items-start flex-col gap-6 text-center lg:text-left">
-                        <div className="font-header text-gray-100 font-bold text-4xl">
+                        <div className="font-header max-w-lg lg:max-w-none text-gray-100 font-bold text-4xl">
                             By Any Means Basketball x All in for Sport
                         </div>
                         <div className="text-base opacity-70">
@@ -29,11 +29,11 @@ export default function CurrentProject() {
                     </div>
                 </div>
                 <div className="col-span-2 md:col-span-1 flex h-full items-center">
-                    <div className="flex gap-2 items-start w-full justify-center md:justify-end lg:justify-center">
+                    <div className="flex lg:gap-2 flex-col lg:flex-row items-center lg:items-start w-full justify-center md:justify-end lg:justify-center">
                         <div className="text-secondary py-1">
                             <Coins />
                         </div>
-                        <div className="">
+                        <div className="flex flex-col items-center lg:items-start">
                             <div className="text-gray-100 whitespace-nowrap font-bold text-2xl font-header">
                                 $15,000
                             </div>
@@ -44,11 +44,11 @@ export default function CurrentProject() {
                     </div>
                 </div>
                 <div className="col-span-2 md:col-span-1 flex h-full items-center">
-                    <div className="flex gap-2 items-start w-full justify-center md:justify-start lg:justify-center">
+                    <div className="flex lg:gap-2 flex-col lg:flex-row items-center lg:items-start w-full justify-center md:justify-end lg:justify-center">
                         <div className="text-primary py-1">
                             <Calendar />
                         </div>
-                        <div className="">
+                        <div className="flex flex-col items-center lg:items-start">
                             <div className="text-gray-100 whitespace-nowrap text-2xl font-bold font-header">
                                 October 18th
                             </div>

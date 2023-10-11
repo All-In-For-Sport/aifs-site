@@ -1,4 +1,5 @@
 import { CurrentProject, Hero, Video } from "@/components/home";
+import Mission from "@/components/home/Mission";
 
 export default function Home() {
     return (
@@ -6,6 +7,7 @@ export default function Home() {
             <Hero />
             <Video />
             <CurrentProject />
+            <Mission />
         </main>
     );
 }

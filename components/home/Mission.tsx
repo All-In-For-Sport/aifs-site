@@ -3,7 +3,7 @@ import Tag from "@/components/common/Tag";
 
 export default function Mission() {
     return (
-        <div className="flex gap-16 flex-col-reverse max-w-xl lg:max-w-none lg:flex-row items-center my-12 lg:my-24">
+        <section className="flex gap-16 flex-col-reverse max-w-xl lg:max-w-none lg:flex-row items-center my-12 lg:my-24">
             <div className="w-full flex justify-center lg:justify-end">
                 <div className="md:w-[484px] md:h-[473px] w-full h-[300px] relative ">
                     <Image
@@ -54,6 +54,6 @@ export default function Mission() {
                     <span className="text-primary font-bold">Guatemala</span>.
                 </p>
             </div>
-        </div>
+        </section>
     );
 }

@@ -9,7 +9,7 @@ import {
 
 export default function CurrentProject() {
     return (
-        <section className="flex p-8 my-12 lg:my-24 flex-col gap-16">
+        <section className="flex md:p-8 my-12 lg:my-24 flex-col gap-16">
             <div className="grid grid-cols-2 gap-8 md:gap-16 lg:grid-cols-4">
                 <div className="col-span-2">
                     <div className="flex items-center lg:items-start flex-col gap-6 text-center lg:text-left">
@@ -76,7 +76,7 @@ export default function CurrentProject() {
                         className="col-span-1 h-full"
                     />
                 </div>
-                <div className="col-span-1 flex justify-center">
+                <div className="col-span-1 md:rotate-0 rotate-180 transition duration-300 flex justify-center">
                     <Image
                         src="/assets/shapes/shape3.png"
                         width={180}

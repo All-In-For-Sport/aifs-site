@@ -2,7 +2,7 @@ import ProjectCard from "../common/ProjectCard";
 
 export default function LatestProjects() {
     return (
-        <section className="flex my-16 lg:my-24 text-center items-center flex-col gap-12">
+        <section className="flex my-24 text-center items-center flex-col gap-12">
             <h2 className="font-bold text-4xl md:text-5xl font-header">
                 Latest Projects
             </h2>

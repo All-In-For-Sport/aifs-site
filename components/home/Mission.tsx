@@ -36,7 +36,7 @@ export default function Mission() {
                         innovative fundraising tools
                     </span>
                 </h2>
-                <p className="text-white/70 max-w-md lg:max-w-none">
+                <p className="text-white/50 max-w-md lg:max-w-none">
                     We're on a mission to build citizen-owned fundraising tools
                     for communities worldwide.
                     <br />

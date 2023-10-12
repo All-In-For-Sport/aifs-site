@@ -30,7 +30,7 @@ export default function RootLayout({
                 className={`${red_hat_display.variable} ${dm_sans.variable} bg-background overflow-x-hidden relative text-white font-body`}
             >
                 <div className="max-w-screen">
-                    <div className="max-w-7xl mx-auto">
+                    <div className="max-w-xl lg:max-w-7xl mx-auto">
                         <Header />
                         {children}
                     </div>

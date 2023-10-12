@@ -9,14 +9,14 @@ import {
 
 export default function CurrentProject() {
     return (
-        <section className="flex group md:p-8 my-12 lg:my-24 flex-col gap-16">
+        <section className="flex md:p-8 my-12 lg:my-24 flex-col gap-16">
             <div className="grid grid-cols-2 gap-8 md:gap-16 lg:grid-cols-5">
                 <div className="col-span-3">
                     <div className="flex items-center lg:items-start flex-col gap-6 text-center lg:text-left">
                         <div className="font-header max-w-lg lg:max-w-none text-gray-100 font-bold text-4xl">
                             By Any Means Basketball x All in for Sport
                         </div>
-                        <div className="text-base opacity-70">
+                        <div className="text-base text-white/50">
                             Supporting a community of hoopers in the
                             Philippines.
                         </div>

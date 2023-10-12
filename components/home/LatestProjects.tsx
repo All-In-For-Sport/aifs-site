@@ -1,4 +1,4 @@
-import ProjectCard from "../common/ProjectCard";
+import ProjectCard from "@/components/common/ProjectCard";
 
 export default function LatestProjects() {
     return (

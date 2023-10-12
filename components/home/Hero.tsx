@@ -8,7 +8,7 @@ export default function Hero() {
                 A <span className="text-primary">funding platform</span> for
                 community-led sports projects.
             </h1>
-            <p className="text-base opacity-70 mt-8 max-w-xl">
+            <p className="text-base text-white/50 mt-8 max-w-xl">
                 We're starting a new public goods funding initiative to support
                 projects that advance inclusion and empowerment through sport.
             </p>

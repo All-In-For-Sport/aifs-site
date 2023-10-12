@@ -1,4 +1,5 @@
 import { CurrentProject, Hero, Video } from "@/components/home";
+import Contact from "@/components/home/Contact";
 import LatestProjects from "@/components/home/LatestProjects";
 import Mission from "@/components/home/Mission";
 
@@ -10,6 +11,7 @@ export default function Home() {
             <CurrentProject />
             <Mission />
             <LatestProjects />
+            <Contact />
         </main>
     );
 }

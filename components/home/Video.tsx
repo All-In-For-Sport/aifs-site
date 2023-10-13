@@ -44,6 +44,7 @@ export default function Video() {
                     className="object-cover object-center"
                     alt=""
                 />
+                <div className="absolute top-0 right-0 min-h-[1682px] left-0 z-0 w-screen mx-auto bg-gradient-to-b from-transparent to-background" />
             </div>
             <div className="w-full h-full relative">
                 <div className="absolute top-0 right-0 h-full -z-20 w-full bottom-0 left-0 mx-auto">

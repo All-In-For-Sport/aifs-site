@@ -1,7 +1,6 @@
 "use client";
 import Image from "next/image";
-import Input from "@/components/common/Input";
-import TextArea from "../common/TextArea";
+import { Input, TextArea } from "@/components/common";
 import { useState } from "react";
 import { CheckIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { PrimaryButton } from "@/components/common";

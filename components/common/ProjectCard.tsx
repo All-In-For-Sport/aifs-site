@@ -2,7 +2,7 @@ import { Project } from "@/types";
 import Image from "next/image";
 import { SecondaryButton } from ".";
 
-export default function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project }: { project: Project }) {
     return (
         <div className="transition duration-300 hover:scale-[1.01] ease-out border-2 border-gray-700 p-6 rounded-3xl">
             <div className="rounded-2xl h-[200px] sm:h-[300px] relative overflow-hidden">

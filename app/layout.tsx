@@ -3,6 +3,7 @@ import "./globals.css";
 import type { Metadata } from "next";
 import { Red_Hat_Display, DM_Sans } from "next/font/google";
 import Image from "next/image";
+import Footer from "@/components/Footer";
 
 const red_hat_display = Red_Hat_Display({
     subsets: ["latin"],
@@ -33,6 +34,7 @@ export default function RootLayout({
                     <div className="max-w-xl lg:max-w-7xl mx-auto">
                         <Header />
                         {children}
+                        <Footer />
                     </div>
                 </div>
             </body>

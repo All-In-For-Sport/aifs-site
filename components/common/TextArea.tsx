@@ -1,6 +1,6 @@
 "use client";
 
-export default function TextArea({
+export function TextArea({
     label,
     value,
     setValue,

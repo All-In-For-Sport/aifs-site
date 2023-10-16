@@ -27,10 +27,10 @@ export default function Header() {
                     <SecondaryButton>Contact Us</SecondaryButton>
                 </Link>
             </div>
-            <Popover className="">
+            <Popover className="lg:hidden">
                 {({ open }) => (
                     <>
-                        <Popover.Button className="lg:hidden">
+                        <Popover.Button className="">
                             <Bars3Icon className="w-8 h-8" />
                         </Popover.Button>
                         <Transition

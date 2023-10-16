@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@formspark/use-formspark": "^0.1.39",
+    "@headlessui/react": "^1.7.17",
     "@heroicons/react": "^2.0.18",
     "framer-motion": "^10.16.4",
     "next": "13.5.4",

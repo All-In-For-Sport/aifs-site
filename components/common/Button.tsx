@@ -1,12 +1,25 @@
 export function PrimaryButton({
     children,
+    type,
+    onClick,
+    disabled,
     icon,
 }: {
     children: string;
+    type?: "submit" | "button";
+    disabled?: boolean;
+    onClick?: () => void;
     icon?: React.ReactNode;
 }) {
     return (
-        <button className="bg-primary text-darkText text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full">
+        <button
+            type={type}
+            onClick={onClick}
+            disabled={disabled}
+            className={`bg-primary text-darkText text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${
+                disabled ? "opacity-50" : ""
+            }`}
+        >
             {children}
             {icon && (
                 <div className="group-hover:translate-x-1 transition duration-200">

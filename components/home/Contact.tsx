@@ -8,6 +8,8 @@ import Link from "next/link";
 import { BsDiscord } from "react-icons/bs";
 import { BiLogoTelegram } from "react-icons/bi";
 import { RiTwitterXFill } from "react-icons/ri";
+import { useFormspark } from "@formspark/use-formspark";
+import toast from "react-hot-toast";
 
 function SocialCallout({
     icon,
@@ -41,6 +43,38 @@ export default function Contact() {
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
     const [agree, setAgree] = useState(false);
+    const [submit, submitting] = useFormspark({
+        formId: process.env.NEXT_PUBLIC_FORMSPARK_FORM_ID!,
+    });
+
+    const onSubmit = async () => {
+        if (!name) {
+            toast.error("Please enter your name.", { id: "name-error" });
+            return;
+        }
+        if (!email) {
+            toast.error("Please enter your email.", { id: "email-error" });
+            return;
+        }
+        if (!message) {
+            toast.error("Please enter a message.", { id: "message-error" });
+            return;
+        }
+        if (!agree) {
+            toast.error("You must agree to the terms and conditions.", {
+                id: "agree-error",
+            });
+            return;
+        }
+        await submit({ name, email, message });
+        toast.success("Message sent! Our team will be in touch shortly.", {
+            id: "success-message",
+        });
+        setName("");
+        setEmail("");
+        setMessage("");
+        setAgree(false);
+    };
 
     return (
         <section className="flex my-12 items-start flex-col w-full gap-8">
@@ -95,6 +129,8 @@ export default function Contact() {
                     </div>
                     <div className="mt-4 flex flex-col ">
                         <PrimaryButton
+                            onClick={onSubmit}
+                            disabled={submitting}
                             icon={<PaperAirplaneIcon className="w-5 h-5" />}
                         >
                             Submit
@@ -120,7 +156,7 @@ export default function Contact() {
                 />
                 <SocialCallout
                     icon={<BiLogoTelegram className="w-6 h-6 text-white" />}
-                    title="Connect on Discord"
+                    title="Connect on Telegram"
                     supportingText="Get updates"
                     link="https://discord.gg/2y8yY5j"
                 />

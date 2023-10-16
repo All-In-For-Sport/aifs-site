@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Red_Hat_Display, DM_Sans } from "next/font/google";
 import Image from "next/image";
 import Footer from "@/components/Footer";
+import { Toaster } from "react-hot-toast";
 
 const red_hat_display = Red_Hat_Display({
     subsets: ["latin"],
@@ -28,8 +29,19 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${red_hat_display.variable} ${dm_sans.variable} bg-background overflow-x-hidden relative text-white font-body`}
+                className={`${red_hat_display.variable} ${dm_sans.variable} bg-background h-screen overflow-y-scroll scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 overflow-x-hidden relative text-white font-body`}
             >
+                <Toaster
+                    toastOptions={{
+                        className: "bg-background text-white border-gray-600",
+                        position: "top-center",
+                        style: {
+                            background: "#111111",
+                            color: "#fff",
+                            border: "2px solid #242424",
+                        },
+                    }}
+                />
                 <div className="max-w-screen">
                     <div className="max-w-xl lg:max-w-7xl mx-auto">
                         <Header />

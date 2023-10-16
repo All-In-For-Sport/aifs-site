@@ -4,7 +4,7 @@ import { EmailForm } from "./common/EmailForm";
 
 export default function Footer() {
     return (
-        <footer className="w-full p-6 flex items-center max-w-xl lg:max-w-none flex-col md:p-12 lg:p-24">
+        <footer className="w-full p-6 flex lg:items-start items-center max-w-xl lg:max-w-none flex-col md:p-12 lg:p-24">
             <div className="">
                 <Image
                     src="/logo.png"

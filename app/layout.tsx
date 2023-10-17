@@ -43,6 +43,23 @@ export default function RootLayout({
                     }}
                 />
                 <div className="max-w-screen">
+                    <div className="absolute top-0 right-0 min-h-[1682px] left-0 -z-10 w-screen mx-auto">
+                        <Image
+                            src="/assets/noise.png"
+                            fill
+                            className="object-cover object-center"
+                            alt=""
+                        />
+                    </div>
+                    <div className="absolute top-[1682px] right-0 min-h-[1682px] left-0 -z-10 w-screen mx-auto">
+                        <Image
+                            src="/assets/noise.png"
+                            fill
+                            className="object-cover object-center"
+                            alt=""
+                        />
+                        <div className="absolute top-0 right-0 min-h-[1682px] left-0 z-0 w-screen mx-auto bg-gradient-to-b from-transparent to-background" />
+                    </div>
                     <div className="max-w-xl lg:max-w-7xl mx-auto">
                         <Header />
                         {children}

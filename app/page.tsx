@@ -1,7 +1,11 @@
-import { CurrentProject, Hero, Video } from "@/components/home";
-import Contact from "@/components/home/Contact";
-import LatestProjects from "@/components/home/LatestProjects";
-import Mission from "@/components/home/Mission";
+import {
+    Contact,
+    CurrentProject,
+    Hero,
+    LatestProjects,
+    Mission,
+    Video,
+} from "@/components/home";
 
 export default function Home() {
     return (

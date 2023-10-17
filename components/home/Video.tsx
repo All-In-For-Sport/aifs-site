@@ -29,23 +29,6 @@ export default function Video() {
             ref={ref}
             className="w-full h-[1500px] overflow-visible flex items-start justify-center"
         >
-            <div className="absolute top-0 right-0 min-h-[1682px] left-0 -z-10 w-screen mx-auto">
-                <Image
-                    src="/assets/noise.png"
-                    fill
-                    className="object-cover object-center"
-                    alt=""
-                />
-            </div>
-            <div className="absolute top-[1682px] right-0 min-h-[1682px] left-0 -z-10 w-screen mx-auto">
-                <Image
-                    src="/assets/noise.png"
-                    fill
-                    className="object-cover object-center"
-                    alt=""
-                />
-                <div className="absolute top-0 right-0 min-h-[1682px] left-0 z-0 w-screen mx-auto bg-gradient-to-b from-transparent to-background" />
-            </div>
             <div className="w-full h-full relative">
                 <div className="absolute top-0 right-0 h-full -z-20 w-full bottom-0 left-0 mx-auto">
                     <div className="top-0 max-w-screen py-12 min-h-screen overflow-visible w-full sticky flex items-center justify-center">

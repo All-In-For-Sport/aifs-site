@@ -45,3 +45,19 @@ export function SecondaryButton({
         </button>
     );
 }
+
+export function GhostButton({
+    children,
+    className,
+}: {
+    children: string;
+    className?: string;
+}) {
+    return (
+        <button
+            className={`transition duration-200 border border-primary border-opacity-0 hover:border-opacity-20 text-white text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${className}`}
+        >
+            {children}
+        </button>
+    );
+}

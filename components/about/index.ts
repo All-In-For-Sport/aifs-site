@@ -1,3 +1,5 @@
 import AboutHero from "./AboutHero";
+import Partnership from "./Partnership";
+import Approach from "./Approach";
 
-export { AboutHero };
+export { AboutHero, Partnership, Approach };

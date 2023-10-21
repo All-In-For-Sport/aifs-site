@@ -1,4 +1,4 @@
-import { AboutHero } from "@/components/about";
+import { AboutCTA, AboutHero, PilotProjects } from "@/components/about";
 import Approach from "@/components/about/Approach";
 import Partnership from "@/components/about/Partnership";
 
@@ -9,6 +9,8 @@ export default function Home() {
             <AboutHero />
             <Partnership />
             <Approach />
+            <PilotProjects />
+            <AboutCTA />
         </main>
     );
 }

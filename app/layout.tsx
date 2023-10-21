@@ -29,7 +29,7 @@ export default function RootLayout({
     return (
         <html lang="en">
             <body
-                className={`${red_hat_display.variable} ${dm_sans.variable} bg-background h-screen overflow-y-scroll scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 overflow-x-hidden relative text-white font-body`}
+                className={`${red_hat_display.variable} ${dm_sans.variable} bg-background scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 overflow-x-hidden relative text-white font-body`}
             >
                 <Toaster
                     toastOptions={{
@@ -42,23 +42,41 @@ export default function RootLayout({
                         },
                     }}
                 />
-                <div className="max-w-screen">
-                    <div className="absolute top-0 right-0 min-h-[1682px] left-0 -z-10 w-screen mx-auto">
-                        <Image
-                            src="/assets/noise.png"
-                            fill
-                            className="object-cover object-center"
-                            alt=""
-                        />
-                    </div>
-                    <div className="absolute top-[1682px] right-0 min-h-[1682px] left-0 -z-10 w-screen mx-auto">
-                        <Image
-                            src="/assets/noise.png"
-                            fill
-                            className="object-cover object-center"
-                            alt=""
-                        />
-                        <div className="absolute top-0 right-0 min-h-[1682px] left-0 z-0 w-screen mx-auto bg-gradient-to-b from-transparent to-background" />
+                <div className="max-w-screen ">
+                    <div className="absolute top-0 -z-10 max-h-full overflow-hidden left-0 right-0">
+                        <div className="relative min-h-[1682px] w-screen mx-auto">
+                            <Image
+                                src="/assets/noise.png"
+                                fill
+                                className="object-cover object-center"
+                                alt=""
+                            />
+                        </div>
+                        <div className="relative min-h-[1682px] w-screen mx-auto">
+                            <Image
+                                src="/assets/noise.png"
+                                fill
+                                className="object-cover object-center"
+                                alt=""
+                            />
+                        </div>
+                        <div className="relative min-h-[1682px] w-screen mx-auto">
+                            <Image
+                                src="/assets/noise.png"
+                                fill
+                                className="object-cover object-center"
+                                alt=""
+                            />
+                        </div>
+                        <div className="relative min-h-[1682px] w-screen mx-auto">
+                            <Image
+                                src="/assets/noise.png"
+                                fill
+                                className="object-cover object-center"
+                                alt=""
+                            />
+                            <div className="absolute top-0 right-0 min-h-[1682px] left-0 z-0 w-screen mx-auto bg-gradient-to-b from-transparent to-background" />
+                        </div>
                     </div>
                     <div className="max-w-xl lg:max-w-7xl mx-auto">
                         <Header />

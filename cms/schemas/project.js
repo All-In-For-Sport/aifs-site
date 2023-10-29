@@ -4,34 +4,45 @@ export default {
   title: 'Project',
   fields: [
     {
+      name: 'isActive',
+      type: 'boolean',
+      title: 'Is Active',
+    },
+    {
       name: 'name',
       type: 'string',
       title: 'Name',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'description',
       type: 'text',
       title: 'Description',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'image',
       type: 'image',
       title: 'Image',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'slug',
       type: 'slug',
       title: 'Slug',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'startDate',
       type: 'date',
       title: 'Start Date',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'endDate',
       type: 'date',
       title: 'End Date',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'donateCryptoLink',
@@ -47,11 +58,13 @@ export default {
       name: 'goal',
       type: 'number',
       title: 'Goal',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'raised',
       type: 'number',
       title: 'Raised',
+      validation: (Rule) => Rule.required(),
     },
     {
       name: 'about',
@@ -62,11 +75,13 @@ export default {
           name: 'title',
           type: 'string',
           title: 'Title',
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'description',
           type: 'text',
           title: 'Description',
+          validation: (Rule) => Rule.required(),
         },
       ],
     },
@@ -79,11 +94,13 @@ export default {
           name: 'title',
           type: 'string',
           title: 'Title',
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'description',
           type: 'text',
           title: 'Description',
+          validation: (Rule) => Rule.required(),
         },
         {
           name: 'videoUrl',
@@ -106,16 +123,19 @@ export default {
               name: 'title',
               type: 'string',
               title: 'Title',
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'description',
               type: 'text',
               title: 'Description',
+              validation: (Rule) => Rule.required(),
             },
             {
               name: 'image',
               type: 'image',
               title: 'Image',
+              validation: (Rule) => Rule.required(),
             },
           ],
         },

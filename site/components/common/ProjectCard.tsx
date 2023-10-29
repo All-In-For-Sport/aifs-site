@@ -1,13 +1,14 @@
 import { Project } from "@/types";
 import Image from "next/image";
 import { SecondaryButton } from ".";
+import Link from "next/link";
 
 export function ProjectCard({ project }: { project: Project }) {
     return (
         <div className="transition duration-300 hover:scale-[1.01] ease-out border-2 border-gray-700 p-6 rounded-3xl">
             <div className="rounded-2xl h-[200px] sm:h-[300px] relative overflow-hidden">
                 <Image
-                    src={project.primary_image_url}
+                    src={project.image}
                     alt=""
                     className="object-center object-cover"
                     fill
@@ -22,7 +23,9 @@ export function ProjectCard({ project }: { project: Project }) {
                     {project.description}
                 </p>
                 <div className="mt-8">
-                    <SecondaryButton>Read more</SecondaryButton>
+                    <Link href={`/projects${project.slug}`}>
+                        <SecondaryButton>Read more</SecondaryButton>
+                    </Link>
                 </div>
             </div>
         </div>

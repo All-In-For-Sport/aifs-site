@@ -6,25 +6,32 @@ import {
     PrimaryButton,
     SecondaryButton,
 } from "@/components/common";
+import { Project } from "@/types";
+import Link from "next/link";
 
-export default function CurrentProject() {
+export default function CurrentProject({ project }: { project: Project }) {
     return (
         <section className="flex md:p-8 my-12 lg:my-24 flex-col gap-16">
             <div className="grid grid-cols-2 gap-8 md:gap-16 lg:grid-cols-5">
                 <div className="col-span-3">
                     <div className="flex items-center lg:items-start flex-col gap-6 text-center lg:text-left">
                         <div className="font-header max-w-lg lg:max-w-none text-gray-100 font-bold text-4xl">
-                            By Any Means Basketball x All in for Sport
+                            {project.name}
                         </div>
                         <div className="text-base text-white/50">
-                            Supporting a community of hoopers in the
-                            Philippines.
+                            {project.description}
                         </div>
                         <div className="flex flex-col sm:flex-row gap-2.5">
-                            <PrimaryButton icon={<ArrowRight />}>
-                                Pledge your support
-                            </PrimaryButton>
-                            <SecondaryButton>Learn more</SecondaryButton>
+                            {project.donateFiatLink && (
+                                <Link href={project.donateFiatLink}>
+                                    <PrimaryButton icon={<ArrowRight />}>
+                                        Pledge your support
+                                    </PrimaryButton>
+                                </Link>
+                            )}
+                            <Link href={`/projects${project.slug}`}>
+                                <SecondaryButton>Learn more</SecondaryButton>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -36,7 +43,7 @@ export default function CurrentProject() {
                             </div>
                             <div className="flex flex-col items-center lg:items-start">
                                 <div className="text-gray-100 whitespace-nowrap font-bold text-2xl font-header">
-                                    $15,000
+                                    ${project.goal}
                                 </div>
                                 <div className="text-base font-body opacity-70">
                                     to raise
@@ -51,7 +58,12 @@ export default function CurrentProject() {
                             </div>
                             <div className="flex flex-col items-center lg:items-start">
                                 <div className="text-gray-100 whitespace-nowrap text-2xl font-bold font-header">
-                                    October 18th
+                                    {new Date(
+                                        project.endDate
+                                    ).toLocaleDateString("en-US", {
+                                        month: "long",
+                                        day: "numeric",
+                                    })}
                                 </div>
                                 <div className="text-base font-body opacity-70">
                                     campaign ends

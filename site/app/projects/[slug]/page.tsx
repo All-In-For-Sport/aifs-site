@@ -7,6 +7,31 @@ import {
     ProjectHero,
 } from "@/components/project";
 
+export async function generateMetadata({
+    params,
+}: {
+    params: { slug: string };
+}) {
+    const client = createClient({
+        projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+        dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+        apiVersion: "2022-08-31",
+        useCdn: process.env.NODE_ENV === "production",
+    });
+
+    const project = (
+        await client.fetch(
+            `*[_type == "project" && slug.current == $slug]{..., "image": image.asset->.url, "goals": goals[] {..., "image": image.asset->.url}}`,
+            { slug: "/" + params.slug }
+        )
+    )[0];
+
+    return {
+        title: `${project.name} | All in for Sport`,
+        description: project.description,
+    };
+}
+
 export async function generateStaticParams() {
     const client = createClient({
         projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,

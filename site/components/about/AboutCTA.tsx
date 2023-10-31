@@ -14,7 +14,7 @@ export default function AboutCTA() {
                     humans are much more connected than we are different, and
                     that sport is the unifying piece that can bring us together.
                 </p>
-                <Link href="" className="">
+                <Link href="https://discord.com/invite/HyeK5hf4vR" className="">
                     <SmallButton className="">Join Us</SmallButton>
                 </Link>
                 <Image
@@ -33,7 +33,7 @@ export default function AboutCTA() {
                     at 4pm EST every Thursday - it&apos;s a great way to meet
                     the team and see what we&apos;re working on right now.
                 </p>
-                <Link href="" className="">
+                <Link href="https://t.me/+CW0_qRG6S5g1MmJh" className="">
                     <SmallButton className="">Join Telegram</SmallButton>
                 </Link>
                 <Image

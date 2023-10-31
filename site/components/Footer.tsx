@@ -20,18 +20,29 @@ export default function Footer() {
                         <h6 className="font-bold text-white mb-2 text-lg font-header">
                             Operations
                         </h6>
-                        <Link href="/">Discord</Link>
-                        <Link href="/">Clarity</Link>
-                        <Link href="/">Docs</Link>
+                        <Link href="https://discord.com/invite/HyeK5hf4vR">
+                            Discord
+                        </Link>
+                        <Link href="https://app.clarity.so/allinforsport">
+                            Clarity
+                        </Link>
                     </div>
                     <div className="flex flex-col text-white/50 gap-2">
                         <h6 className="font-bold text-white mb-2 text-lg font-header">
                             Community
                         </h6>
-                        <Link href="/">Discussion</Link>
-                        <Link href="/">Badges</Link>
-                        <Link href="/">Voting</Link>
-                        <Link href="/">State</Link>
+                        <Link href="https://discuss.allinforsport.org">
+                            Discussion
+                        </Link>
+                        <Link href="https://opensea.io/collection/all-in-for-sport">
+                            Badges
+                        </Link>
+                        <Link href="https://snapshot.org/#/allinforsport.eth">
+                            Voting
+                        </Link>
+                        <Link href="https://state.allinforsport.org/">
+                            State
+                        </Link>
                     </div>
                 </div>
                 <div>

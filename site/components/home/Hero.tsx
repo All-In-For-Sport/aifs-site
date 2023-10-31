@@ -1,5 +1,6 @@
 import { PrimaryButton, SecondaryButton } from "@/components/common/Button";
 import { ArrowRight } from "@/components/common";
+import Link from "next/link";
 
 export default function Hero() {
     return (
@@ -13,10 +14,14 @@ export default function Hero() {
                 projects that advance inclusion and empowerment through sport.
             </p>
             <div className="mt-12 min-w-[400px] flex flex-col sm:flex-row gap-2.5">
-                <PrimaryButton icon={<ArrowRight />}>
-                    Our Projects
-                </PrimaryButton>
-                <SecondaryButton>Our Story</SecondaryButton>
+                <Link href="/projects">
+                    <PrimaryButton icon={<ArrowRight />}>
+                        Our Projects
+                    </PrimaryButton>
+                </Link>
+                <Link href="/about">
+                    <SecondaryButton>Our Story</SecondaryButton>
+                </Link>
             </div>
         </section>
     );

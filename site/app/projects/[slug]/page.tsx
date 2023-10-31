@@ -7,6 +7,20 @@ import {
     ProjectHero,
 } from "@/components/project";
 
+export async function generateStaticParams() {
+    const client = createClient({
+        projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
+        dataset: process.env.NEXT_PUBLIC_SANITY_DATASET,
+        apiVersion: "2022-08-31",
+        useCdn: process.env.NODE_ENV === "production",
+    });
+    const projects = await client.fetch(`*[_type == "project"]{slug}`);
+
+    return projects.map((project: { slug: string }) => ({
+        params: { slug: project.slug },
+    }));
+}
+
 export default async function ProjectPage({
     params,
 }: {

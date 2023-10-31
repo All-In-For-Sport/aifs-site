@@ -46,10 +46,10 @@ export default function Footer() {
                     </div>
                 </div>
                 <div>
-                    <h6 className="font-bold text-white mb-2 text-lg font-header">
+                    {/* <h6 className="font-bold text-white mb-2 text-lg font-header">
                         Newsletter
                     </h6>
-                    <EmailForm />
+                    <EmailForm /> */}
                 </div>
             </div>
             <div className="flex justify-between w-full pt-16 text-xs text-white/50">

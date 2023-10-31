@@ -18,7 +18,7 @@ const dm_sans = DM_Sans({
 
 export const metadata: Metadata = {
     title: "All in for Sport",
-    description: "",
+    description: "A funding platform for community-led sports projects.",
 };
 
 export default function RootLayout({

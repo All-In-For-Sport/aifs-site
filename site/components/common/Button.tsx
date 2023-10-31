@@ -16,7 +16,7 @@ export function PrimaryButton({
             type={type}
             onClick={onClick}
             disabled={disabled}
-            className={`bg-primary text-darkText text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${
+            className={`bg-primary w-full text-darkText text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${
                 disabled ? "opacity-50" : ""
             }`}
         >
@@ -39,7 +39,7 @@ export function SecondaryButton({
 }) {
     return (
         <button
-            className={`bg-primary bg-opacity-0 hover:bg-opacity-10 transition duration-200 border border-primary text-primary text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${className}`}
+            className={`bg-primary w-full bg-opacity-0 hover:bg-opacity-10 transition duration-200 border border-primary text-primary text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${className}`}
         >
             {children}
         </button>

@@ -9,13 +9,15 @@ import { Fragment } from "react";
 export default function Header() {
     return (
         <header className="flex relative justify-between items-center w-full p-6">
-            <Image
-                src="/logo.png"
-                width={256}
-                height={256}
-                alt=""
-                className="w-12 h-12"
-            />
+            <Link href="/">
+                <Image
+                    src="/logo.png"
+                    width={256}
+                    height={256}
+                    alt=""
+                    className="w-12 h-12"
+                />
+            </Link>
             <div className="hidden lg:flex items-center gap-3">
                 <Link href="/about" className="font-semibold py-2 px-3.5">
                     About

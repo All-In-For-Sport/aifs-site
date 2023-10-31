@@ -18,7 +18,8 @@ export default async function Home() {
 
     const projects = await client.fetch(`*[_type == "project"]{
         ...,
-        "image": image.asset->.url
+        "image": image.asset->.url,
+        "slug": slug.current
     }`);
 
     return (

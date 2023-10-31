@@ -26,12 +26,11 @@ export function EmailForm() {
                         name="agree"
                         checked={agree}
                         className="hidden"
-                        onChange={() => setAgree(!agree)}
                     />
                     <label
                         htmlFor="agree"
                         onClick={() => setAgree(!agree)}
-                        className="border-gray-700 border-2 bg-gray-800 rounded-lg h-6 w-6 flex items-center justify-center"
+                        className="border-gray-700 cursor-pointer border-2 bg-gray-800 rounded-lg h-6 w-6 flex items-center justify-center"
                     >
                         {agree && (
                             <CheckIcon className="text-primary w-3 h-3" />
@@ -45,9 +44,14 @@ export function EmailForm() {
                         .
                     </label>
                 </div>
-                <PrimaryButton icon={<PaperAirplaneIcon className="w-5 h-5" />}>
-                    Submit
-                </PrimaryButton>
+                <div>
+                    <PrimaryButton
+                        disabled={!agree}
+                        icon={<PaperAirplaneIcon className="w-5 h-5" />}
+                    >
+                        Submit
+                    </PrimaryButton>
+                </div>
             </div>
         </form>
     );

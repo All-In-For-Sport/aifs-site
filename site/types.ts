@@ -9,6 +9,7 @@ export type Project = {
     donateCryptoLink?: string;
     donateFiatLink?: string;
     goal: number;
+    raised: number;
     about: {
         title: string;
         description: string;

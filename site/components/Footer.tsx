@@ -58,8 +58,7 @@ export default function Footer() {
                     Sport
                 </div>
                 <div className="flex gap-8">
-                    <div>Terms of Use</div>
-                    <div>Privacy Policy</div>
+                    <Link href="/privacy">Privacy Policy</Link>
                 </div>
             </div>
         </footer>

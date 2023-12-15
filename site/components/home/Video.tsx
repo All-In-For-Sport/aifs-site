@@ -67,7 +67,7 @@ export default function Video() {
                                 className="w-full h-full bg-[#606060]"
                             >
                                 <iframe
-                                    src="https://customer-dtnsdgf6yztpyx6r.cloudflarestream.com/a77abe015e3249adb1f9dc26005e4551/iframe?autoplay=true"
+                                    src="https://customer-dtnsdgf6yztpyx6r.cloudflarestream.com/d73bfa756455d5c3895b25cbe9b33dba/iframe?autoplay=true"
                                     title="All in for Sport Introduction"
                                     allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture;"
                                     className="w-full h-full"

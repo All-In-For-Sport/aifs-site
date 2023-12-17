@@ -64,7 +64,7 @@ export default function Video() {
                             <motion.div
                                 initial={{ opacity: 0 }}
                                 animate={{ opacity: 1 }}
-                                className="w-full h-full bg-[#606060]"
+                                className="w-full h-full  bg-[#606060]"
                             >
                                 <iframe
                                     src="https://customer-dtnsdgf6yztpyx6r.cloudflarestream.com/d73bfa756455d5c3895b25cbe9b33dba/iframe?autoplay=true"

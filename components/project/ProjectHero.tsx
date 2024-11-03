@@ -31,7 +31,7 @@ export default function ProjectHero({ project }: { project: Project }) {
                 style={{
                   width: `${Math.min(
                     Math.round((project.raised / project.goal) * 100),
-                    100
+                    100,
                   )}%`,
                 }}
               />

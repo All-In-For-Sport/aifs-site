@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Approach() {
   return (
-    <section className="flex relative gap-16 flex-col max-w-xl lg:max-w-none lg:flex-row items-center my-24">
+    <section className="page-wrap flex relative gap-16 flex-col lg:flex-row items-center py-24">
       <div className="block left-0 my-auto right-0 mx-auto w-[200px] h-[200px] rounded-full -translate-y-8 -z-20 bg-[#5A6DED] blur-[100px] absolute lg:translate-x-24" />
       <div className="flex flex-col items-center text-center lg:text-left lg:items-start gap-6 lg:w-1/2">
         <Tag>Our Approach</Tag>

@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <main className="container max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div className="py-12 page-wrap">
       <div className="prose lg:prose-xl">
         <h1 className="text-white text-3xl font-semibold mt-4">
           Our Privacy Policy
@@ -48,14 +48,14 @@ export default function PrivacyPolicy() {
             child&apos;s Personal Information from our Services.
           </p>
           <p className="text-white/50">
-            We encourage parents and legal guardians to monitor their children's
-            Internet usage and to help enforce this Policy by instructing their
-            children never to provide Personal Information through the Website
-            and Services without their permission. We also ask that all parents
-            and legal guardians overseeing the care of children take the
-            necessary precautions to ensure that their children are instructed
-            to never give out Personal Information when online without their
-            permission.
+            We encourage parents and legal guardians to monitor their
+            children&apos;s Internet usage and to help enforce this Policy by
+            instructing their children never to provide Personal Information
+            through the Website and Services without their permission. We also
+            ask that all parents and legal guardians overseeing the care of
+            children take the necessary precautions to ensure that their
+            children are instructed to never give out Personal Information when
+            online without their permission.
           </p>
           <h3 className="text-white text-xl font-semibold mt-4">
             Use and processing of collected information
@@ -308,6 +308,6 @@ export default function PrivacyPolicy() {
       <p className="text-center mt-8 text-white">
         This document was last updated on June 29, 2023
       </p>
-    </main>
+    </div>
   );
 }

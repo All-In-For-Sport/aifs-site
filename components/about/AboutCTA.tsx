@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function AboutCTA() {
   return (
-    <section className="my-24 relative grid grid-cols-1 gap-8 lg:grid-cols-2">
+    <section className="page-wrap py-24 relative grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="block left-0 my-auto right-0 mx-auto w-[200px] h-[200px] rounded-full -translate-y-20 lg:-translate-y-2 -z-20 bg-[#5A6DED] blur-[75px] absolute" />
       <div className="rounded-2xl overflow-hidden shadow-lg border pr-12 border-darkText bg-background relative p-8">
         <h5 className="text-2xl mb-4">Join Our Community</h5>

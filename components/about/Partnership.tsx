@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function Partnership() {
   return (
-    <section className="flex gap-16 flex-col-reverse max-w-xl lg:max-w-none lg:flex-row items-center my-12 lg:my-24">
+    <section className="page-wrap flex gap-16 flex-col-reverse lg:flex-row items-center py-12 lg:py-24">
       <div className="w-full flex justify-center lg:justify-end">
         <div className="md:w-[484px] md:h-[473px] w-full h-[300px] relative ">
           <Image

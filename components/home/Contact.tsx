@@ -79,7 +79,7 @@ export default function Contact() {
   return (
     <section
       id="contactUs"
-      className="flex my-12 items-start flex-col w-full gap-8"
+      className="page-wrap flex my-12 items-start flex-col w-full gap-8"
     >
       <h2 className="font-bold text-4xl md:text-5xl font-header">
         Want to get in touch?

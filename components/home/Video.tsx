@@ -24,10 +24,9 @@ export default function Video() {
   });
 
   return (
-    // z-20 to keep glow visible throughout the page
     <section
       ref={ref}
-      className="w-full h-[1500px] overflow-visible flex items-start justify-center"
+      className="page-wrap w-full h-[1500px] overflow-visible flex items-start justify-center z-20"
     >
       <div className="w-full h-full relative">
         <div className="absolute top-0 right-0 h-full -z-20 w-full bottom-0 left-0 mx-auto">

@@ -5,6 +5,7 @@ import { Red_Hat_Display, DM_Sans } from "next/font/google";
 import Image from "next/image";
 import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { BackgroundGradient } from "@/components/common/BackgroundGradient";
 
 const red_hat_display = Red_Hat_Display({
   subsets: ["latin"],
@@ -29,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.variable} ${dm_sans.variable} bg-background scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 overflow-x-hidden relative text-white font-body`}
+        className={`${red_hat_display.variable} ${dm_sans.variable} bg-background scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 overflow-x-hidden text-white font-body`}
       >
         <Toaster
           toastOptions={{
@@ -42,47 +43,11 @@ export default function RootLayout({
             },
           }}
         />
-        <div className="max-w-screen ">
-          <div className="absolute top-0 -z-10 max-h-full overflow-hidden left-0 right-0">
-            <div className="relative min-h-[1682px] w-screen mx-auto">
-              <Image
-                src="/assets/noise.png"
-                fill
-                className="object-cover object-center"
-                alt=""
-              />
-            </div>
-            <div className="relative min-h-[1682px] w-screen mx-auto">
-              <Image
-                src="/assets/noise.png"
-                fill
-                className="object-cover object-center"
-                alt=""
-              />
-            </div>
-            <div className="relative min-h-[1682px] w-screen mx-auto">
-              <Image
-                src="/assets/noise.png"
-                fill
-                className="object-cover object-center"
-                alt=""
-              />
-            </div>
-            <div className="relative min-h-[1682px] w-screen mx-auto">
-              <Image
-                src="/assets/noise.png"
-                fill
-                className="object-cover object-center"
-                alt=""
-              />
-              <div className="absolute top-0 right-0 min-h-[1682px] left-0 z-0 w-screen mx-auto bg-gradient-to-b from-transparent to-background" />
-            </div>
-          </div>
-          <div className="max-w-xl lg:max-w-7xl mx-auto">
-            <Header />
-            {children}
-            <Footer />
-          </div>
+        <div className="min-h-screen flex flex-col background-image relative">
+          <BackgroundGradient />
+          <Header />
+          <main className="relative grow">{children}</main>
+          <Footer />
         </div>
       </body>
     </html>

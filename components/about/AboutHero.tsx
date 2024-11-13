@@ -4,7 +4,7 @@ import Image from "next/image";
 export default function AboutHero() {
   return (
     <>
-      <section className="mb-24">
+      <section className="page-wrap page-section-padding">
         <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8">
           <div className="flex flex-col text-center lg:text-left items-center lg:items-start w-full lg:w-6/12">
             <Tag>About us</Tag>
@@ -67,7 +67,7 @@ export default function AboutHero() {
           </div>
         </div>
       </section>
-      <section className="relative flex flex-col max-w-4xl text-center gap-2 py-24">
+      <section className="relative flex flex-col max-w-4xl text-center gap-2 py-24 page-wrap">
         <div className="block left-0 my-auto right-0 mx-auto w-[200px] h-[200px] rounded-full -translate-y-8 -z-20 bg-[#5A6DED] blur-[100px] absolute" />
         <h2 className="font-header text-5xl leading-[64px] font-extrabold">
           Sprung from Krause House

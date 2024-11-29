@@ -1,11 +1,6 @@
-import {
-  Contact,
-  CurrentProject,
-  Hero,
-  LatestProjects,
-  Mission,
-  Video,
-} from "@/components/home";
+import { Contact, Hero, Mission } from "@/components/home";
+
+import { Video } from "@/components/home/Video";
 
 export default async function Home() {
   return (

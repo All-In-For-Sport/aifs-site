@@ -13,7 +13,7 @@ export default function Video() {
     offset: ["start center", "start start"],
   });
   const [scale, setScale] = useState(INITIAL_SCALE);
-  const [isVideoLoaded, setIsVideoLoaded] = useState(false);
+  const [isThumbnailLoaded, setIsThumbnailLoaded] = useState(false);
   const [loadVideo, setLoadVideo] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
 
@@ -36,7 +36,7 @@ export default function Video() {
         </div>
 
         <div
-          className={`top-0 pt-12 min-h-[50vh] overflow-visible w-full sticky flex items-center justify-center transition-opacity ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}
+          className={`top-0 pt-12 min-h-[50vh] overflow-visible w-full sticky flex items-center justify-center transition-opacity ${isThumbnailLoaded ? "opacity-100" : "opacity-0"}`}
         >
           <motion.div
             style={{ scale }}
@@ -48,7 +48,6 @@ export default function Video() {
               disableRemotePlayback
               controls
               onPlay={() => setIsPlaying(true)}
-              onLoadedData={() => setIsVideoLoaded(true)}
             >
               {loadVideo && (
                 <source src="/assets/aifs_introduction.mp4" type="video/mp4" />
@@ -66,6 +65,7 @@ export default function Video() {
               alt="basketball player jumping for a slam dunk"
               fill
               className={`size-full object-cover pointer-events-none transition-all ${isPlaying && "opacity-0"}`}
+              onLoad={() => setIsThumbnailLoaded(true)}
             />
           </motion.div>
         </div>

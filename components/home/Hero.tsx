@@ -4,8 +4,8 @@ import Link from "next/link";
 
 export default function Hero() {
   return (
-    <section className="page-wrap text-center max-w-3xl relative mx-auto flex flex-col items-center pt-6 md:pt-12 lg:pt-24">
-      <h1 className="font-header text-5xl md:text-6xl lg:text-7xl leading-[64px] md:leading-[72px] lg:leading-[84px] font-extrabold">
+    <section className="page-wrap text-center relative mx-auto flex flex-col items-center pt-6 md:pt-12 lg:pt-24">
+      <h1 className="max-w-3xl font-header text-4xl leading-snug sm:text-5xl sm:leading-normal md:text-6xl lg:text-7xl md:leading-[3.8rem] lg:leading-[5.5rem] font-extrabold">
         A <span className="text-primary">funding platform</span> for
         community-led sports projects.
       </h1>

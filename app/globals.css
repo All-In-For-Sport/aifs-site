@@ -10,7 +10,7 @@ svg {
 /* utilities */
 .page-wrap {
   @apply max-w-xl lg:max-w-7xl mx-auto;
-  @apply px-6 md:px-12 lg:px-24;
+  @apply px-6 lg:px-24;
 }
 
 .page-section-padding {

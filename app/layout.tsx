@@ -43,7 +43,7 @@ export default function RootLayout({
             },
           }}
         />
-        <div className="min-h-screen flex flex-col background-image relative">
+        <div className="min-h-screen flex flex-col background-image relative overflow-clip">
           <BackgroundGradient />
           <Header />
           <main className="relative grow">{children}</main>

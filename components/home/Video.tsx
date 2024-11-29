@@ -4,7 +4,7 @@ import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
 import { Play } from "@/components/common";
 
-const INITIAL_SCALE = 0.8;
+const INITIAL_SCALE = 0.85;
 
 export function Video() {
   const ref = useRef(null);
@@ -18,6 +18,7 @@ export function Video() {
   const [isPlaying, setIsPlaying] = useState(false);
 
   useMotionValueEvent(scrollYProgress, "change", (latest: any) => {
+    if (latest >= 0.67) return;
     setScale(INITIAL_SCALE + latest * 0.15);
   });
 
@@ -35,7 +36,7 @@ export function Video() {
         </div>
 
         <div
-          className={`top-0 py-12 min-h-[50vh] overflow-visible w-full sticky flex items-center justify-center transition-opacity ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}
+          className={`top-0 pt-12 min-h-[50vh] overflow-visible w-full sticky flex items-center justify-center transition-opacity ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}
         >
           <motion.div
             style={{ scale }}

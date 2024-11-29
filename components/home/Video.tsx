@@ -37,7 +37,7 @@ export function Video() {
         </div>
 
         <div
-          className={`top-0 py-12 min-h-screen overflow-visible w-full sticky flex items-center justify-center transition-opacity ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}
+          className={`top-0 py-12 min-h-[50vh] overflow-visible w-full sticky flex items-center justify-center transition-opacity ${isVideoLoaded ? "opacity-100" : "opacity-0"}`}
         >
           <motion.div
             style={{ scale }}

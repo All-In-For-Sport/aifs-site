@@ -6,7 +6,7 @@ import { Play } from "@/components/common";
 
 const INITIAL_SCALE = 0.85;
 
-export function Video() {
+export default function Video() {
   const ref = useRef(null);
   const { scrollYProgress } = useScroll({
     target: ref,

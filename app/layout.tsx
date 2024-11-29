@@ -30,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.variable} ${dm_sans.variable} bg-background scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 overflow-x-hidden text-white font-body`}
+        className={`${red_hat_display.variable} ${dm_sans.variable} bg-background scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 text-white font-body`}
       >
         <Toaster
           toastOptions={{

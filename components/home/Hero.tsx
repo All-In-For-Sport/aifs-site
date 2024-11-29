@@ -13,7 +13,7 @@ export default function Hero() {
         We&apos;re starting a new public goods funding initiative to support
         projects that advance inclusion and empowerment through sport.
       </p>
-      <div className="mt-12 w-full flex flex-col sm:flex-row gap-2.5">
+      <div className="mt-12 w-full max-w-96 flex flex-col sm:flex-row gap-2.5">
         <Link href="/projects">
           <PrimaryButton icon={<ArrowRight />}>Our Projects</PrimaryButton>
         </Link>

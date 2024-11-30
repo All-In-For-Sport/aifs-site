@@ -1,79 +1,90 @@
-export function PrimaryButton({
+import { MouseEventHandler, ReactNode } from "react";
+import { clsx } from "clsx";
+import Link from "next/link";
+
+const sharedButtonClasses =
+  "flex justify-center items-center gap-2 px-8 py-3 text-base rounded-full group disabled:opacity-50 font-bold";
+
+const buttonVariantClasses = {
+  primary: "bg-primary text-darkText",
+  secondary:
+    "bg-primary bg-opacity-0 hover:bg-opacity-10 transition duration-200 border border-primary text-primary",
+  small:
+    "bg-primary bg-opacity-0 hover:bg-opacity-10 transition duration-200 border-2 border-darkText text-primary text-sm",
+  ghost:
+    "transition duration-200 border border-primary border-opacity-0 hover:border-opacity-20 text-white",
+};
+
+export function Button({
   children,
-  type,
-  onClick,
-  disabled,
-  icon,
+  fullWidth = false,
+  variant = "primary",
+  disabled = false,
+  leftIcon,
+  rightIcon,
+  ...props
 }: {
-  children: string;
-  type?: "submit" | "button";
+  children: ReactNode;
+  fullWidth?: boolean;
   disabled?: boolean;
-  onClick?: () => void;
-  icon?: React.ReactNode;
+  variant?: keyof typeof buttonVariantClasses;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
 }) {
   return (
     <button
-      type={type}
-      onClick={onClick}
-      disabled={disabled}
-      className={`bg-primary w-full text-darkText text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${
-        disabled ? "opacity-50" : ""
-      }`}
-    >
-      {children}
-      {icon && (
-        <div className="group-hover:translate-x-1 transition duration-200">
-          {icon}
-        </div>
+      {...props}
+      className={clsx(
+        sharedButtonClasses,
+        buttonVariantClasses[variant],
+        fullWidth && "w-full"
       )}
+    >
+      {leftIcon && <IconWrapper>{leftIcon}</IconWrapper>}
+      {children}
+      {rightIcon && <IconWrapper>{rightIcon}</IconWrapper>}
     </button>
   );
 }
 
-export function SecondaryButton({
+export function ButtonLink({
   children,
-  className,
+  href,
+  fullWidth = false,
+  variant = "primary",
+  leftIcon,
+  rightIcon,
+  ...props
 }: {
-  children: string;
-  className?: string;
+  children: ReactNode;
+  href: string;
+  fullWidth?: boolean;
+  variant?: keyof typeof buttonVariantClasses;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
+  onClick?: MouseEventHandler<HTMLAnchorElement>;
 }) {
   return (
-    <button
-      className={`bg-primary w-full bg-opacity-0 hover:bg-opacity-10 transition duration-200 border border-primary text-primary text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${className}`}
+    <Link
+      href={href}
+      className={clsx(
+        sharedButtonClasses,
+        buttonVariantClasses[variant],
+        fullWidth && "w-full"
+      )}
     >
+      {leftIcon && <IconWrapper>{leftIcon}</IconWrapper>}
       {children}
-    </button>
+      {rightIcon && <IconWrapper>{rightIcon}</IconWrapper>}
+    </Link>
   );
 }
 
-export function SmallButton({
-  children,
-  className,
-}: {
-  children: string;
-  className?: string;
-}) {
+function IconWrapper({ children }: { children: ReactNode }) {
   return (
-    <button
-      className={`bg-primary bg-opacity-0 hover:bg-opacity-10 transition duration-200 border-2 border-darkText text-primary text-sm gap-2 justify-center items-center group flex font-bold px-6 py-2 rounded-full ${className}`}
-    >
+    <div className="group-hover:translate-x-1 transition duration-200">
       {children}
-    </button>
-  );
-}
-
-export function GhostButton({
-  children,
-  className,
-}: {
-  children: string;
-  className?: string;
-}) {
-  return (
-    <button
-      className={`transition duration-200 border border-primary border-opacity-0 hover:border-opacity-20 text-white text-base gap-2 justify-center items-center group flex font-bold px-8 py-3 rounded-full ${className}`}
-    >
-      {children}
-    </button>
+    </div>
   );
 }

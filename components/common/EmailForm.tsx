@@ -1,10 +1,10 @@
 "use client";
-
 import { useState } from "react";
-import { Input } from "./Input";
 import { CheckIcon } from "@heroicons/react/24/solid";
-import { PrimaryButton } from "./Button";
 import { PaperAirplaneIcon } from "@heroicons/react/24/solid";
+
+import { Input } from "./Input";
+import { Button } from "./Button";
 
 export function EmailForm() {
   const [email, setEmail] = useState("");
@@ -40,12 +40,12 @@ export function EmailForm() {
           </label>
         </div>
         <div>
-          <PrimaryButton
+          <Button
             disabled={!agree}
-            icon={<PaperAirplaneIcon className="w-5 h-5" />}
+            rightIcon={<PaperAirplaneIcon className="w-5 h-5" />}
           >
             Submit
-          </PrimaryButton>
+          </Button>
         </div>
       </div>
     </form>

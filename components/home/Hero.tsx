@@ -1,6 +1,5 @@
-import { PrimaryButton, SecondaryButton } from "@/components/common/Button";
+import { ButtonLink } from "@/components/common/Button";
 import { ArrowRight } from "@/components/common";
-import Link from "next/link";
 
 export default function Hero() {
   return (
@@ -13,13 +12,13 @@ export default function Hero() {
         We&apos;re starting a new public goods funding initiative to support
         projects that advance inclusion and empowerment through sport.
       </p>
-      <div className="mt-12 w-full max-w-96 flex flex-col sm:flex-row gap-2.5">
-        <Link href="/projects">
-          <PrimaryButton icon={<ArrowRight />}>Our Projects</PrimaryButton>
-        </Link>
-        <Link href="/about">
-          <SecondaryButton>Our Story</SecondaryButton>
-        </Link>
+      <div className="flex  flex-col sm:flex-row gap-2.5 justify-center mt-12 w-full max-w-96">
+        <ButtonLink href="/projects" rightIcon={<ArrowRight />}>
+          Our Projects
+        </ButtonLink>
+        <ButtonLink href="/about" variant="secondary">
+          Our Story
+        </ButtonLink>
       </div>
     </section>
   );

@@ -1,15 +1,15 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { SecondaryButton } from "./common";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
+import { ButtonLink } from "./common/Button";
 
 export default function Header() {
   return (
     <header>
-      <div className="page-wrap flex relative justify-between items-center py-6">
+      <div className="flex relative justify-between items-center py-6 w-full px-6 max-w-7xl m-auto">
         <Link href="/">
           <Image
             src="/logo.png"
@@ -26,9 +26,9 @@ export default function Header() {
           <Link href="/projects" className="font-semibold py-2 px-3.5">
             Projects
           </Link>
-          <Link href="#contactUs">
-            <SecondaryButton>Contact Us</SecondaryButton>
-          </Link>
+          <ButtonLink variant="secondary" href="#contactUs">
+            Contact Us
+          </ButtonLink>
         </div>
         <Popover className="lg:hidden">
           {({ close }) => (
@@ -60,15 +60,15 @@ export default function Header() {
                   >
                     Projects
                   </Link>
-                  <Link
+
+                  <ButtonLink
                     href="#contactUs"
-                    className="w-full flex justify-stretch"
+                    variant="secondary"
+                    fullWidth
                     onClick={() => close()}
                   >
-                    <SecondaryButton className="w-full">
-                      Contact Us
-                    </SecondaryButton>
-                  </Link>
+                    Contact Us
+                  </ButtonLink>
                 </Popover.Panel>
               </Transition>
             </>

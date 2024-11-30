@@ -23,6 +23,9 @@ const config: Config = {
         background: "#111111",
         darkText: "#242424",
       },
+      screens: {
+        xs: "420px",
+      },
     },
   },
   plugins: [require("tailwind-scrollbar"), require("@tailwindcss/typography")],

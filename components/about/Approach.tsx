@@ -1,6 +1,6 @@
 import Image from "next/image";
+
 import { Tag } from "@/components/common";
-import Link from "next/link";
 
 export default function Approach() {
   return (

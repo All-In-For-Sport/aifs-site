@@ -1,13 +1,13 @@
 import Image from "next/image";
 import { Project } from "@/types";
 import Link from "next/link";
-import { PrimaryButton, SecondaryButton } from "../common";
+import { Button } from "../common";
 
 export default function ProjectHero({ project }: { project: Project }) {
   return (
     <section className="grid lg:grid-cols-3 gap-4 w-full">
       <div className="w-full rounded-2xl overflow-hidden h-[500px] relative lg:col-span-2">
-        <img
+        <Image
           src={project.image}
           alt={project.name}
           className="object-cover object-center"
@@ -31,7 +31,7 @@ export default function ProjectHero({ project }: { project: Project }) {
                 style={{
                   width: `${Math.min(
                     Math.round((project.raised / project.goal) * 100),
-                    100,
+                    100
                   )}%`,
                 }}
               />
@@ -53,12 +53,12 @@ export default function ProjectHero({ project }: { project: Project }) {
           <div className="w-full items-stretch flex gap-4 flex-col">
             {project.donateCryptoLink && (
               <Link href={project.donateCryptoLink} target="_blank">
-                <PrimaryButton>Donate ETH</PrimaryButton>
+                <Button>Donate ETH</Button>
               </Link>
             )}
             {project.donateFiatLink && (
               <Link href={project.donateFiatLink} target="_blank">
-                <SecondaryButton>Donate USD</SecondaryButton>
+                <Button variant="secondary">Donate USD</Button>
               </Link>
             )}
           </div>

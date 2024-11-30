@@ -1,7 +1,7 @@
-import { Project } from "@/types";
 import Image from "next/image";
-import { SecondaryButton } from ".";
-import Link from "next/link";
+
+import { ButtonLink } from "./Button";
+import { Project } from "@/types";
 
 export function ProjectCard({ project }: { project: Project }) {
   return (
@@ -21,9 +21,9 @@ export function ProjectCard({ project }: { project: Project }) {
           <p className="text-white/50 mt-3 text-sm">{project.description}</p>
         </div>
         <div className="mt-8">
-          <Link href={`/projects/${project.slug}`}>
-            <SecondaryButton>Read more</SecondaryButton>
-          </Link>
+          <ButtonLink href={`/projects/${project.slug}`} variant="secondary">
+            Read more
+          </ButtonLink>
         </div>
       </div>
     </div>

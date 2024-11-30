@@ -1,5 +1,6 @@
-import { GhostButton, PrimaryButton, Tag } from "@/components/common";
+import { Tag } from "@/components/common";
 import Image from "next/image";
+import { Button, ButtonLink } from "../common/Button";
 
 export default function AboutHero() {
   return (
@@ -17,9 +18,9 @@ export default function AboutHero() {
               to support projects that advance inclusion and empowerment through
               sport.
             </p>
-            <div className="flex gap-2.5 mt-12">
-              <PrimaryButton>Our Projects</PrimaryButton>
-              <GhostButton>Get updates</GhostButton>
+            <div className="flex flex-col xs:flex-row gap-2.5 mt-12">
+              <ButtonLink href="/projects">Our Projects</ButtonLink>
+              <Button variant="ghost">Get updates</Button>
             </div>
           </div>
           <div className="relative w-full lg:w-6/12">

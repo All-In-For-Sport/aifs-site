@@ -1,15 +1,16 @@
 "use client";
-import Image from "next/image";
-import { Input, TextArea } from "@/components/common";
 import { useState } from "react";
-import { CheckIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
-import { PrimaryButton } from "@/components/common";
 import Link from "next/link";
+import Image from "next/image";
+import { CheckIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { BsDiscord } from "react-icons/bs";
 import { BiLogoTelegram } from "react-icons/bi";
 import { RiTwitterXFill } from "react-icons/ri";
 import { useFormspark } from "@formspark/use-formspark";
 import toast from "react-hot-toast";
+
+import { Input, TextArea } from "@/components/common";
+import { Button } from "../common/Button";
 
 function SocialCallout({
   icon,
@@ -126,13 +127,13 @@ export default function Contact() {
             </label>
           </div>
           <div className="mt-4 flex flex-col ">
-            <PrimaryButton
+            <Button
               onClick={onSubmit}
               disabled={submitting}
-              icon={<PaperAirplaneIcon className="w-5 h-5" />}
+              rightIcon={<PaperAirplaneIcon className="w-5 h-5" />}
             >
               Submit
-            </PrimaryButton>
+            </Button>
           </div>
         </div>
         <div className="relative h-[300px] lg:h-auto lg:min-h-full flex rounded-2xl overflow-hidden w-full lg:w-2/3">

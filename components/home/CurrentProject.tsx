@@ -1,11 +1,5 @@
 import Image from "next/image";
-import {
-  ArrowRight,
-  Calendar,
-  Coins,
-  PrimaryButton,
-  SecondaryButton,
-} from "@/components/common";
+import { ArrowRight, Calendar, Coins } from "@/components/common";
 import { Project } from "@/types";
 import Link from "next/link";
 
@@ -22,13 +16,15 @@ export default function CurrentProject({ project }: { project: Project }) {
             <div className="flex flex-col sm:flex-row gap-2.5">
               {project.donateFiatLink && (
                 <Link href={project.donateFiatLink}>
-                  <PrimaryButton icon={<ArrowRight />}>
+                  button
+                  {/* <PrimaryButton icon={<ArrowRight />}>
                     Pledge your support
-                  </PrimaryButton>
+                  </PrimaryButton> */}
                 </Link>
               )}
               <Link href={`/projects${project.slug}`}>
-                <SecondaryButton>Learn more</SecondaryButton>
+                {/* <SecondaryButton>Learn more</SecondaryButton> */}
+                button
               </Link>
             </div>
           </div>

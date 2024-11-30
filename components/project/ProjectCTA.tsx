@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { SmallButton } from "@/components/common";
 import Link from "next/link";
 import { Project } from "@/types";
+import { Button } from "../common";
 
 export default function ProjectCTA({ project }: { project: Project }) {
   return (
@@ -17,7 +17,7 @@ export default function ProjectCTA({ project }: { project: Project }) {
             </p>
           </div>
           <Link href={project.donateCryptoLink} className="" target="_blank">
-            <SmallButton className="">Donate with ETH</SmallButton>
+            <Button variant="small">Donate with ETH</Button>
           </Link>
           <Image
             className="absolute -top-32 -right-28 w-56 h-56"
@@ -38,7 +38,7 @@ export default function ProjectCTA({ project }: { project: Project }) {
             </p>
           </div>
           <Link href={project.donateFiatLink} className="" target="_blank">
-            <SmallButton className="">Donate with USD</SmallButton>
+            <Button>Donate with USD</Button>
           </Link>
           <Image
             className="absolute -top-36 -right-32 w-56 h-56"

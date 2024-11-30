@@ -31,7 +31,7 @@ export default function Header() {
           </Link>
         </div>
         <Popover className="lg:hidden">
-          {({ open }) => (
+          {({ close }) => (
             <>
               <Popover.Button className="">
                 <Bars3Icon className="w-8 h-8" />
@@ -49,18 +49,21 @@ export default function Header() {
                   <Link
                     href="/about"
                     className="font-semibold py-4 w-full text-center px-3.5"
+                    onClick={() => close()}
                   >
                     About
                   </Link>
                   <Link
                     href="/projects"
                     className="font-semibold py-4 mb-4 w-full text-center px-3.5"
+                    onClick={() => close()}
                   >
                     Projects
                   </Link>
                   <Link
                     href="#contactUs"
                     className="w-full flex justify-stretch"
+                    onClick={() => close()}
                   >
                     <SecondaryButton className="w-full">
                       Contact Us

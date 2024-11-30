@@ -1,6 +1,7 @@
 import Image from "next/image";
-import { Tag } from "@/components/common";
 import Link from "next/link";
+
+import { Tag } from "@/components/common";
 
 export default function Partnership() {
   return (

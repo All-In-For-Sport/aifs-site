@@ -1,11 +1,13 @@
-import Header from "@/components/Header";
-import "./globals.css";
 import type { Metadata } from "next";
-import { Red_Hat_Display, DM_Sans } from "next/font/google";
-import Image from "next/image";
-import Footer from "@/components/Footer";
 import { Toaster } from "react-hot-toast";
+import { Red_Hat_Display, DM_Sans } from "next/font/google";
+
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 import { BackgroundGradient } from "@/components/common/BackgroundGradient";
+import { siteUrl } from "@/components/siteMeta";
+
+import "./globals.css";
 
 const red_hat_display = Red_Hat_Display({
   subsets: ["latin"],
@@ -18,6 +20,7 @@ const dm_sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteUrl),
   title: "All in for Sport",
   description: "A funding platform for community-led sports projects.",
 };

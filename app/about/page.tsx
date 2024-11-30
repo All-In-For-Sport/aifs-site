@@ -1,7 +1,8 @@
+import { Metadata } from "next";
+
 import { AboutCTA, AboutHero, PilotProjects } from "@/components/about";
 import Approach from "@/components/about/Approach";
 import Partnership from "@/components/about/Partnership";
-import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "About | All in for Sport",

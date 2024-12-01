@@ -1,6 +1,8 @@
 import { Metadata } from "next";
-import { allPosts, Post } from "@/.contentlayer/generated";
+import { getUnixTime } from "date-fns";
 import Link from "next/link";
+
+import { allPosts, Post } from "@/.contentlayer/generated";
 import { TagNavigation } from "./components/TagNavigation";
 
 export const metadata: Metadata = {
@@ -25,16 +27,18 @@ export default async function UpdatesIndexPage({
       <h2 className="font-header text-4xl font-bold md:text-5xl">Updates</h2>
       <TagNavigation />
       <div className="flex flex-col items-start gap-8">
-        {posts.map((post, i) => (
-          <div key={`post_${i}`}>
-            <Link
-              href={post.slug}
-              className="prose prose-invert opacity-80 transition-opacity hover:opacity-100"
-            >
-              <h2 className="">{post.title}</h2>
-            </Link>
-          </div>
-        ))}
+        {posts
+          .sort((a, b) => getUnixTime(b.date) - getUnixTime(a.date))
+          .map((post, i) => (
+            <div key={`post_${i}`}>
+              <Link
+                href={post.slug}
+                className="prose prose-invert opacity-80 transition-opacity hover:opacity-100"
+              >
+                <h2 className="">{post.title}</h2>
+              </Link>
+            </div>
+          ))}
       </div>
     </section>
   );

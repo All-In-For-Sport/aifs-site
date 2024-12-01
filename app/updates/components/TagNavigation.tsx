@@ -1,31 +1,51 @@
 "use client";
+import clsx from "clsx";
 import Link from "next/link";
 import { usePathname, useSearchParams } from "next/navigation";
-import { useCallback } from "react";
+import { ReactNode, useCallback } from "react";
 
 export function TagNavigation() {
   const pathname = usePathname();
-  const searchParams = useSearchParams();
-
-  const createQueryString = useCallback(
-    (name: string, value: string) => {
-      const params = new URLSearchParams(searchParams.toString());
-      params.set(name, value);
-
-      return params.toString();
-    },
-    [searchParams]
-  );
 
   return (
-    <nav>
-      <Link href={pathname}>All</Link>
-      <Link href={pathname + "?" + createQueryString("tag", "article")}>
+    <nav className="flex gap-4">
+      <TagLink href={pathname}>All</TagLink>
+      <TagLink href={pathname} tag="article">
         Articles
-      </Link>
-      <Link href={pathname + "?" + createQueryString("tag", "event")}>
+      </TagLink>
+
+      <TagLink href={pathname} tag="event">
         Events
-      </Link>
+      </TagLink>
     </nav>
   );
 }
+
+function TagLink({
+  children,
+  href,
+  tag,
+}: {
+  children: ReactNode;
+  href: string;
+  tag?: string;
+}) {
+  const searchParams = useSearchParams();
+
+  const currentTag = searchParams.get("tag");
+  return (
+    <Link
+      href={tag ? href + "?" + "tag=" + tag : href}
+      className={clsx(
+        "rounded-full px-6 py-3 font-bold",
+        !currentTag && !tag
+          ? highlightClasses
+          : tag === currentTag && highlightClasses,
+      )}
+    >
+      {children}
+    </Link>
+  );
+}
+
+const highlightClasses = "bg-primary text-neutral-800";

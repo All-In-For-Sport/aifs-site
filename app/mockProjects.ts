@@ -1,9 +1,9 @@
 export const mockProject = {
-  name: "Nice Project",
+  name: "Mock Project",
   isActive: true,
   description: "project description",
   image: "",
-  slug: "nice-project-slug",
+  slug: "mock-project-slug",
   startDate: "1",
   endDate: "2",
   goal: 10,
@@ -18,8 +18,8 @@ export const mockProject = {
   },
   goals: [
     {
-      title: "some goal title",
-      description: "some goal description",
+      title: "goal title",
+      description: "goal description",
       image: "/assets/man-tossing-basketball-in-air.jpg",
     },
   ],

@@ -23,8 +23,8 @@ export default function Header() {
           <Link href="/about" className="font-semibold py-2 px-3.5">
             About
           </Link>
-          <Link href="/projects" className="font-semibold py-2 px-3.5">
-            Projects
+          <Link href="/updates" className="font-semibold py-2 px-3.5">
+            Updates
           </Link>
           <ButtonLink variant="secondary" href="#contactUs">
             Contact Us
@@ -54,11 +54,11 @@ export default function Header() {
                     About
                   </Link>
                   <Link
-                    href="/projects"
+                    href="/updates"
                     className="font-semibold py-4 mb-4 w-full text-center px-3.5"
                     onClick={() => close()}
                   >
-                    Projects
+                    Updates
                   </Link>
 
                   <ButtonLink

@@ -9,13 +9,14 @@ export const Post = defineDocumentType(() => ({
     date: { type: "date", required: true },
     author: { type: "string", required: true },
     isPublished: { type: "boolean", required: true },
+    tags: { type: "list", of: { type: "string" }, required: true },
   },
   computedFields: {
     slug: {
       type: "string",
-      resolve: (post) => `/blog/${post._raw.flattenedPath}`,
+      resolve: (post) => `/updates/${post._raw.flattenedPath}`,
     },
   },
 }));
 
-export default makeSource({ contentDirPath: "posts", documentTypes: [Post] });
+export default makeSource({ contentDirPath: "updates", documentTypes: [Post] });

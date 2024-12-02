@@ -24,7 +24,7 @@ export default async function UpdatesIndexPage({
 
   return (
     <section className="m-auto flex max-w-4xl flex-col gap-12 px-6 py-12">
-      <h1 className="font-header text-3xl font-bold">Updates</h1>
+      <h1 className="font-header text-6xl font-bold lg:text-5xl">Updates</h1>
       <TagNavigation />
       <div className="flex w-full max-w-2xl flex-col items-start justify-start gap-8">
         {posts

@@ -9,21 +9,21 @@ import { ButtonLink } from "./common/Button";
 export default function Header() {
   return (
     <header>
-      <div className="flex relative justify-between items-center py-6 w-full px-6 max-w-7xl m-auto">
+      <div className="relative m-auto flex w-full max-w-7xl items-center justify-between px-6 py-6">
         <Link href="/">
           <Image
             src="/logo.png"
             width={256}
             height={256}
             alt=""
-            className="w-12 h-12"
+            className="h-12 w-12"
           />
         </Link>
-        <div className="hidden lg:flex items-center gap-3">
-          <Link href="/about" className="font-semibold py-2 px-3.5">
+        <div className="hidden items-center gap-3 lg:flex">
+          <Link href="/about" className="px-3.5 py-2 font-semibold">
             About
           </Link>
-          <Link href="/updates" className="font-semibold py-2 px-3.5">
+          <Link href="/updates" className="px-3.5 py-2 font-semibold">
             Updates
           </Link>
           <ButtonLink variant="secondary" href="#contactUs">
@@ -34,7 +34,7 @@ export default function Header() {
           {({ close }) => (
             <>
               <Popover.Button className="">
-                <Bars3Icon className="w-8 h-8" />
+                <Bars3Icon className="h-8 w-8" />
               </Popover.Button>
               <Transition
                 as={Fragment}
@@ -45,17 +45,17 @@ export default function Header() {
                 leaveFrom="opacity-100 translate-y-0"
                 leaveTo="opacity-0 translate-y-1"
               >
-                <Popover.Panel className="absolute p-6 items-center border-2 left-0 z-50 right-0 mx-auto w-5/6 rounded-2xl border-gray-600 bg-background shadow-lg flex flex-col">
+                <Popover.Panel className="absolute left-0 right-0 z-50 mx-auto flex w-5/6 flex-col items-center rounded-2xl border-2 border-gray-600 bg-background p-6 shadow-lg">
                   <Link
                     href="/about"
-                    className="font-semibold py-4 w-full text-center px-3.5"
+                    className="w-full px-3.5 py-4 text-center font-semibold"
                     onClick={() => close()}
                   >
                     About
                   </Link>
                   <Link
                     href="/updates"
-                    className="font-semibold py-4 mb-4 w-full text-center px-3.5"
+                    className="mb-4 w-full px-3.5 py-4 text-center font-semibold"
                     onClick={() => close()}
                   >
                     Updates

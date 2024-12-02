@@ -3,7 +3,11 @@ const { withContentlayer } = require("next-contentlayer2");
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["images.unsplash.com", "cdn.sanity.io"],
+    remotePatterns: [
+      { hostname: "images.unsplash.com" },
+      { hostname: "cdn.sanity.io" },
+      { hostname: "arweave.net" },
+    ],
   },
 };
 

@@ -8,8 +8,10 @@ export const Post = defineDocumentType(() => ({
     title: { type: "string", required: true },
     date: { type: "date", required: true },
     author: { type: "string", required: true },
+    authorEns: { type: "string", required: false },
     isPublished: { type: "boolean", required: true },
-    tags: { type: "list", of: { type: "string" }, required: true },
+    group: { type: "string", required: false },
+    postType: { type: "string", required: false },
   },
   computedFields: {
     slug: {

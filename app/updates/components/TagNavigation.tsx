@@ -10,11 +10,11 @@ export function TagNavigation() {
   return (
     <nav className="flex gap-4">
       <TagLink href={pathname}>All</TagLink>
-      <TagLink href={pathname} tag="article">
+      <TagLink href={pathname} postType="article">
         Articles
       </TagLink>
 
-      <TagLink href={pathname} tag="event">
+      <TagLink href={pathname} postType="event">
         Events
       </TagLink>
     </nav>
@@ -24,23 +24,23 @@ export function TagNavigation() {
 function TagLink({
   children,
   href,
-  tag,
+  postType,
 }: {
   children: ReactNode;
   href: string;
-  tag?: string;
+  postType?: string;
 }) {
   const searchParams = useSearchParams();
 
-  const currentTag = searchParams.get("tag");
+  const currentPostType = searchParams.get("type");
   return (
     <Link
-      href={tag ? href + "?" + "tag=" + tag : href}
+      href={postType ? href + "?" + "type=" + postType : href}
       className={clsx(
-        "rounded-full px-6 py-3 font-bold",
-        !currentTag && !tag
+        "rounded-full px-4 py-1.5 font-bold",
+        !currentPostType && !postType
           ? highlightClasses
-          : tag === currentTag && highlightClasses,
+          : postType === currentPostType && highlightClasses,
       )}
     >
       {children}

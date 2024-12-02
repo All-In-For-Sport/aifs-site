@@ -13,33 +13,45 @@ export const metadata: Metadata = {
 export default async function UpdatesIndexPage({
   searchParams,
 }: {
-  searchParams: Promise<{ tag?: string }>;
+  searchParams: Promise<{ type?: string }>;
 }) {
-  const { tag } = await searchParams;
+  const { type } = await searchParams;
   const posts = allPosts.filter((post) => {
-    if (post.isPublished && !tag) return true;
-    if (tag && post.tags.includes(tag)) return true;
+    if (post.isPublished && !type) return true;
+    if (type && post.postType === type) return true;
     return false;
   });
 
   return (
-    <section className="flex flex-col items-center gap-12 py-12 text-center">
-      <h2 className="font-header text-4xl font-bold md:text-5xl">Updates</h2>
+    <section className="m-auto flex max-w-4xl flex-col gap-12 px-6 py-12">
+      <h1 className="font-header text-3xl font-bold">Updates</h1>
       <TagNavigation />
-      <div className="flex flex-col items-start gap-8">
+      <div className="flex w-full max-w-2xl flex-col items-start justify-start gap-8">
         {posts
           .sort((a, b) => getUnixTime(b.date) - getUnixTime(a.date))
-          .map((post, i) => (
-            <div key={`post_${i}`}>
-              <Link
-                href={post.slug}
-                className="prose prose-invert opacity-80 transition-opacity hover:opacity-100"
-              >
-                <h2 className="">{post.title}</h2>
-              </Link>
-            </div>
+          .map((post) => (
+            <PostCard key={`post_${post.slug}`} post={post} />
           ))}
       </div>
     </section>
+  );
+}
+
+async function PostCard({ post }: { post: Post }) {
+  return (
+    <article className="flex flex-col items-start justify-start gap-4">
+      <Link href={post.slug} className="prose prose-invert">
+        <h2 className="text-4xl">{post.title}</h2>
+      </Link>
+      <section>{post.author}</section>
+      <section>
+        <span
+          key={`post-tag-${post.postType}`}
+          className="rounded-full border border-neutral-400 px-3 py-1 text-sm font-bold text-neutral-300"
+        >
+          {post.postType}
+        </span>
+      </section>
+    </article>
   );
 }

@@ -1,6 +1,6 @@
 import { ProjectCard } from "@/components/common";
 import { Metadata } from "next";
-import { mockProjects } from "../mockProjects";
+import { projects } from "../projects";
 
 export const metadata: Metadata = {
   title: "Projects | All in for Sport",
@@ -14,7 +14,7 @@ export default async function ProjectsPage() {
         All Projects
       </h2>
       <div className="flex flex-col gap-8 lg:flex-row">
-        {mockProjects.map((project) => (
+        {projects.map((project) => (
           <ProjectCard key={project.slug} project={project} />
         ))}
       </div>

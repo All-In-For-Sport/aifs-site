@@ -5,7 +5,7 @@ import { Red_Hat_Display, DM_Sans } from "next/font/google";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { BackgroundGradient } from "@/components/common/BackgroundGradient";
-import { siteUrl } from "@/components/siteMeta";
+import { siteUrl } from "@/app/siteMeta";
 
 import "./globals.css";
 
@@ -33,7 +33,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.variable} ${dm_sans.variable} bg-background scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 text-white font-body`}
+        className={`${red_hat_display.variable} ${dm_sans.variable} bg-background font-body text-white scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600`}
       >
         <Toaster
           toastOptions={{
@@ -46,7 +46,7 @@ export default function RootLayout({
             },
           }}
         />
-        <div className="min-h-screen flex flex-col background-image relative overflow-clip">
+        <div className="background-image relative flex min-h-screen flex-col overflow-clip">
           <BackgroundGradient />
           <Header />
           <main className="relative grow">{children}</main>

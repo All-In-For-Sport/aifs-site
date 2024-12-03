@@ -1,7 +1,7 @@
 import Image from "next/image";
-import { ArrowRight, Calendar, Coins } from "@/components/shared";
 import { Project } from "@/types";
 import Link from "next/link";
+import { Calendar, Coins } from "@/app/shared/Icons";
 
 export default function CurrentProject({ project }: { project: Project }) {
   return (

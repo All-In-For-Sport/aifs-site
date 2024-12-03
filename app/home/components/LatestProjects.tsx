@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/shared";
+import { ProjectCard } from "@/app/projects/components/ProjectCard";
 import { Project } from "@/types";
 
 export default function LatestProjects({ projects }: { projects: Project[] }) {

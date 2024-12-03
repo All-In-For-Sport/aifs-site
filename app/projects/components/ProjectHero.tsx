@@ -1,9 +1,9 @@
 import Image from "next/image";
 import { Project } from "@/types";
 import Link from "next/link";
-import { Button } from "../common";
+import { Button } from "@/app/shared/Button";
 
-export default function ProjectHero({ project }: { project: Project }) {
+export function ProjectHero({ project }: { project: Project }) {
   return (
     <section className="grid w-full gap-4 lg:grid-cols-3">
       <div className="relative h-[500px] w-full overflow-hidden rounded-2xl lg:col-span-2">

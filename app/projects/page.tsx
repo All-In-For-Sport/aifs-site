@@ -1,4 +1,4 @@
-import { ProjectCard } from "@/components/common";
+import { ProjectCard } from "@/app/projects/components/ProjectCard";
 import { Metadata } from "next";
 import { projects } from "../projects";
 

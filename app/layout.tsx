@@ -4,7 +4,7 @@ import { Red_Hat_Display, DM_Sans } from "next/font/google";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import { BackgroundGradient } from "@/components/common/BackgroundGradient";
+import { BackgroundGradient } from "@/app/shared/BackgroundGradient";
 import { siteUrl } from "@/app/siteMeta";
 
 import "./globals.css";

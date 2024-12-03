@@ -1,12 +1,11 @@
-import { projects } from "@/app/projects";
-import {
-  ProjectAbout,
-  ProjectCTA,
-  ProjectDetails,
-  ProjectGoals,
-  ProjectHero,
-} from "@/components/project";
 import { notFound } from "next/navigation";
+
+import { projects } from "@/app/projects";
+import { ProjectHero } from "../components/ProjectHero";
+import { ProjectAbout } from "../components/ProjectAbout";
+import { ProjectDetails } from "../components/ProjectDetails";
+import { ProjectGoals } from "../components/ProjectGoals";
+import { ProjectCTA } from "../components/ProjectCTA";
 
 export async function generateMetadata({
   params: { slug },

@@ -4,7 +4,7 @@ import Link from "next/link";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Popover, Transition } from "@headlessui/react";
 import { Fragment } from "react";
-import { ButtonLink } from "./common/Button";
+import { ButtonLink } from "../app/shared/Button";
 
 export default function Header() {
   return (

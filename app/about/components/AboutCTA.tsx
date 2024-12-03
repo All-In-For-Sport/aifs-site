@@ -1,16 +1,16 @@
 import Image from "next/image";
 
-import { ButtonLink } from "@/components/common/Button";
+import { ButtonLink } from "@/app/shared/Button";
 
-import { telegramJoinLink } from "../siteMeta";
+import { telegramJoinLink } from "../../siteMeta";
 
-export default function AboutCTA() {
+export function AboutCTA() {
   return (
-    <section className="page-wrap py-24 relative grid grid-cols-1 gap-8 lg:grid-cols-2">
-      <div className="block left-0 my-auto right-0 mx-auto w-[200px] h-[200px] rounded-full -translate-y-20 lg:-translate-y-2 -z-20 bg-[#5A6DED] blur-[75px] absolute" />
-      <div className="rounded-2xl overflow-hidden shadow-lg border pr-12 border-darkText bg-background relative p-8 flex flex-col gap-4 items-start">
+    <section className="page-wrap relative grid grid-cols-1 gap-8 py-24 lg:grid-cols-2">
+      <div className="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-20 rounded-full bg-[#5A6DED] blur-[75px] lg:-translate-y-2" />
+      <div className="relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-darkText bg-background p-8 pr-12 shadow-lg">
         <h5 className="text-2xl">Join Our Community</h5>
-        <p className="text-white/50 text-sm">
+        <p className="text-sm text-white/50">
           We invite you to come play with us and be part of this transformative
           journey. Together, we will prove that we humans are much more
           connected than we are different, and that sport is the unifying piece
@@ -24,16 +24,16 @@ export default function AboutCTA() {
         </ButtonLink>
 
         <Image
-          className="absolute -top-28 -right-28 w-56 h-56"
+          className="absolute -right-28 -top-28 h-56 w-56"
           src="/assets/shapes/shape7.png"
           width={250}
           height={250}
           alt=""
         />
       </div>
-      <div className="rounded-2xl overflow-hidden shadow-lg border pr-12 border-darkText bg-background relative p-8 flex flex-col gap-4 items-start">
+      <div className="relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-darkText bg-background p-8 pr-12 shadow-lg">
         <h5 className="text-2xl">Next Steps</h5>
-        <p className="text-white/50 text-sm">
+        <p className="text-sm text-white/50">
           Curious? Want to learn more? Join our Telegram group and say hi!
           Everyone is welcome to join our weekly community calls at 4pm EST
           every Thursday - it&apos;s a great way to meet the team and see what
@@ -43,7 +43,7 @@ export default function AboutCTA() {
           Join Telegram
         </ButtonLink>
         <Image
-          className="absolute -top-32 -right-32 w-56 h-56"
+          className="absolute -right-32 -top-32 h-56 w-56"
           src="/assets/shapes/shape8.png"
           width={250}
           height={250}

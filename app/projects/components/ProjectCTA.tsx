@@ -1,17 +1,18 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Project } from "@/types";
-import { Button } from "../common";
 
-export default function ProjectCTA({ project }: { project: Project }) {
+import { Project } from "@/types";
+import { Button } from "@/app/shared/Button";
+
+export function ProjectCTA({ project }: { project: Project }) {
   return (
-    <section className="my-24 relative grid grid-cols-1 gap-8 lg:grid-cols-2">
-      <div className="block left-0 my-auto right-0 mx-auto w-[200px] h-[200px] rounded-full -translate-y-20 lg:-translate-y-2 -z-20 bg-[#5A6DED] blur-[75px] absolute" />
+    <section className="relative my-24 grid grid-cols-1 gap-8 lg:grid-cols-2">
+      <div className="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-20 rounded-full bg-[#5A6DED] blur-[75px] lg:-translate-y-2" />
       {project.donateCryptoLink && (
-        <div className="rounded-2xl flex flex-col justify-between overflow-hidden shadow-lg border pr-12 border-darkText bg-background relative p-8">
+        <div className="relative flex flex-col justify-between overflow-hidden rounded-2xl border border-darkText bg-background p-8 pr-12 shadow-lg">
           <div>
-            <h5 className="text-2xl mb-4">Donate with crypto</h5>
-            <p className="text-white/50 text-sm mb-4">
+            <h5 className="mb-4 text-2xl">Donate with crypto</h5>
+            <p className="mb-4 text-sm text-white/50">
               Contribute to this project with crypto. Contribute with ETH using
               the link below.
             </p>
@@ -20,7 +21,7 @@ export default function ProjectCTA({ project }: { project: Project }) {
             <Button variant="small">Donate with ETH</Button>
           </Link>
           <Image
-            className="absolute -top-32 -right-28 w-56 h-56"
+            className="absolute -right-28 -top-32 h-56 w-56"
             src="/assets/shapes/shape7.png"
             width={250}
             height={250}
@@ -29,10 +30,10 @@ export default function ProjectCTA({ project }: { project: Project }) {
         </div>
       )}
       {project.donateFiatLink && (
-        <div className="rounded-2xl justify-between overflow-hidden shadow-lg border pr-12 border-darkText bg-background relative p-8">
+        <div className="relative justify-between overflow-hidden rounded-2xl border border-darkText bg-background p-8 pr-12 shadow-lg">
           <div>
-            <h5 className="text-2xl mb-4">Donate with fiat</h5>
-            <p className="text-white/50 mb-4 text-sm">
+            <h5 className="mb-4 text-2xl">Donate with fiat</h5>
+            <p className="mb-4 text-sm text-white/50">
               Not in crypto? No problem. Contribute in USD using the button
               below.
             </p>
@@ -41,7 +42,7 @@ export default function ProjectCTA({ project }: { project: Project }) {
             <Button>Donate with USD</Button>
           </Link>
           <Image
-            className="absolute -top-36 -right-32 w-56 h-56"
+            className="absolute -right-32 -top-36 h-56 w-56"
             src="/assets/shapes/shape8.png"
             width={250}
             height={250}

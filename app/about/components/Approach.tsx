@@ -1,35 +1,35 @@
 import Image from "next/image";
 
-import { Tag } from "@/components/common";
+import { Tag } from "@/components/shared";
 
-export default function Approach() {
+export function Approach() {
   return (
-    <section className="page-wrap flex relative gap-16 flex-col lg:flex-row items-center py-24">
-      <div className="block left-0 my-auto right-0 mx-auto w-[200px] h-[200px] rounded-full -translate-y-8 -z-20 bg-[#5A6DED] blur-[100px] absolute lg:translate-x-24" />
-      <div className="flex flex-col items-center text-center lg:text-left lg:items-start gap-6 lg:w-1/2">
+    <section className="page-wrap relative flex flex-col items-center gap-16 py-24 lg:flex-row">
+      <div className="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-8 rounded-full bg-[#5A6DED] blur-[100px] lg:translate-x-24" />
+      <div className="flex flex-col items-center gap-6 text-center lg:w-1/2 lg:items-start lg:text-left">
         <Tag>Our Approach</Tag>
-        <h2 className="text-4xl md:text-5xl font-bold font-header">
+        <h2 className="font-header text-4xl font-bold md:text-5xl">
           Empowering Communities Globally
         </h2>
-        <p className="text-white/50 max-w-md lg:max-w-none">
+        <p className="max-w-md text-white/50 lg:max-w-none">
           We believe in meeting people where they are and supporting grassroots
           community-led initiatives. There are so many wonderful organizations
           working on the ground in communities across the world, who have the
           local knowledge, experience, and local base. Our multifaceted approach
           includes:
         </p>
-        <div className="flex flex-col text-left gap-4">
+        <div className="flex flex-col gap-4 text-left">
           <div className="flex gap-3">
             <Image
               src="/assets/icons/team.png"
               width={24}
               height={24}
               alt=""
-              className="w-auto h-8"
+              className="h-8 w-auto"
             />
             <div className="flex flex-col">
               <p className="text-lg font-medium">Governance</p>
-              <p className="text-white/50 text-sm max-w-prose">
+              <p className="max-w-prose text-sm text-white/50">
                 Establishing a flexible, fractal, proposal-driven governance
                 model that will be resourced through a perpetual funding engine.
               </p>
@@ -41,11 +41,11 @@ export default function Approach() {
               width={24}
               height={24}
               alt=""
-              className="w-auto h-8"
+              className="h-8 w-auto"
             />
             <div className="flex flex-col">
               <p className="text-lg font-medium">Partnerships</p>
-              <p className="text-white/50 text-sm max-w-prose">
+              <p className="max-w-prose text-sm text-white/50">
                 Collaborating with athlete partners, corporate sponsors, and
                 global communities to create unique funding opportunities.
               </p>
@@ -57,11 +57,11 @@ export default function Approach() {
               width={24}
               height={24}
               alt=""
-              className="w-auto h-8"
+              className="h-8 w-auto"
             />
             <div className="flex flex-col">
               <p className="text-lg font-medium">Community Decision-making</p>
-              <p className="text-white/50 text-sm max-w-prose">
+              <p className="max-w-prose text-sm text-white/50">
                 Utilizing a community proposal-first approach, where passionate
                 groups from around the world can propose funding for their
                 initiatives.
@@ -70,7 +70,7 @@ export default function Approach() {
           </div>
         </div>
       </div>
-      <div className="flex justify-center lg:justify-end lg:w-1/2">
+      <div className="flex justify-center lg:w-1/2 lg:justify-end">
         <Image
           src="/assets/about-approach.png"
           width={1118}

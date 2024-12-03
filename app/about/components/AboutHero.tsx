@@ -1,24 +1,24 @@
-import { Tag } from "@/components/common";
+import { Tag } from "@/components/shared";
 import Image from "next/image";
-import { Button, ButtonLink } from "../common/Button";
+import { Button, ButtonLink } from "../../shared/Button";
 
-export default function AboutHero() {
+export function AboutHero() {
   return (
     <>
       <section className="page-wrap page-section-padding">
-        <div className="flex flex-col lg:flex-row justify-between gap-16 lg:gap-8">
-          <div className="flex flex-col text-center lg:text-left items-center lg:items-start w-full lg:w-6/12">
+        <div className="flex flex-col justify-between gap-16 lg:flex-row lg:gap-8">
+          <div className="flex w-full flex-col items-center text-center lg:w-6/12 lg:items-start lg:text-left">
             <Tag>About us</Tag>
-            <h1 className="mt-6 font-header text-4xl lg:text-5xl leading-[48px] lg:leading-[56px] font-extrabold">
+            <h1 className="mt-6 font-header text-4xl font-extrabold leading-[48px] lg:text-5xl lg:leading-[56px]">
               The Mission: Empowering Through Sport
             </h1>
-            <p className="text-base text-white/50 mt-8">
+            <p className="mt-8 text-base text-white/50">
               All In For Sport (AIFS) is a decentralized autonomous organization
               (DAO) whose mission is to create a public goods funding initiative
               to support projects that advance inclusion and empowerment through
               sport.
             </p>
-            <div className="flex flex-col xs:flex-row gap-2.5 mt-12">
+            <div className="mt-12 flex flex-col gap-2.5 xs:flex-row">
               <ButtonLink href="/projects">Our Projects</ButtonLink>
               <Button variant="ghost">Get updates</Button>
             </div>
@@ -29,22 +29,22 @@ export default function AboutHero() {
               width={1261}
               height={1040}
               alt=""
-              className="lg:absolute left-0 top-0 lg:min-w-[120%] h-auto"
+              className="left-0 top-0 h-auto lg:absolute lg:min-w-[120%]"
             />
           </div>
         </div>
-        <div className="lg:w-7/12 grid text-left grid-cols-1 lg:grid-cols-2 mt-16 lg:mt-12 gap-8">
+        <div className="mt-16 grid grid-cols-1 gap-8 text-left lg:mt-12 lg:w-7/12 lg:grid-cols-2">
           <div className="flex gap-3">
             <Image
               src="/assets/icons/chip.png"
               width={24}
               height={24}
               alt=""
-              className="w-auto h-8"
+              className="h-8 w-auto"
             />
             <div className="flex flex-col">
               <p className="text-lg font-medium">Innovative Funding</p>
-              <p className="text-white/50 text-sm max-w-prose">
+              <p className="max-w-prose text-sm text-white/50">
                 Exploring web3 tech to create perpetual funding for community
                 initiatives, shifting power dynamics.
               </p>
@@ -56,11 +56,11 @@ export default function AboutHero() {
               width={24}
               height={24}
               alt=""
-              className="w-auto h-7"
+              className="h-7 w-auto"
             />
             <div className="flex flex-col">
               <p className="text-lg font-medium">Empowering Communities</p>
-              <p className="text-white/50 text-sm max-w-prose">
+              <p className="max-w-prose text-sm text-white/50">
                 Supporting grassroots, community-led sports initiatives,
                 unlocking their true potential.
               </p>
@@ -68,9 +68,9 @@ export default function AboutHero() {
           </div>
         </div>
       </section>
-      <section className="relative flex flex-col max-w-4xl text-center gap-2 py-24 page-wrap">
-        <div className="block left-0 my-auto right-0 mx-auto w-[200px] h-[200px] rounded-full -translate-y-8 -z-20 bg-[#5A6DED] blur-[100px] absolute" />
-        <h2 className="font-header text-5xl leading-[64px] font-extrabold">
+      <section className="page-wrap relative flex max-w-4xl flex-col gap-2 py-24 text-center">
+        <div className="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-8 rounded-full bg-[#5A6DED] blur-[100px]" />
+        <h2 className="font-header text-5xl font-extrabold leading-[64px]">
           Sprung from Krause House
         </h2>
         <p className="text-white/50">

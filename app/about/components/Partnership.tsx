@@ -1,17 +1,17 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Tag } from "@/components/common";
+import { Tag } from "@/components/shared";
 
-export default function Partnership() {
+export function Partnership() {
   return (
-    <section className="page-wrap flex gap-16 flex-col-reverse lg:flex-row items-center py-12 lg:py-24">
-      <div className="w-full flex justify-center lg:justify-end">
-        <div className="md:w-[484px] md:h-[473px] w-full h-[300px] relative ">
+    <section className="page-wrap flex flex-col-reverse items-center gap-16 py-12 lg:flex-row lg:py-24">
+      <div className="flex w-full justify-center lg:justify-end">
+        <div className="relative h-[300px] w-full md:h-[473px] md:w-[484px]">
           <Image
             src="https://images.unsplash.com/photo-1508972348941-5e2b14d04c64?auto=format&fit=crop&q=80&w=1000"
             fill
-            className="object-cover object-center rounded-3xl"
+            className="rounded-3xl object-cover object-center"
             sizes="(max-width: 640px) 100vw, 50vw"
             alt=""
           />
@@ -20,27 +20,27 @@ export default function Partnership() {
             alt=""
             width={81}
             height={83}
-            className="w-16 md:w-24 h-auto absolute -top-10 right-4"
+            className="absolute -top-10 right-4 h-auto w-16 md:w-24"
           />
           <Image
             src="/assets/shapes/shape6.png"
             alt=""
             width={180}
             height={180}
-            className="w-48 md:w-64 h-auto absolute md:-left-20 md:-bottom-20 -bottom-16 -left-16"
+            className="absolute -bottom-16 -left-16 h-auto w-48 md:-bottom-20 md:-left-20 md:w-64"
           />
         </div>
       </div>
-      <div className="flex flex-col items-center text-center lg:text-left lg:items-start gap-6">
+      <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
         <Tag>Partnership</Tag>
-        <h2 className="text-4xl md:text-5xl font-bold font-header">
+        <h2 className="font-header text-4xl font-bold md:text-5xl">
           Our Partnership with SuperBenefit
         </h2>
-        <p className="text-white/50 max-w-md lg:max-w-none">
+        <p className="max-w-md text-white/50 lg:max-w-none">
           AIFS is working closely with{" "}
           <Link
             href="https://superbenefit.org"
-            className="text-primary font-bold"
+            className="font-bold text-primary"
           >
             SuperBenefit DAO
           </Link>{" "}
@@ -51,7 +51,7 @@ export default function Partnership() {
           <br />
           <br />
           Together, we are working on beta testing our ideas and understanding
-          the true value <span className="text-primary font-bold">
+          the true value <span className="font-bold text-primary">
             AIFS
           </span>{" "}
           can provide to its partners, community, and those who have not

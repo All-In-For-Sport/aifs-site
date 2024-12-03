@@ -5,7 +5,7 @@ import { Red_Hat_Display, DM_Sans } from "next/font/google";
 import Header from "@/app/shared/Header";
 import Footer from "@/app/shared/Footer";
 import { BackgroundGradient } from "@/app/shared/BackgroundGradient";
-import { siteUrl } from "@/app/siteMeta";
+import { siteLinks } from "@/app/siteMeta";
 
 import "./globals.css";
 import { FeaturesProvider } from "./features/useFeatures";
@@ -21,7 +21,7 @@ const dm_sans = DM_Sans({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL(siteUrl),
+  metadataBase: new URL(siteLinks.siteUrl),
   title: "All in for Sport",
   description: "A funding platform for community-led sports projects.",
 };

@@ -1,45 +1,43 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { siteLinks } from "../siteMeta";
+
 export default function Footer() {
   return (
     <footer>
-      <div className="page-wrap p-6 flex lg:items-start items-center flex-col md:py-12 lg:py-24">
+      <div className="page-wrap flex flex-col items-center p-6 md:py-12 lg:items-start lg:py-24">
         <div className="">
           <Image
             src="/logo.png"
             alt=""
             width={100}
             height={100}
-            className="w-12 h-auto"
+            className="h-auto w-12"
           />
         </div>
-        <div className="flex w-full flex-col-reverse gap-12 lg:flex-row mt-8 justify-between">
+        <div className="mt-8 flex w-full flex-col-reverse justify-between gap-12 lg:flex-row">
           <div className="grid grid-cols-2 gap-12">
-            <div className="flex flex-col text-white/50 gap-2">
-              <h6 className="font-bold text-white mb-2 text-lg font-header">
+            <div className="flex flex-col gap-2 text-white/50">
+              <h6 className="mb-2 font-header text-lg font-bold text-white">
                 Operations
               </h6>
-              <Link href="https://discord.com/invite/HyeK5hf4vR">Discord</Link>
-              <Link href="https://app.clarity.so/allinforsport">Clarity</Link>
+              <Link href={siteLinks.discordJoin}>Discord</Link>
+              <Link href={siteLinks.clarity}>Clarity</Link>
             </div>
-            <div className="flex flex-col text-white/50 gap-2">
-              <h6 className="font-bold text-white mb-2 text-lg font-header">
+            <div className="flex flex-col gap-2 text-white/50">
+              <h6 className="mb-2 font-header text-lg font-bold text-white">
                 Community
               </h6>
-              <Link href="https://discuss.allinforsport.org">Discussion</Link>
-              <Link href="https://opensea.io/collection/all-in-for-sport">
-                Badges
-              </Link>
-              <Link href="https://snapshot.org/#/allinforsport.eth">
-                Voting
-              </Link>
-              <Link href="https://state.allinforsport.org/">State</Link>
+              <Link href={siteLinks.discuss}>Discussion</Link>
+              <Link href={siteLinks.opensea}>Badges</Link>
+              <Link href={siteLinks.snapshot}>Voting</Link>
+              <Link href={siteLinks.state}>State</Link>
             </div>
           </div>
           <div></div>
         </div>
-        <div className="flex justify-between w-full pt-16 text-xs text-white/50">
+        <div className="flex w-full justify-between pt-16 text-xs text-white/50">
           <div>
             ©️{new Date().getFullYear()} All Rights Reserved. All in for Sport
           </div>

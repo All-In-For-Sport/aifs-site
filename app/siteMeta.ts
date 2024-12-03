@@ -1,2 +1,10 @@
-export const siteUrl = "https://allinforsport.org";
-export const telegramJoinLink = "https://t.me/+CW0_qRG6S5g1MmJh";
+export const siteLinks = {
+  siteUrl: "https://allinforsport.org",
+  telegramJoin: "https://t.me/+CW0_qRG6S5g1MmJh",
+  discordJoin: "https://discord.com/invite/HyeK5hf4vR",
+  clarity: "https://app.clarity.so/allinforsport",
+  discuss: "https://discuss.allinforsport.org",
+  opensea: "https://opensea.io/collection/all-in-for-sport",
+  snapshot: "https://snapshot.org/#/allinforsport.eth",
+  state: "https://state.allinforsport.org/",
+};

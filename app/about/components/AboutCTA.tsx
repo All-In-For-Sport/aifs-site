@@ -2,7 +2,7 @@ import Image from "next/image";
 
 import { ButtonLink } from "@/app/shared/Button";
 
-import { telegramJoinLink } from "../../siteMeta";
+import { siteLinks } from "../../siteMeta";
 
 export function AboutCTA() {
   return (
@@ -39,7 +39,7 @@ export function AboutCTA() {
           every Thursday - it&apos;s a great way to meet the team and see what
           we&apos;re working on right now.
         </p>
-        <ButtonLink href={telegramJoinLink} variant="small">
+        <ButtonLink href={siteLinks.telegramJoin} variant="small">
           Join Telegram
         </ButtonLink>
         <Image

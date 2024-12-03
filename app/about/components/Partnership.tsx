@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { Tag } from "@/components/shared";
+import { Tag } from "@/app/shared/Tag";
 
 export function Partnership() {
   return (

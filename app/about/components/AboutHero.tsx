@@ -1,6 +1,7 @@
-import { Tag } from "@/components/shared";
 import Image from "next/image";
-import { Button, ButtonLink } from "../../shared/Button";
+
+import { Button, ButtonLink } from "@/app/shared/Button";
+import { Tag } from "@/app/shared/Tag";
 
 export function AboutHero() {
   return (

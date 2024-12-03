@@ -1,5 +1,6 @@
 import Image from "next/image";
-import { Tag } from "@/components/shared";
+
+import { Tag } from "@/app/shared/Tag";
 
 export default function Mission() {
   return (

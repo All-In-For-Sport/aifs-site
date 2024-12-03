@@ -9,7 +9,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { useFormspark } from "@formspark/use-formspark";
 import toast from "react-hot-toast";
 
-import { Button } from "../../app/shared/Button";
+import { Button } from "../../shared/Button";
 import { Input } from "@/app/shared/Input";
 import { TextArea } from "@/app/shared/TextArea";
 

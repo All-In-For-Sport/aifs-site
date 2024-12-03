@@ -4,6 +4,8 @@ import Link from "next/link";
 
 import { allPosts, Post } from "@/.contentlayer/generated";
 import { TagNavigation } from "./components/TagNavigation";
+import { notFound } from "next/navigation";
+import { getFeatures } from "../features/getFeatures";
 
 export const metadata: Metadata = {
   title: "Updates | All in for Sport",
@@ -15,6 +17,8 @@ export default async function UpdatesIndexPage({
 }: {
   searchParams: Promise<{ type?: string }>;
 }) {
+  if (!getFeatures().BLOG) return notFound();
+
   const { type } = await searchParams;
   const posts = allPosts.filter((post) => {
     if (post.isPublished && !type) return true;

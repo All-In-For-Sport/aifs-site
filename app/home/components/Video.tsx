@@ -2,7 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
 import Image from "next/image";
-import { Play } from "@/components/shared";
+import { Play } from "@/app/shared/Icons";
 
 const INITIAL_SCALE = 0.85;
 

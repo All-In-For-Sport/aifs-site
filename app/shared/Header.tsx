@@ -1,12 +1,16 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
+import { Fragment } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";
 import { Popover, Transition } from "@headlessui/react";
-import { Fragment } from "react";
-import { ButtonLink } from "../app/shared/Button";
+
+import { ButtonLink } from "./Button";
+import { useFeatures } from "@/app/features/useFeatures";
 
 export default function Header() {
+  const features = useFeatures();
+
   return (
     <header>
       <div className="relative m-auto flex w-full max-w-7xl items-center justify-between px-6 py-6">
@@ -23,9 +27,11 @@ export default function Header() {
           <Link href="/about" className="px-3.5 py-2 font-semibold">
             About
           </Link>
-          <Link href="/updates" className="px-3.5 py-2 font-semibold">
-            Updates
-          </Link>
+          {features.BLOG && (
+            <Link href="/updates" className="px-3.5 py-2 font-semibold">
+              Updates
+            </Link>
+          )}
           <ButtonLink variant="secondary" href="#contactUs">
             Contact Us
           </ButtonLink>
@@ -53,13 +59,15 @@ export default function Header() {
                   >
                     About
                   </Link>
-                  <Link
-                    href="/updates"
-                    className="mb-4 w-full px-3.5 py-4 text-center font-semibold"
-                    onClick={() => close()}
-                  >
-                    Updates
-                  </Link>
+                  {features.BLOG && (
+                    <Link
+                      href="/updates"
+                      className="mb-4 w-full px-3.5 py-4 text-center font-semibold"
+                      onClick={() => close()}
+                    >
+                      Updates
+                    </Link>
+                  )}
 
                   <ButtonLink
                     href="#contactUs"

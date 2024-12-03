@@ -1,5 +1,5 @@
 import { ButtonLink } from "@/app/shared/Button";
-import { ArrowRight } from "@/components/shared";
+import { ArrowRight } from "@/app/shared/Icons";
 
 export default function Hero() {
   return (

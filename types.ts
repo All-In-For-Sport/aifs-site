@@ -3,6 +3,8 @@ export type Project = {
   isActive: boolean;
   description: string;
   image: any;
+  imageWidth: number;
+  imageHeight: number;
   slug: string;
   startDate: string;
   endDate: string;

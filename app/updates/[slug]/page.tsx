@@ -37,6 +37,7 @@ function PostContent({ post, avatar }: { post: Post; avatar?: Avatar }) {
   return (
     <div className="m-auto max-w-4xl px-6 py-4">
       <article className="grid gap-8">
+        {post.featuredImage && <FeaturedImage post={post} />}
         <section className="grid gap-4 py-5">
           <p>{format(post.date, "PP")}</p>
           <h1 className="font-header text-5xl font-extrabold md:text-6xl lg:text-7xl">
@@ -55,5 +56,16 @@ function PostContent({ post, avatar }: { post: Post; avatar?: Avatar }) {
         </div>
       </article>
     </div>
+  );
+}
+
+async function FeaturedImage({ post }: { post: Post }) {
+  const image = await import(`@/updates/images/${post.featuredImage}`);
+  return (
+    <Image
+      className="w-full"
+      src={image}
+      alt={post.featuredImageAltText || "featured image for article"}
+    />
   );
 }

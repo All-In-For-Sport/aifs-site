@@ -12,6 +12,8 @@ export const Post = defineDocumentType(() => ({
     isPublished: { type: "boolean", required: true },
     group: { type: "string", required: false },
     postType: { type: "string", required: false },
+    featuredImage: { type: "string", required: false },
+    featuredImageAltText: { type: "string", required: false },
   },
   computedFields: {
     slug: {

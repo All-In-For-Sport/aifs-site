@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-import Image from "next/image";
 import { useMDXComponent } from "next-contentlayer2/hooks";
 
 import { allPosts, Post } from "@/.contentlayer/generated";
@@ -7,11 +6,38 @@ import { ExampleMDXComponent } from "../ExampleMDXComponent";
 import { format } from "date-fns";
 import { Avatar, getEnsAvatar } from "@/app/services/Ens";
 import { EnsDisplay } from "../components/AuthorDisplay";
+import { FeaturedImage } from "../components/FeaturedImage";
+import { Metadata, ResolvingMetadata } from "next";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
     slug: post.slug,
   }));
+}
+
+export async function generateMetadata(
+  {
+    params,
+  }: {
+    params: { slug: string };
+  },
+  parent: ResolvingMetadata,
+): Promise<Metadata> {
+  const post = allPosts.find((post) => post.slug.includes(params.slug));
+  const parentResolved = await parent;
+
+  if (!post) return {};
+
+  const previousImages = parentResolved.openGraph?.images || [];
+
+  return {
+    title: post.title,
+    description: post.metaDescription || "All in for Sport",
+    openGraph: {
+      description: post.metaDescription,
+      images: previousImages,
+    },
+  };
 }
 
 export default async function PostPage({
@@ -56,16 +82,5 @@ function PostContent({ post, avatar }: { post: Post; avatar?: Avatar }) {
         </div>
       </article>
     </div>
-  );
-}
-
-async function FeaturedImage({ post }: { post: Post }) {
-  const image = await import(`@/updates/images/${post.featuredImage}`);
-  return (
-    <Image
-      className="w-full"
-      src={image}
-      alt={post.featuredImageAltText || "featured image for article"}
-    />
   );
 }

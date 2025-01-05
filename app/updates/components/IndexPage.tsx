@@ -1,17 +1,20 @@
 "use client";
+import { getUnixTime } from "date-fns";
+
+import { TagNavigation } from "./TagNavigation";
+import { PostCard } from "./PostCard";
 
 import { allPosts } from "@/.contentlayer/generated";
-import { TagNavigation } from "./TagNavigation";
-import { getUnixTime } from "date-fns";
-import { PostCard } from "./PostCard";
-import { useParams } from "next/navigation";
+import { useSearchParams } from "next/navigation";
 
 export function IndexPage() {
-  const params = useParams();
+  const params = useSearchParams();
 
-  const posts = allPosts.filter((post) => {
-    if (post.isPublished && !params.postType) return true;
-    if (params.postType && post.postType === params.postType) return true;
+  const postTypeParam = params.get("type");
+
+  const filteredPosts = allPosts.filter((post) => {
+    if (post.isPublished && !postTypeParam) return true;
+    if (postTypeParam && post.postType === postTypeParam) return true;
     return false;
   });
 
@@ -20,7 +23,7 @@ export function IndexPage() {
       <h1 className="font-header text-4xl font-bold md:text-5xl">Updates</h1>
       <TagNavigation />
       <div className="flex w-full max-w-2xl flex-col items-start justify-start gap-8">
-        {posts
+        {filteredPosts
           .sort((a, b) => getUnixTime(b.date) - getUnixTime(a.date))
           .map((post) => (
             <PostCard key={`post_${post.slug}`} post={post} />

@@ -1,13 +1,13 @@
 import { notFound } from "next/navigation";
 import { useMDXComponent } from "next-contentlayer2/hooks";
+import Image from "next/image";
 
-import { allPosts, Post } from "@/.contentlayer/generated";
-import { ExampleMDXComponent } from "../ExampleMDXComponent";
 import { format } from "date-fns";
 import { Avatar, getEnsAvatar } from "@/app/services/Ens";
 import { EnsDisplay } from "../components/AuthorDisplay";
-import { FeaturedImage } from "../components/FeaturedImage";
 import { Metadata, ResolvingMetadata } from "next";
+
+import { allPosts, Post } from "@/.contentlayer/generated";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
@@ -63,7 +63,15 @@ function PostContent({ post, avatar }: { post: Post; avatar?: Avatar }) {
   return (
     <div className="m-auto max-w-4xl px-6 py-4">
       <article className="grid gap-8">
-        {post.featuredImage && <FeaturedImage post={post} />}
+        {post.featuredImageData && (
+          <Image
+            src={post.featuredImageData.path}
+            width={post.featuredImageData.width}
+            height={post.featuredImageData.height}
+            alt={post.featuredImageAltText || "featured image for post"}
+            className="w-full"
+          />
+        )}
         <section className="grid gap-4 py-5">
           <p>{format(post.date, "PP")}</p>
           <h1 className="font-header text-5xl font-extrabold md:text-6xl lg:text-7xl">
@@ -78,7 +86,7 @@ function PostContent({ post, avatar }: { post: Post; avatar?: Avatar }) {
           </section>
         </section>
         <div className="prose prose-xl prose-neutral prose-invert">
-          <MDXContent components={{ ExampleMDXComponent }} />
+          <MDXContent />
         </div>
       </article>
     </div>

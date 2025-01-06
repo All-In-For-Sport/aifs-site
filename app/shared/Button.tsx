@@ -38,7 +38,7 @@ export function Button({
       className={clsx(
         sharedButtonClasses,
         buttonVariantClasses[variant],
-        fullWidth && "w-full"
+        fullWidth && "w-full",
       )}
     >
       {leftIcon && <IconWrapper>{leftIcon}</IconWrapper>}
@@ -71,7 +71,7 @@ export function ButtonLink({
       className={clsx(
         sharedButtonClasses,
         buttonVariantClasses[variant],
-        fullWidth && "w-full"
+        fullWidth && "w-full",
       )}
     >
       {leftIcon && <IconWrapper>{leftIcon}</IconWrapper>}
@@ -83,7 +83,7 @@ export function ButtonLink({
 
 function IconWrapper({ children }: { children: ReactNode }) {
   return (
-    <div className="group-hover:translate-x-1 transition duration-200">
+    <div className="transition duration-200 group-hover:translate-x-1">
       {children}
     </div>
   );

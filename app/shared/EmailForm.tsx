@@ -18,7 +18,7 @@ export function EmailForm() {
         setValue={setEmail}
         placeholder="michael.jordan@gmail.com"
       />
-      <div className="flex flex-col lg:flex-row mt-4 gap-4">
+      <div className="mt-4 flex flex-col gap-4 lg:flex-row">
         <div className="flex items-center gap-2">
           <input
             type="checkbox"
@@ -30,9 +30,9 @@ export function EmailForm() {
           <label
             htmlFor="agree"
             onClick={() => setAgree(!agree)}
-            className="border-gray-700 cursor-pointer border-2 bg-gray-800 rounded-lg h-6 w-6 flex items-center justify-center"
+            className="flex h-6 w-6 cursor-pointer items-center justify-center rounded-lg border-2 border-gray-700 bg-gray-800"
           >
-            {agree && <CheckIcon className="text-primary w-3 h-3" />}
+            {agree && <CheckIcon className="h-3 w-3 text-primary" />}
           </label>
           <label htmlFor="agree">
             I agree to the{" "}
@@ -42,7 +42,7 @@ export function EmailForm() {
         <div>
           <Button
             disabled={!agree}
-            rightIcon={<PaperAirplaneIcon className="w-5 h-5" />}
+            rightIcon={<PaperAirplaneIcon className="h-5 w-5" />}
           >
             Submit
           </Button>

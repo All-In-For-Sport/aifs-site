@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 
 import { Post } from "@/.contentlayer/generated";
 import { format } from "date-fns";

@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { CheckIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { BsDiscord } from "react-icons/bs";
 import { BiLogoTelegram } from "react-icons/bi";

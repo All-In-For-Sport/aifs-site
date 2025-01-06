@@ -1,7 +1,7 @@
 "use client";
 import { useEffect, useRef, useState } from "react";
 import { motion, useMotionValueEvent, useScroll } from "framer-motion";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { Play } from "@/app/shared/Icons";
 
 const INITIAL_SCALE = 0.85;

@@ -7,7 +7,7 @@ import { PostPage } from "../components/PostPage";
 
 export async function generateStaticParams() {
   return allPosts.map((post) => ({
-    slug: post.slug,
+    slug: post._raw.flattenedPath,
   }));
 }
 

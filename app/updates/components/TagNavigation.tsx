@@ -20,10 +20,10 @@ function TagLink({ children, tag }: { children: string; tag: string }) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
 
-  const currentPostType = searchParams.get("type");
+  const currentTagParam = searchParams.get("type");
 
   const isCurrentTag =
-    tag === currentPostType || (!currentPostType && tag === "all");
+    tag === currentTagParam || (!currentTagParam && tag === "all");
 
   return (
     <Link

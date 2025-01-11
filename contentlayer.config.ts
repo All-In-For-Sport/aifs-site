@@ -15,6 +15,7 @@ export const Post = defineDocumentType(() => ({
     date: { type: "date", required: true },
     author: { type: "string", required: true },
     authorEns: { type: "string", required: false },
+    authorEnsAvatar: { type: "boolean", required: false },
     isPublished: { type: "boolean", required: true },
     isFeatured: { type: "boolean", required: false },
     group: { type: "string", required: false },

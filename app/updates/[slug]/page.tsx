@@ -1,5 +1,4 @@
 import { notFound } from "next/navigation";
-
 import { Metadata, ResolvingMetadata } from "next";
 
 import { allPosts, Post } from "@/.contentlayer/generated";

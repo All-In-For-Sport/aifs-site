@@ -1,15 +1,19 @@
 import Image from "next-export-optimize-images/image";
+import { useMDXComponent } from "next-contentlayer2/hooks";
+import Link from "next/link";
 
-import { ButtonLink } from "../../shared/Button";
+import { PostTypeBadge } from "./PostTypeBadge";
 
 import { Post } from "@/.contentlayer/generated";
-
 import fallbackImage from "@/app/opengraph-image.jpg";
+import { EnsAvatar } from "./EnsAvatar";
 
 export function PostCard({ post }: { post: Post }) {
+  const MDXContent = useMDXComponent(post.body.code);
+
   return (
-    <div className="flex w-full flex-col rounded-3xl border-2 border-gray-700 p-6 transition duration-300 ease-out hover:scale-[1.01]">
-      <div className="relative overflow-hidden rounded-2xl sm:h-[300px]">
+    <Link className="group flex max-w-96 md:max-w-[45%]" href={post.slug}>
+      <article className="flex flex-col gap-6 rounded-3xl bg-[#141414] p-4">
         {post.featuredImageData ? (
           <Image
             src={post.featuredImageData.path}
@@ -25,18 +29,40 @@ export function PostCard({ post }: { post: Post }) {
             className="w-full"
           />
         )}
-      </div>
-      <div className="flex flex-1 flex-col items-center justify-between pt-8 text-center md:px-8">
-        <div>
-          <h5 className="font-header text-2xl font-bold">{post.title}</h5>
-          <p className="mt-3 text-sm text-white/50">TODO: add excerpts!</p>
-        </div>
-        <div className="mt-8">
+        <div className="relative grid gap-4">
+          <div>
+            <PostTypeBadge>{post.postType}</PostTypeBadge>
+          </div>
+          <div>
+            <h2 className="font-header text-2xl font-bold group-hover:underline">
+              {post.title}
+            </h2>
+          </div>
+          <section className="flex gap-2">
+            {post.authorEns ? (
+              <>
+                {post.authorEnsAvatar && (
+                  <figure className="relative size-6 overflow-clip rounded-full">
+                    <EnsAvatar ens={post.authorEns} />
+                  </figure>
+                )}
+                <span>{post.authorEns}</span>
+              </>
+            ) : (
+              <figure>{post.author}</figure>
+            )}
+          </section>
+          <p className="max-h-36 overflow-hidden leading-7 text-white/50">
+            <MDXContent />
+          </p>
+          <div className="absolute bottom-0 h-24 w-full bg-gradient-to-b from-[#14141400] to-[#141414] to-90%" />
+          {/* <div className="mt-8">
           <ButtonLink href={post.slug} variant="secondary">
             Read more
           </ButtonLink>
+        </div> */}
         </div>
-      </div>
-    </div>
+      </article>
+    </Link>
   );
 }

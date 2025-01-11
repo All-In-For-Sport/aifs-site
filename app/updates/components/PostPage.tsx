@@ -1,26 +1,12 @@
 "use client";
 import Image from "next-export-optimize-images/image";
+import { useMDXComponent } from "next-contentlayer2/hooks";
+import { format } from "date-fns";
 
 import { Post } from "@/.contentlayer/generated";
-import { format } from "date-fns";
-import { Avatar, getEnsAvatar } from "@/app/services/Ens";
-import { useMDXComponent } from "next-contentlayer2/hooks";
-import { useEffect, useState } from "react";
+import { EnsAvatar } from "./EnsAvatar";
 
 export function PostPage({ post }: { post: Post }) {
-  const [avatar, setAvatar] = useState<Avatar | null>(null);
-
-  useEffect(() => {
-    if (!post.authorEns) return;
-    getEnsAvatar(post.authorEns)
-      .then((res) => {
-        if (res) setAvatar(res);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  }, [post]);
-
   const MDXContent = useMDXComponent(post.body.code);
 
   return (
@@ -44,17 +30,7 @@ export function PostPage({ post }: { post: Post }) {
             {post.authorEns ? (
               <>
                 <figure className="relative size-6 overflow-clip rounded-full">
-                  {avatar ? (
-                    <Image
-                      className="size-full"
-                      src={avatar.src}
-                      fill
-                      alt={`avatar for ${avatar.ens}`}
-                      unoptimized
-                    />
-                  ) : (
-                    <div className="size-full bg-neutral-400 opacity-50" />
-                  )}
+                  {post.authorEnsAvatar && <EnsAvatar ens={post.authorEns} />}
                 </figure>
                 <span>{post.authorEns}</span>
               </>

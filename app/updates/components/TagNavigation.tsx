@@ -6,7 +6,7 @@ import { usePathname, useSearchParams } from "next/navigation";
 export function TagNavigation({ tags }: { tags: Array<string> }) {
   return (
     <nav className="flex gap-4">
-      <TagLink tag="">All</TagLink>
+      <TagLink tag="all">All</TagLink>
       {tags.map((tag) => (
         <TagLink key={`tag_${tag}`} tag={tag}>
           {tag.slice(0, 1).toUpperCase() + tag.slice(1, tag.length) + "s"}
@@ -22,15 +22,15 @@ function TagLink({ children, tag }: { children: string; tag: string }) {
 
   const currentPostType = searchParams.get("type");
 
-  const isAllPosts = !currentPostType && !tag;
-  const isCurrentTag = tag === currentPostType;
+  const isCurrentTag =
+    tag === currentPostType || (!currentPostType && tag === "all");
 
   return (
     <Link
       href={pathname + (tag && "?type=" + tag)}
       className={clsx(
         "border-b-[3px] border-[#00000000] border-opacity-0 px-4 py-1.5 font-bold transition-all hover:text-neutral-200",
-        isAllPosts || isCurrentTag
+        isCurrentTag
           ? "border-primary border-opacity-100 text-neutral-200"
           : "text-neutral-400",
       )}

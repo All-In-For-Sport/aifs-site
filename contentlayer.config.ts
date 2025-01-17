@@ -19,14 +19,20 @@ export const Post = defineDocumentType(() => ({
     isPublished: { type: "boolean", required: true },
     isFeatured: { type: "boolean", required: false },
     group: { type: "string", required: false },
-    postType: { type: "string", required: false },
+    category: { type: "string", required: true },
+    categoryPlural: { type: "string", required: true },
     featuredImage: { type: "string", required: false },
     featuredImageAltText: { type: "string", required: false },
   },
   computedFields: {
+    path: {
+      type: "string",
+      resolve: (post) =>
+        `/updates/${post.categoryPlural}/${post._raw.flattenedPath}`,
+    },
     slug: {
       type: "string",
-      resolve: (post) => `/updates/${post._raw.flattenedPath}`,
+      resolve: (post) => post._raw.flattenedPath,
     },
     featuredImageData: {
       type: "nested",

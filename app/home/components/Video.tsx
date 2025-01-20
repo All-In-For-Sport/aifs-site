@@ -50,7 +50,10 @@ export default function Video() {
               onPlay={() => setIsPlaying(true)}
             >
               {loadVideo && (
-                <source src="/assets/aifs_introduction.mp4" type="video/mp4" />
+                <source
+                  src="https://res.cloudinary.com/fastwebsiteswales/video/upload/v1737379255/aifs/aifs_introduction_gzytr9.mp4"
+                  type="video/mp4"
+                />
               )}
             </video>
             <div className="pointer-events-none absolute left-0 top-0 flex size-full items-center justify-center">

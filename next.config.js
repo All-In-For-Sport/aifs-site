@@ -6,7 +6,7 @@ const nextConfig = {
   output: "export",
   reactStrictMode: true,
   images: {
-    unoptimized: true,
+    // unoptimized: true,
     remotePatterns: [
       { hostname: "images.unsplash.com" },
       { hostname: "cdn.sanity.io" },

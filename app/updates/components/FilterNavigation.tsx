@@ -32,9 +32,7 @@ function CategoryLink({
 
   const isCurrentCategory =
     (category && pathname.includes(category)) ||
-    (category === "" && pathname === "/updates");
-
-  console.log({ pathname });
+    (category === "" && pathname === "/updates/");
 
   return (
     <Link

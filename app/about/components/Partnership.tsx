@@ -9,7 +9,7 @@ export function Partnership() {
       <div className="flex w-full justify-center lg:justify-end">
         <div className="relative h-[300px] w-full md:h-[473px] md:w-[484px]">
           <Image
-            src="https://images.unsplash.com/photo-1508972348941-5e2b14d04c64?auto=format&fit=crop&q=80&w=1000"
+            src="/assets/about/partnership.webp"
             fill
             className="rounded-3xl object-cover object-center"
             sizes="(max-width: 640px) 100vw, 50vw"

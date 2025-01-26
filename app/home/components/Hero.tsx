@@ -13,9 +13,6 @@ export default function Hero() {
         initiatives advancing inclusion and empowerment through sport.
       </p>
       <div className="mt-12 flex w-full max-w-96 flex-col justify-center gap-2.5 sm:flex-row">
-        <ButtonLink href="/projects" rightIcon={<ArrowRight />}>
-          Our Projects
-        </ButtonLink>
         <ButtonLink href="/about" variant="secondary">
           Our Story
         </ButtonLink>

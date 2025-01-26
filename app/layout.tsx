@@ -5,10 +5,9 @@ import { Red_Hat_Display, DM_Sans } from "next/font/google";
 import Header from "@/app/shared/Header";
 import Footer from "@/app/shared/Footer";
 import { BackgroundGradient } from "@/app/shared/BackgroundGradient";
-import { siteLinks } from "@/app/siteMeta";
+import { FeaturesProvider } from "./features/useFeatures";
 
 import "./globals.css";
-import { FeaturesProvider } from "./features/useFeatures";
 
 const red_hat_display = Red_Hat_Display({
   subsets: ["latin"],
@@ -19,12 +18,6 @@ const dm_sans = DM_Sans({
   subsets: ["latin"],
   variable: "--dm-sans",
 });
-
-export const metadata: Metadata = {
-  metadataBase: new URL(siteLinks.siteUrl),
-  title: "All in for Sport",
-  description: "A Coordi-nation for grassroots sports projects",
-};
 
 export default function RootLayout({
   children,

@@ -9,7 +9,7 @@ import Contact from "../shared/Contact";
 
 export const metadata: Metadata = {
   title: "About | All in for Sport",
-  description: "A funding platform for community-led sports projects.",
+  description: "A Coordi-nation for grassroots sports projects",
 };
 
 export default function About() {

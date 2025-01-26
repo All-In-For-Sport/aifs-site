@@ -1,6 +1,6 @@
 export function ExampleMDXComponent() {
   return (
-    <div className="p-8 rounded border border-blue-95">
+    <div className="border-blue-95 rounded border p-8">
       I&apos;m an example MDX component!
     </div>
   );

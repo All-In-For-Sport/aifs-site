@@ -23,7 +23,7 @@ export function Input({
         name={label}
         id={label}
         placeholder={placeholder}
-        className="p-4 bg-gray-800 placeholder-gray-600 border-2 border-gray-700 block w-full sm:text-sm rounded-2xl mt-1"
+        className="mt-1 block w-full rounded-2xl border-2 border-gray-700 bg-gray-800 p-4 placeholder-gray-600 sm:text-sm"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />

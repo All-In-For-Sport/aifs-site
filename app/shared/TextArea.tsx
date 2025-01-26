@@ -20,7 +20,7 @@ export function TextArea({
         name={label}
         id={label}
         placeholder={placeholder}
-        className="p-4 bg-gray-800 h-32 placeholder-gray-600 border-2 border-gray-700 block w-full sm:text-sm rounded-2xl mt-1"
+        className="mt-1 block h-32 w-full rounded-2xl border-2 border-gray-700 bg-gray-800 p-4 placeholder-gray-600 sm:text-sm"
         value={value}
         onChange={(e) => setValue(e.target.value)}
       />

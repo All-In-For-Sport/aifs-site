@@ -22,6 +22,7 @@ const config: Config = {
         secondary: "#F301F8",
         background: "#111111",
         darkText: "#242424",
+        bluegrey: "#1f2937",
       },
       screens: {
         xs: "420px",

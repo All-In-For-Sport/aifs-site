@@ -1,6 +1,6 @@
 export function BackgroundGradient({ className }: { className?: string }) {
   return (
-    <div className="left-0 right-0 mx-auto w-[400px] h-[300px] rounded-full -z-20 bg-[#5A6DED] blur-[100px] absolute -top-[150px]" />
+    <div className="absolute -top-[150px] left-0 right-0 -z-20 mx-auto h-[300px] w-[400px] rounded-full bg-[#5A6DED] blur-[100px]" />
   );
 }
 

@@ -1,5 +1,5 @@
 "use client";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import Link from "next/link";
 import { Fragment } from "react";
 import { Bars3Icon } from "@heroicons/react/24/outline";

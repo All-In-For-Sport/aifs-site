@@ -5,6 +5,7 @@ import { Partnership } from "./components/Partnership";
 import { AboutHero } from "./components/AboutHero";
 import { PilotProjects } from "./components/PilotProjects";
 import { AboutCTA } from "./components/AboutCTA";
+import Contact from "../shared/Contact";
 
 export const metadata: Metadata = {
   title: "About | All in for Sport",
@@ -19,6 +20,7 @@ export default function About() {
       <Approach />
       <PilotProjects />
       <AboutCTA />
+      <Contact />
     </>
   );
 }

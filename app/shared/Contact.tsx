@@ -1,7 +1,7 @@
 "use client";
 import { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image from "next-export-optimize-images/image";
 import { CheckIcon, PaperAirplaneIcon } from "@heroicons/react/24/solid";
 import { BsDiscord } from "react-icons/bs";
 import { BiLogoTelegram } from "react-icons/bi";
@@ -9,7 +9,7 @@ import { RiTwitterXFill } from "react-icons/ri";
 import { useFormspark } from "@formspark/use-formspark";
 import toast from "react-hot-toast";
 
-import { Button } from "../../shared/Button";
+import { Button } from "./Button";
 import { Input } from "@/app/shared/Input";
 import { TextArea } from "@/app/shared/TextArea";
 
@@ -81,7 +81,7 @@ export default function Contact() {
   return (
     <section
       id="contactUs"
-      className="page-wrap my-12 flex w-full flex-col items-start gap-8"
+      className="page-wrap flex w-full flex-col items-start gap-8 py-24"
     >
       <h2 className="font-header text-4xl font-bold md:text-5xl">
         Want to get in touch?

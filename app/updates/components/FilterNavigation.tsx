@@ -37,6 +37,7 @@ function CategoryLink({
   return (
     <Link
       href={"/updates" + (category && "/" + category)}
+      scroll={false}
       className={clsx(
         "border-b-[3px] border-[#00000000] border-opacity-0 px-4 py-1.5 font-bold transition-all hover:text-neutral-200",
         isCurrentCategory

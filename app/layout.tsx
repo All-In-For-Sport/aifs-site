@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.variable} ${dm_sans.variable} bg-background font-body text-white scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600`}
+        className={`${red_hat_display.variable} ${dm_sans.variable} font-body scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 bg-background text-white`}
       >
         <FeaturesProvider>
           <Toaster

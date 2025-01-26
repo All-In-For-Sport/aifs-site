@@ -10,8 +10,8 @@ export function BuildTogether() {
         empower their communities.
         <br />
         <br />
-        Now we're aiming to amplify our impact by networking with like-minded
-        projects to explore how emerging technologies such as{" "}
+        Now we&apos;re aiming to amplify our impact by networking with
+        like-minded projects to explore how emerging technologies such as{" "}
         <span className="font-bold text-primary">decentralized governance</span>
         , <span className="font-bold text-primary">impact attestations</span>{" "}
         and <span className="font-bold text-primary">machine learning</span> can

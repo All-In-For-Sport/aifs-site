@@ -9,7 +9,7 @@ export default function Hero() {
         sports projects
       </h1>
       <p className="mt-8 max-w-xl text-base text-white/50">
-        We're building a network of projects that support community-led
+        We&apos;re building a network of projects that support community-led
         initiatives advancing inclusion and empowerment through sport.
       </p>
       <div className="mt-12 flex w-full max-w-96 flex-col justify-center gap-2.5 sm:flex-row">

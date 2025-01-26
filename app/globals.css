@@ -25,3 +25,13 @@ svg {
     background-size: 100% auto;
   }
 }
+
+.cta-container {
+  container-type: inline-size;
+}
+
+.button-wrapper {
+  @container (width > 370px) {
+    flex-direction: row;
+  }
+}

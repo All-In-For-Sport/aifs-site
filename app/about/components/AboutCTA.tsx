@@ -18,7 +18,7 @@ export function AboutCTA() {
           upcoming event or check out our stream library to find out more about
           the awesome projects in our network.
         </p>
-        <div className="@sm:flex-row flex w-full flex-col gap-4">
+        <div className="button-wrapper flex w-full flex-col gap-4 pt-2">
           <ButtonLink href={siteLinks.luma} variant="small">
             Event Calendar
           </ButtonLink>
@@ -42,7 +42,7 @@ export function AboutCTA() {
           connected than we are different, and that sport is the unifying piece
           that can bring us together.
         </p>
-        <div className="@min-[320px]:flex-row flex w-full flex-col gap-4">
+        <div className="button-wrapper flex w-full flex-col gap-4 pt-2">
           <ButtonLink href={siteLinks.discordJoin} variant="small">
             Join Discord
           </ButtonLink>
@@ -65,7 +65,7 @@ export function AboutCTA() {
 
 function Card({ children }: { children: ReactNode }) {
   return (
-    <div className="@container relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-darkText bg-background p-8 pr-12 shadow-lg">
+    <div className="cta-container relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-darkText bg-background p-8 pr-12 shadow-lg">
       {children}
     </div>
   );

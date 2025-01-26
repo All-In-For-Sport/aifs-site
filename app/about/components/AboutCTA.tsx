@@ -52,7 +52,7 @@ export function AboutCTA() {
         </div>
 
         <Image
-          className="absolute -right-28 -top-28 h-56 w-56"
+          className="absolute -right-32 -top-32 h-56 w-56 sm:-right-28 sm:-top-28"
           src="/assets/shapes/shape7.png"
           width={250}
           height={250}
@@ -65,7 +65,7 @@ export function AboutCTA() {
 
 function Card({ children }: { children: ReactNode }) {
   return (
-    <div className="cta-container relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-darkText bg-background p-8 pr-12 shadow-lg">
+    <div className="cta-container relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-darkText bg-background px-8 py-14 shadow-lg">
       {children}
     </div>
   );

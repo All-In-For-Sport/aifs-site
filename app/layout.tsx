@@ -23,7 +23,7 @@ const dm_sans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteLinks.siteUrl),
   title: "All in for Sport",
-  description: "A funding platform for community-led sports projects.",
+  description: "A Coordi-nation for grassroots sports projects",
 };
 
 export default function RootLayout({
@@ -34,7 +34,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${red_hat_display.variable} ${dm_sans.variable} font-body scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600 bg-background text-white`}
+        className={`${red_hat_display.variable} ${dm_sans.variable} bg-background font-body text-white scrollbar-thin scrollbar-track-gray-800 scrollbar-thumb-gray-600`}
       >
         <FeaturesProvider>
           <Toaster

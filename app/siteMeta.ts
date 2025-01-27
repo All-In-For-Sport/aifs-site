@@ -9,5 +9,5 @@ export const siteLinks = {
   snapshot: "https://snapshot.org/#/allinforsport.eth",
   state: "https://state.allinforsport.org/",
   luma: "https://lu.ma/aifs",
-  bonfire: "https://www.bonfire.xyz/allinforsport/gatherings",
+  bonfire: "https://watch.allinforsport.org",
 };

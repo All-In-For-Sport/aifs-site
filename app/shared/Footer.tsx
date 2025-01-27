@@ -24,7 +24,7 @@ export default function Footer() {
               </h6>
               <Link href={siteLinks.discordJoin}>Discord</Link>
               <Link href={siteLinks.telegramJoin}>Telegram</Link>
-              <Link href={siteLinks.x}>X</Link>
+              <Link href={siteLinks.x}>Twitter</Link>
               <Link href={siteLinks.linkedin}>Linkedin</Link>
             </div>
             <div className="flex flex-col gap-2 text-white/50">

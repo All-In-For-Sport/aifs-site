@@ -1,7 +1,7 @@
 export function BuildTogether() {
   return (
     <section className="page-wrap flex flex-col items-center py-12 lg:py-24">
-      <h2 className="mb-12 font-header text-4xl font-extrabold leading-[48px] lg:text-5xl lg:leading-[56px]">
+      <h2 className="mb-12 text-center font-header text-4xl font-extrabold leading-[48px] lg:text-5xl lg:leading-[56px]">
         Let&apos;s Build Together
       </h2>
       <p className="max-w-3xl text-center text-white/50">

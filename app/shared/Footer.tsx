@@ -30,7 +30,7 @@ export default function Footer() {
                 Community
               </h6>
               <Link href={siteLinks.discuss}>Discussion</Link>
-              <Link href={siteLinks.opensea}>Badges</Link>
+              <Link href={siteLinks.hats}>Badges</Link>
               <Link href={siteLinks.snapshot}>Voting</Link>
               <Link href={siteLinks.state}>State</Link>
             </div>

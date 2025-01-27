@@ -1,0 +1,38 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* globals */
+svg {
+  fill: currentColor;
+}
+
+/* utilities */
+.page-wrap {
+  @apply mx-auto max-w-xl lg:max-w-7xl;
+  @apply px-4 sm:px-6 lg:px-24;
+}
+
+.page-section-padding {
+  @apply py-12 lg:py-24;
+}
+
+.background-image {
+  background-image: url("/assets/noise.png");
+  background-size: 300% auto;
+  position: relative;
+  @media (min-width: 768px) {
+    background-size: 100% auto;
+  }
+}
+
+/* About page CTA */
+.cta-container {
+  container-type: inline-size;
+}
+
+.button-wrapper {
+  @container (width > 370px) {
+    flex-direction: row;
+  }
+}

@@ -7,4 +7,6 @@ export const siteLinks = {
   opensea: "https://opensea.io/collection/all-in-for-sport",
   snapshot: "https://snapshot.org/#/allinforsport.eth",
   state: "https://state.allinforsport.org/",
+  luma: "https://lu.ma/aifs",
+  bonfire: "https://www.bonfire.xyz/allinforsport/gatherings",
 };

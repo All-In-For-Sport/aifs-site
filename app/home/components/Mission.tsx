@@ -34,22 +34,24 @@ export default function Mission() {
         <div className="flex flex-col items-center gap-6 text-center lg:items-start lg:text-left">
           <Tag>Our Mission</Tag>
           <h2 className="font-header text-4xl font-bold md:text-5xl">
-            Empowering sports communities with{" "}
-            <span className="text-primary">innovative fundraising tools</span>
+            Helping local communities use{" "}
+            <span className="font-bold text-primary">
+              sport for social change
+            </span>
           </h2>
           <p className="max-w-md text-white/50 lg:max-w-none">
-            We&apos;re on a mission to build citizen-owned fundraising tools for
-            communities worldwide.
+            We&apos;re on a mission to bring collaborative governance and
+            innovative fundraising tools to sports communities worldwide.
             <br />
             <br />
             Our learning journey begins with sports-loving cities in North
-            America including{" "}
-            <span className="font-bold text-primary">Oakland</span>,{" "}
-            <span className="font-bold text-primary">Toronto</span> and{" "}
-            <span className="font-bold text-primary">Los Angeles</span>, and
-            international basketball communities in the{" "}
-            <span className="font-bold text-primary">Philippines</span> and{" "}
-            <span className="font-bold text-primary">Guatemala</span>.
+            America including Our journey begins by convening a network of{" "}
+            <span className="font-bold text-primary">
+              individuals, organizations and grassroots groups
+            </span>
+            , united by{" "}
+            <span className="font-bold text-primary">shared values</span> and a{" "}
+            <span className="font-bold text-primary">common purpose</span>.
           </p>
         </div>
       </div>

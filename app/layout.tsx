@@ -23,7 +23,7 @@ const dm_sans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteLinks.siteUrl),
   title: "All in for Sport",
-  description: "A funding platform for community-led sports projects.",
+  description: "A Coordi-nation for grassroots sports projects",
 };
 
 export default function RootLayout({

@@ -15,14 +15,9 @@ export function AboutHero() {
             </h1>
             <p className="mt-8 text-base text-white/50">
               All In For Sport (AIFS) is a decentralized autonomous organization
-              (DAO) whose mission is to create a public goods funding initiative
-              to support projects that advance inclusion and empowerment through
-              sport.
+              (DAO) whose mission is to create a coordi-nation to support
+              projects that advance inclusion and empowerment through sport.
             </p>
-            <div className="mt-12 flex flex-col gap-2.5 xs:flex-row">
-              <ButtonLink href="/projects">Our Projects</ButtonLink>
-              <Button variant="ghost">Get updates</Button>
-            </div>
           </div>
           <div className="relative w-full lg:w-6/12">
             <Image
@@ -34,7 +29,7 @@ export function AboutHero() {
             />
           </div>
         </div>
-        <div className="mt-16 grid grid-cols-1 gap-8 text-left lg:mt-12 lg:w-7/12 lg:grid-cols-2">
+        <div className="mt-16 grid grid-cols-1 gap-8 text-left lg:mt-32 lg:w-7/12 lg:grid-cols-2">
           <div className="flex gap-3">
             <Image
               src="/assets/icons/chip.png"

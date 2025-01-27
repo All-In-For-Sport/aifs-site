@@ -55,7 +55,6 @@ export function ButtonLink({
   variant = "primary",
   leftIcon,
   rightIcon,
-  ...props
 }: {
   children: ReactNode;
   href: string;

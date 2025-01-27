@@ -3,7 +3,7 @@ import { Metadata } from "next";
 import { Approach } from "./components/Approach";
 import { Partnership } from "./components/Partnership";
 import { AboutHero } from "./components/AboutHero";
-import { PilotProjects } from "./components/PilotProjects";
+import { BuildTogether } from "./components/BuildTogether";
 import { AboutCTA } from "./components/AboutCTA";
 import Contact from "../shared/Contact";
 
@@ -18,7 +18,7 @@ export default function About() {
       <AboutHero />
       <Partnership />
       <Approach />
-      <PilotProjects />
+      <BuildTogether />
       <AboutCTA />
       <Contact />
     </>

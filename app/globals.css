@@ -10,7 +10,7 @@ svg {
 /* utilities */
 .page-wrap {
   @apply mx-auto max-w-xl lg:max-w-7xl;
-  @apply px-6 lg:px-24;
+  @apply px-4 sm:px-6 lg:px-24;
 }
 
 .page-section-padding {
@@ -23,5 +23,16 @@ svg {
   position: relative;
   @media (min-width: 768px) {
     background-size: 100% auto;
+  }
+}
+
+/* About page CTA */
+.cta-container {
+  container-type: inline-size;
+}
+
+.button-wrapper {
+  @container (width > 370px) {
+    flex-direction: row;
   }
 }

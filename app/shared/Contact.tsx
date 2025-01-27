@@ -12,6 +12,7 @@ import toast from "react-hot-toast";
 import { Button } from "./Button";
 import { Input } from "@/app/shared/Input";
 import { TextArea } from "@/app/shared/TextArea";
+import { siteLinks } from "../siteMeta";
 
 function SocialCallout({
   icon,
@@ -158,13 +159,13 @@ export default function Contact() {
           icon={<BiLogoTelegram className="h-6 w-6 text-white" />}
           title="Connect on Telegram"
           supportingText="Get updates"
-          link="https://discord.gg/2y8yY5j"
+          link={siteLinks.telegramJoin}
         />
         <SocialCallout
           icon={<RiTwitterXFill className="h-6 w-6 text-white" />}
           title="Follow us"
           supportingText="See what's new"
-          link="https://discord.gg/2y8yY5j"
+          link="https://x.com/allinforsport"
         />
       </div>
     </section>

@@ -165,7 +165,7 @@ export default function Contact() {
           icon={<RiTwitterXFill className="h-6 w-6 text-white" />}
           title="Follow us"
           supportingText="See what's new"
-          link="https://x.com/allinforsport"
+          link={siteLinks.x}
         />
       </div>
     </section>

@@ -20,10 +20,12 @@ export default function Footer() {
           <div className="grid grid-cols-2 gap-12">
             <div className="flex flex-col gap-2 text-white/50">
               <h6 className="mb-2 font-header text-lg font-bold text-white">
-                Operations
+                Socials
               </h6>
               <Link href={siteLinks.discordJoin}>Discord</Link>
-              <Link href={siteLinks.clarity}>Clarity</Link>
+              <Link href={siteLinks.telegramJoin}>Telegram</Link>
+              <Link href={siteLinks.x}>X</Link>
+              <Link href={siteLinks.linkedin}>Linkedin</Link>
             </div>
             <div className="flex flex-col gap-2 text-white/50">
               <h6 className="mb-2 font-header text-lg font-bold text-white">

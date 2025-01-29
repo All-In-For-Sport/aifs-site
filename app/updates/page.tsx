@@ -4,8 +4,10 @@ import { notFound } from "next/navigation";
 import { getFeatures } from "../features/getFeatures";
 import { IndexPage } from "./components/IndexPage";
 import { allPosts } from "@/.contentlayer/generated";
+import { siteLinks } from "../siteMeta";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(siteLinks.siteUrl),
   title: "Updates | All in for Sport",
   description: "A funding platform for community-led sports projects.",
 };

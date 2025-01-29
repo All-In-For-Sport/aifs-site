@@ -21,6 +21,7 @@ export function AboutHero() {
           </div>
           <div className="relative w-full lg:w-6/12">
             <Image
+              priority={true}
               src="/assets/about-hero.png"
               width={1261}
               height={1040}
@@ -32,6 +33,7 @@ export function AboutHero() {
         <div className="mt-16 grid grid-cols-1 gap-8 text-left lg:mt-32 lg:w-7/12 lg:grid-cols-2">
           <div className="flex gap-3">
             <Image
+              priority={true}
               src="/assets/icons/chip.png"
               width={24}
               height={24}
@@ -48,6 +50,7 @@ export function AboutHero() {
           </div>
           <div className="flex gap-3">
             <Image
+              priority={true}
               src="/assets/icons/command.png"
               width={24}
               height={24}

@@ -18,8 +18,8 @@ svg {
 }
 
 .background-image {
-  background-image: url("/assets/noise.png");
-  background-size: 300% auto;
+  background-image: url("/assets/noise.webp");
+  background-size: 200% auto;
   position: relative;
   @media (min-width: 768px) {
     background-size: 100% auto;

@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
 import { Red_Hat_Display, DM_Sans } from "next/font/google";
 

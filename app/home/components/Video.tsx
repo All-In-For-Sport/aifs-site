@@ -64,6 +64,7 @@ export default function Video() {
               </div>
             </div>
             <Image
+              priority={true}
               src="/assets/video-thumbnail.jpeg"
               alt="basketball player jumping for a slam dunk"
               fill

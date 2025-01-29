@@ -125,7 +125,10 @@ export default function Contact() {
             </label>
             <label htmlFor="agree">
               I agree to the{" "}
-              <span className="text-primary">terms and conditions</span>.
+              <Link href="/privacy" className="text-primary">
+                terms and conditions
+              </Link>
+              .
             </label>
           </div>
           <div className="mt-4 flex flex-col">

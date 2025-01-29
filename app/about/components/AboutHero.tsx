@@ -32,6 +32,7 @@ export function AboutHero() {
         <div className="mt-16 grid grid-cols-1 gap-8 text-left lg:mt-32 lg:w-7/12 lg:grid-cols-2">
           <div className="flex gap-3">
             <Image
+              priority={true}
               src="/assets/icons/chip.png"
               width={24}
               height={24}

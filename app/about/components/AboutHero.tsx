@@ -21,6 +21,7 @@ export function AboutHero() {
           </div>
           <div className="relative w-full lg:w-6/12">
             <Image
+              priority={true}
               src="/assets/about-hero.png"
               width={1261}
               height={1040}
@@ -49,6 +50,7 @@ export function AboutHero() {
           </div>
           <div className="flex gap-3">
             <Image
+              priority={true}
               src="/assets/icons/command.png"
               width={24}
               height={24}

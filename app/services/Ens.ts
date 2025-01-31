@@ -4,13 +4,16 @@ import { mainnet } from "viem/chains";
 
 const client = createPublicClient({
   chain: mainnet,
-  transport: http(mainnet.rpcUrls.default.http[0], {
-    fetchOptions: {
-      next: {
-        revalidate: 60 * 60,
+  transport: http(
+    `https://eth-mainnet.g.alchemy.com/v2/${process.env.NEXT_PUBLIC_ALCHEMY_API_KEY}`,
+    {
+      fetchOptions: {
+        next: {
+          revalidate: 60 * 60,
+        },
       },
     },
-  }),
+  ),
 });
 
 export type Avatar = {

@@ -1,18 +1,19 @@
-"use client";
 import Image from "next-export-optimize-images/image";
 import { useMDXComponent } from "next-contentlayer2/hooks";
-import { format } from "date-fns";
+import { format, previousDay } from "date-fns";
 
 import { Post } from "@/.contentlayer/generated";
 import { EnsAvatar } from "./EnsAvatar";
 import Contact from "@/app/shared/Contact";
+import { getEnsAvatar } from "@/app/services/Ens";
+import { MDXContent } from "./MDXContent";
 
-export function PostPage({ post }: { post: Post }) {
-  const MDXContent = useMDXComponent(post.body.code);
+export async function PostPage({ post }: { post: Post }) {
+  const avatar = post.authorEns ? await getEnsAvatar(post.authorEns) : null;
 
   return (
     <>
-      <div className="m-auto max-w-4xl px-6 py-4">
+      <div className="m-auto max-w-4xl px-4 py-4 sm:mx-4">
         <article className="grid gap-8">
           {post.featuredImageData && (
             <Image
@@ -29,10 +30,10 @@ export function PostPage({ post }: { post: Post }) {
               {post.title}
             </h1>
             <section className="flex gap-4">
-              {post.authorEns ? (
+              {avatar ? (
                 <>
                   <figure className="relative size-6 overflow-clip rounded-full">
-                    {post.authorEnsAvatar && <EnsAvatar ens={post.authorEns} />}
+                    <EnsAvatar avatar={avatar} />
                   </figure>
                   <span>{post.authorEns}</span>
                 </>
@@ -42,7 +43,7 @@ export function PostPage({ post }: { post: Post }) {
             </section>
           </section>
           <div className="prose prose-xl prose-neutral prose-invert">
-            <MDXContent />
+            <MDXContent mdx={post.body.code} />
           </div>
         </article>
       </div>

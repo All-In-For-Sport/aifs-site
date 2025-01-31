@@ -11,8 +11,8 @@ export function IndexPage({ posts }: { posts: Array<Post> }) {
 
   return (
     <>
-      <section className="m-auto flex max-w-4xl flex-col items-center gap-12 px-6 py-12">
-        <h1 className="font-header text-4xl font-bold md:text-5xl">Updates</h1>
+      <section className="m-auto flex max-w-4xl flex-col items-center gap-12 px-4 py-12 sm:px-6">
+        <h1 className="font-header text-5xl font-bold md:text-6xl">Updates</h1>
         <FilterNavigation categories={categories} />
         <div className="flex w-full max-w-4xl flex-wrap justify-center gap-8">
           {posts

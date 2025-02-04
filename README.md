@@ -2,11 +2,6 @@
 
 This is a NextJS static export site. Images are optimised at build time with [next-export-optimise-images](https://www.npmjs.com/package/next-export-optimize-images) and blog posts are written in markdown and managed using [contentlayer](https://contentlayer.dev/).
 
-1. [Frontmatter](#frontmatter)
-2. [Post Categories](#post-categories)
-3. [Featured images](#featured-images)
-4. [ENS Avatars](#ens-avatars)
-
 ## Frontmatter
 
 | field                  | mandatory | type      | info                                                                                                          |
@@ -28,6 +23,10 @@ This is a NextJS static export site. Images are optimised at build time with [ne
 - derived from categories attached to posts
 - seperate index pages for each category generated
 
+## Featured Posts
+
+The site homepage will display the 2 most recently publised posts that have an `isFeatured` field set to `true` under the _updates_ heading.
+
 ## Featured Images
 
 - add image file to `/public/updates/`
@@ -37,4 +36,4 @@ This is a NextJS static export site. Images are optimised at build time with [ne
 
 Both `author` and `authorEns` frontmatter fields are optional but site will fail to build if neither are present.
 
-`authorEns` takes priority so if both are present the author's ens name will be rendered rather than the author's name
+Priority is given to `authorEns` so if both are present the author's ENS address will be rendered rather than the author's name. If the ENS address has an avatar attached this will be displayed alongside the address.

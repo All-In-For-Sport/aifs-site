@@ -1,11 +1,9 @@
 import Image from "next-export-optimize-images/image";
-import { useMDXComponent } from "next-contentlayer2/hooks";
-import { format, previousDay } from "date-fns";
+import { format } from "date-fns";
 
 import { Post } from "@/.contentlayer/generated";
 import { EnsAvatar } from "./EnsAvatar";
 import Contact from "@/app/shared/Contact";
-import { getEnsAvatar } from "@/app/services/Ens";
 import { MDXContent } from "./MDXContent";
 
 export async function PostPage({ post }: { post: Post }) {

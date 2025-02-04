@@ -156,7 +156,7 @@ export default function Contact() {
           icon={<BsDiscord className="h-6 w-6 text-white" />}
           title="Join our Discord"
           supportingText="Get involved"
-          link="https://discord.gg/2y8yY5j"
+          link={siteLinks.discordJoin}
         />
         <SocialCallout
           icon={<BiLogoTelegram className="h-6 w-6 text-white" />}

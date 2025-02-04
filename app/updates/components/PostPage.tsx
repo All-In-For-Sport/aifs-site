@@ -1,16 +1,12 @@
 import Image from "next-export-optimize-images/image";
-import { useMDXComponent } from "next-contentlayer2/hooks";
-import { format, previousDay } from "date-fns";
+import { format } from "date-fns";
 
 import { Post } from "@/.contentlayer/generated";
 import { EnsAvatar } from "./EnsAvatar";
 import Contact from "@/app/shared/Contact";
-import { getEnsAvatar } from "@/app/services/Ens";
 import { MDXContent } from "./MDXContent";
 
 export async function PostPage({ post }: { post: Post }) {
-  const avatar = post.authorEns ? await getEnsAvatar(post.authorEns) : null;
-
   return (
     <>
       <div className="m-auto max-w-4xl px-4 py-4 sm:mx-4">
@@ -30,13 +26,8 @@ export async function PostPage({ post }: { post: Post }) {
               {post.title}
             </h1>
             <section className="flex gap-4">
-              {avatar ? (
-                <>
-                  <figure className="relative size-6 overflow-clip rounded-full">
-                    <EnsAvatar avatar={avatar} />
-                  </figure>
-                  <span>{post.authorEns}</span>
-                </>
+              {post.authorEns ? (
+                <EnsAvatar authorEns={post.authorEns} />
               ) : (
                 <figure>{post.author}</figure>
               )}

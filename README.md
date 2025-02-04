@@ -1,20 +1,13 @@
 # All in for Sport Website
 
-- homepage featured updates
-- publishing a post
-- frontmatter
+Overview eg. NextJS static site, images optimised at build time with PLUGIN_LINK, contentlayer for managing posts
 
-## Publishing Posts
+1. [Frontmatter](#frontmatter)
+2. [Post Categories](#post-categories)
+3. [Featured images](#featured-images)
+4. [ENS Avatars](#ens-avatars)
 
-1. Create an `MDX` file in `/updates`
-
-2. Add necessary [frontmatter](# Post Frontmatter)
-
-post mdx documents are kept in `/updates`
-
-filenames should be `snake-case` and will be used in a posts unique URL eg. a post with a filename of `example-post.mdx` and a catagory of `event` will have a url of `allinforsport.org/updates/events/example-post`
-
-## Post Frontmatter
+## Frontmatter
 
 | field             | mandatory | type    | info                                   |
 | ----------------- | --------- | ------- | -------------------------------------- |
@@ -24,26 +17,18 @@ filenames should be `snake-case` and will be used in a posts unique URL eg. a po
 | `authorEns`       | no        | string  | author's ens address                   |
 | `authorEnsAvatar` | no        | boolean | whether there is an avatar attached to |
 
-    metaDescription: { type: "string", required: false },
+## Post Categories
 
-    date: { type: "date", required: true },
-    author: { type: "string", required: true },
-    authorEns: { type: "string", required: false },
-    authorEnsAvatar: { type: "boolean", required: false },
-    isPublished: { type: "boolean", required: true },
-    isFeatured: { type: "boolean", required: false },
-    group: { type: "string", required: false },
-    category: { type: "string", required: true },
-    categoryPlural: { type: "string", required: true },
-    featuredImage: { type: "string", required: false },
-    featuredImageAltText: { type: "string", required: false },
+- derived from categories attached to posts
+- seperate index pages for each category generated
 
-title: Building DAOs as Scalable Networks
-author: Rowan Yeoman
-authorEns: yeoro.eth
-authorEnsAvatar: true
-category: article
-categoryPlural: articles
-date: 2021-12-03
-isPublished: true
-isFeatured: true
+## Featured Images
+
+- add image file to `/public/updates/`
+- fallback image will be used on updates index page if there is no featured image attached to a post
+
+## ENS Avatars
+
+Both `author` and `authorEns` frontmatter fields are optional but site will fail to build if neither are present.
+
+`authorEns` takes priority so if both are present the author's ens name will be rendered rather than the author's name

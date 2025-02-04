@@ -10,6 +10,11 @@ import { getEnsAvatar } from "@/app/services/Ens";
 import { MDXContent } from "./MDXContent";
 
 export async function PostCard({ post }: { post: Post }) {
+  if (!post.author && !post.authorEns)
+    throw new Error(
+      `post with title "${post.title}" has no author name or ENS address`,
+    );
+
   return (
     <article className="group relative flex max-w-96 flex-col gap-6 rounded-3xl bg-[#141414] p-4 md:max-w-[45%]">
       <Link className="absolute left-0 top-0 z-10 size-full" href={post.path} />

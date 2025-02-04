@@ -7,6 +7,11 @@ import Contact from "@/app/shared/Contact";
 import { MDXContent } from "./MDXContent";
 
 export async function PostPage({ post }: { post: Post }) {
+  if (!post.author && !post.authorEns)
+    throw new Error(
+      `post with title "${post.title}" has no author name or ENS address`,
+    );
+
   return (
     <>
       <div className="m-auto max-w-4xl px-4 py-4 sm:mx-4">

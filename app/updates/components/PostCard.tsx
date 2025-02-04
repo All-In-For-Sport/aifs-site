@@ -10,8 +10,6 @@ import { getEnsAvatar } from "@/app/services/Ens";
 import { MDXContent } from "./MDXContent";
 
 export async function PostCard({ post }: { post: Post }) {
-  const avatar = post.authorEns ? await getEnsAvatar(post.authorEns) : null;
-
   return (
     <article className="group relative flex max-w-96 flex-col gap-6 rounded-3xl bg-[#141414] p-4 md:max-w-[45%]">
       <Link className="absolute left-0 top-0 z-10 size-full" href={post.path} />
@@ -41,14 +39,7 @@ export async function PostCard({ post }: { post: Post }) {
         </div>
         <section className="flex gap-2">
           {post.authorEns ? (
-            <>
-              {avatar && (
-                <figure className="relative size-6 overflow-clip rounded-full">
-                  <EnsAvatar avatar={avatar} />
-                </figure>
-              )}
-              <span>{post.authorEns}</span>
-            </>
+            <EnsAvatar authorEns={post.authorEns} />
           ) : (
             <figure>{post.author}</figure>
           )}

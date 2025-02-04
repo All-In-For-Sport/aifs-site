@@ -12,7 +12,7 @@
 
 post mdx documents are kept in `/updates`
 
-filenames should be `snake-case` and will be used in a posts unique URL eg. a post with a filename of `example-post.mdx` and a catagory of `event` will have a url of `allinforsport.org/updates/example-post`
+filenames should be `snake-case` and will be used in a posts unique URL eg. a post with a filename of `example-post.mdx` and a catagory of `event` will have a url of `allinforsport.org/updates/events/example-post`
 
 ## Post Frontmatter
 

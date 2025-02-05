@@ -3,7 +3,7 @@ import { ArrowRight } from "@/app/shared/Icons";
 
 export default function Hero() {
   return (
-    <section className="page-wrap relative mx-auto flex flex-col items-center pt-6 text-center md:pt-12 lg:pt-24">
+    <section className="page-wrap relative flex flex-col items-center pt-6 text-center md:pt-12 lg:pt-24">
       <h1 className="max-w-3xl font-header text-4xl font-extrabold leading-snug sm:text-5xl sm:leading-normal md:text-6xl md:leading-[3.8rem] lg:text-7xl lg:leading-[5.5rem]">
         A <span className="text-primary">Coordi-nation</span> for grassroots
         sports projects

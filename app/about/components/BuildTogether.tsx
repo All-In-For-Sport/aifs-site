@@ -1,6 +1,6 @@
 export function BuildTogether() {
   return (
-    <section className="page-wrap flex flex-col items-center py-12 lg:py-24">
+    <section className="page-wrap page-section-padding flex flex-col items-center">
       <h2 className="mb-12 text-center font-header text-4xl font-extrabold leading-[48px] lg:text-5xl lg:leading-[56px]">
         Let&apos;s Build Together
       </h2>

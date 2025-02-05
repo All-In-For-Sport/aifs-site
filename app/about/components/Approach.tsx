@@ -4,7 +4,7 @@ import { Tag } from "@/app/shared/Tag";
 
 export function Approach() {
   return (
-    <section className="page-wrap relative flex flex-col items-center gap-16 py-24 lg:flex-row">
+    <section className="page-wrap page-section-padding relative flex flex-col items-center gap-16 lg:flex-row">
       <div className="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-8 rounded-full bg-[#5A6DED] blur-[100px] lg:translate-x-24" />
       <div className="flex flex-col items-center gap-6 text-center lg:w-1/2 lg:items-start lg:text-left">
         <Tag>Our Approach</Tag>

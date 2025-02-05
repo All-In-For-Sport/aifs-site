@@ -1,6 +1,6 @@
 export default function PrivacyPolicy() {
   return (
-    <div className="page-wrap py-12">
+    <div className="page-wrap page-section-padding">
       <div className="prose lg:prose-xl">
         <h1 className="mt-4 text-3xl font-semibold text-white">
           Our Privacy Policy

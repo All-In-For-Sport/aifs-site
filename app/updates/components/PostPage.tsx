@@ -9,7 +9,7 @@ import { MDXContent } from "./MDXContent";
 export async function PostPage({ post }: { post: Post }) {
   return (
     <>
-      <div className="m-auto max-w-4xl px-4 py-4 sm:mx-4">
+      <div className="page-section-padding mx-auto max-w-4xl px-4 sm:px-6">
         <article className="grid gap-8">
           {post.featuredImageData && (
             <Image

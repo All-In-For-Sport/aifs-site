@@ -67,7 +67,7 @@ export function AboutHero() {
           </div>
         </div>
       </section>
-      <section className="page-wrap relative flex max-w-4xl flex-col gap-2 py-24 text-center">
+      <section className="page-wrap page-section-padding relative flex flex-col gap-2 text-center">
         <div className="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-8 rounded-full bg-[#5A6DED] blur-[100px]" />
         <h2 className="font-header text-5xl font-extrabold leading-[64px]">
           Sprung from Krause House

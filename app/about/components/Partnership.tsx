@@ -5,7 +5,7 @@ import { Tag } from "@/app/shared/Tag";
 
 export function Partnership() {
   return (
-    <section className="page-wrap flex flex-col-reverse items-center gap-16 py-12 lg:flex-row lg:py-24">
+    <section className="page-wrap page-section-padding flex flex-col-reverse items-center gap-16 lg:flex-row">
       <div className="flex w-full justify-center lg:justify-end">
         <div className="relative h-[300px] w-full md:h-[473px] md:w-[484px]">
           <Image

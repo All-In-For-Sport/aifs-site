@@ -7,9 +7,8 @@ import { ReactNode } from "react";
 
 export function AboutCTA() {
   return (
-    <section className="page-wrap relative grid grid-cols-1 gap-8 py-24 lg:grid-cols-2">
+    <section className="page-wrap page-section-padding relative grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-20 rounded-full bg-[#5A6DED] blur-[75px] lg:-translate-y-2" />
-
       <Card>
         <h5 className="text-2xl">Follow our Journey</h5>
         <p className="text-sm text-white/50">

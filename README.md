@@ -7,7 +7,7 @@ This is a NextJS static export site. Images are optimised at build time with [ne
 | field                  | mandatory | type      | info                                                                                                          |
 | ---------------------- | --------- | --------- | ------------------------------------------------------------------------------------------------------------- |
 | `title`                | yes       | `string`  | Post title                                                                                                    |
-| `date`                 | yes       | `date`    | Post published date in `2021-12-03` format                                                                    |
+| `date`                 | yes       | `date`    | Post published date in `YYYY-MM-DD` format                                                                    |
 | `isPublished`          | yes       | `boolean` | Whether to include post when site is built                                                                    |
 | `category`             | yes       | `string`  | Post category eg. `event`                                                                                     |
 | `categoryPlural`       | yes       | `string`  | Plural version of the post category eg. `events`                                                              |
@@ -20,8 +20,9 @@ This is a NextJS static export site. Images are optimised at build time with [ne
 
 ## Post Categories
 
-- derived from categories attached to posts
-- seperate index pages for each category generated
+The categories posts on the `/updates` page can be filtered by are derived from the category and categoryPlural fields attached to each post.
+
+For each unique category found an individual index page is generated nested under `/updates` and the category is added to the filter navigation bar.
 
 ## Featured Posts
 
@@ -29,8 +30,9 @@ The site homepage will display the 2 most recently publised posts that have an `
 
 ## Featured Images
 
-- add image file to `/public/updates/`
-- fallback image will be used on updates index page if there is no featured image attached to a post
+To add a featured image for a post add the image file to the `/public/updates/` folder and the filename to the post's frontmatter as `featuredImage`.
+
+Featured images are not required to publish a post. If no featured image is attached to a post a fallback image will be used on the index pages and if the post is featured on the homepage.
 
 ## ENS Avatars
 

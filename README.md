@@ -16,7 +16,8 @@ This is a NextJS static export site. Images are optimised at build time with [ne
 | `authorEns`            | no        | `string`  | Post author's ens address                                                                                     |
 | `featuredImage`        | no        | `string`  | Filename of the featured image for a post                                                                     |
 | `featuredImageAltText` | no        | `string`  | [alt text](https://developer.mozilla.org/en-US/docs/Web/API/HTMLImageElement/alt) for a post's featured image |
-| `metaDescription`      | no        | `string`  | Meta description for a post displayed when sharing a post on social media                                     |
+
+<!-- | `metaDescription`      | no        | `string`  | Meta description for a post displayed when sharing a post on social media                                     | -->
 
 ## Post Categories
 

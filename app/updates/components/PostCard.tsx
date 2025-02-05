@@ -8,6 +8,7 @@ import fallbackImage from "@/app/opengraph-image.jpg";
 import { Post } from "@/.contentlayer/generated";
 import { getEnsAvatar } from "@/app/services/Ens";
 import { MDXContent } from "./MDXContent";
+import { AuthorName } from "./AuthorName";
 
 export async function PostCard({ post }: { post: Post }) {
   if (!post.author && !post.authorEns)
@@ -46,7 +47,7 @@ export async function PostCard({ post }: { post: Post }) {
           {post.authorEns ? (
             <EnsAvatar authorEns={post.authorEns} />
           ) : (
-            <figure>{post.author}</figure>
+            <AuthorName>{post.author}</AuthorName>
           )}
         </section>
         <div className="max-h-36 overflow-clip leading-7 text-white/50">

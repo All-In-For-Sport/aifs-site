@@ -5,6 +5,9 @@ import { Post } from "@/.contentlayer/generated";
 import { EnsAvatar } from "./EnsAvatar";
 import Contact from "@/app/shared/Contact";
 import { MDXContent } from "./MDXContent";
+import { Tag } from "@/app/shared/Tag";
+import { AuthorName } from "./AuthorName";
+import { DateBadge } from "./DateBadge";
 
 export async function PostPage({ post }: { post: Post }) {
   if (!post.author && !post.authorEns)
@@ -25,17 +28,19 @@ export async function PostPage({ post }: { post: Post }) {
               className="w-full"
             />
           )}
-          <section className="grid gap-4 py-5">
-            <p>{format(post.date, "PP")}</p>
-            <h1 className="font-header text-5xl font-extrabold md:text-6xl lg:text-7xl">
+          <section className="flex flex-col items-start gap-6 py-5">
+            <h1 className="font-header text-4xl font-extrabold sm:text-5xl md:text-6xl lg:text-7xl">
               {post.title}
             </h1>
-            <section className="flex gap-4">
-              {post.authorEns ? (
-                <EnsAvatar authorEns={post.authorEns} />
-              ) : (
-                <figure>{post.author}</figure>
-              )}
+            <section className="flex flex-col gap-4">
+              <div className="flex gap-4">
+                {post.authorEns ? (
+                  <EnsAvatar authorEns={post.authorEns} />
+                ) : (
+                  <AuthorName>{post.author}</AuthorName>
+                )}
+              </div>
+              <DateBadge>{`${format(post.date, "LLLL")} ${format(post.date, "d")} ${format(post.date, "y")}`}</DateBadge>
             </section>
           </section>
           <div className="prose prose-xl prose-neutral prose-invert">

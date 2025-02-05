@@ -17,7 +17,7 @@ export async function PostCard({ post }: { post: Post }) {
     );
 
   return (
-    <article className="group relative flex max-w-96 flex-col gap-6 rounded-3xl bg-[#141414] p-4 md:max-w-[45%]">
+    <article className="group relative flex w-full flex-col gap-6 rounded-3xl bg-[#141414] p-4">
       <Link className="absolute left-0 top-0 z-10 size-full" href={post.path} />
       {post.featuredImageData ? (
         <Image
@@ -39,7 +39,7 @@ export async function PostCard({ post }: { post: Post }) {
           <CategoryBadge>{post.category}</CategoryBadge>
         </div>
         <div>
-          <h2 className="font-header text-2xl font-bold group-hover:underline">
+          <h2 className="font-header text-2xl font-bold group-hover:underline xs:text-3xl">
             {post.title}
           </h2>
         </div>

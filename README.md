@@ -40,3 +40,25 @@ Featured images are not required to publish a post. If no featured image is atta
 Both `author` and `authorEns` frontmatter fields are optional but site will fail to build if neither are present.
 
 Priority is given to `authorEns` so if both are present the author's ENS address will be rendered rather than the author's name. If the ENS address has an avatar attached this will be displayed alongside the address.
+
+## Post Embeds
+
+### Bonfire Videos
+
+Use provided MDX component passing URL's for the video and poster image:
+
+```mdx
+<BonfireVideo src="..." poster="...">
+```
+
+Paste the code below into your devtools console while looking at the page for the video you are looking to embed to extract the values
+
+##
+
+        (() => {
+          const el = document.querySelector("video");
+          const poster = el?.getAttribute("poster");
+          const src = el?.getAttribute("src");
+          console.log("poster: ", poster);
+          console.log("src: ", src);
+        })();

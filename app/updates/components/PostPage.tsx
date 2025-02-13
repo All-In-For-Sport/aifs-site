@@ -5,7 +5,6 @@ import { Post } from "@/.contentlayer/generated";
 import { EnsAvatar } from "./EnsAvatar";
 import Contact from "@/app/shared/Contact";
 import { MDXContent } from "./MDXContent";
-import { Tag } from "@/app/shared/Tag";
 import { AuthorName } from "./AuthorName";
 import { DateBadge } from "./DateBadge";
 
@@ -32,7 +31,7 @@ export async function PostPage({ post }: { post: Post }) {
             <h1 className="font-header text-4xl font-extrabold sm:text-5xl md:text-6xl lg:text-7xl">
               {post.title}
             </h1>
-            <section className="flex flex-col gap-4">
+            <section className="flex flex-col items-start gap-4">
               <div className="flex gap-4">
                 {post.authorEns ? (
                   <EnsAvatar authorEns={post.authorEns} />

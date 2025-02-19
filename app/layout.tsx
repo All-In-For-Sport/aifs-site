@@ -7,6 +7,8 @@ import { BackgroundGradient } from "@/app/shared/BackgroundGradient";
 import { FeaturesProvider } from "./features/useFeatures";
 
 import "./globals.css";
+import { siteLinks } from "./siteMeta";
+import { Metadata } from "next";
 
 const red_hat_display = Red_Hat_Display({
   subsets: ["latin"],
@@ -17,6 +19,12 @@ const dm_sans = DM_Sans({
   subsets: ["latin"],
   variable: "--dm-sans",
 });
+
+export const metadata: Metadata = {
+  metadataBase: new URL(siteLinks.siteUrl),
+  title: "All in for Sport",
+  description: "A Coordi-nation for grassroots sports projects",
+};
 
 export default function RootLayout({
   children,

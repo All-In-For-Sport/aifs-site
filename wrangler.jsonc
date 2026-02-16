@@ -10,10 +10,6 @@
     {
       "pattern": "allinforsport.org",
       "custom_domain": true
-    },
-    {
-      "pattern": "www.allinforsport.org",
-      "custom_domain": true
     }
   ]
 }

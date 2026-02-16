@@ -1,0 +1,64 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '@layouts/BaseLayout.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('updates', ({ data }) => data.isPublished);
+  return posts.map(post => ({
+    params: { category: post.data.categoryPlural, slug: post.id },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+
+const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
+
+// Featured images are stored in public/updates/ — frontmatter only has the filename
+const imageSrc = post.data.featuredImage
+  ? `/updates/${post.data.featuredImage}`
+  : undefined;
+---
+
+<BaseLayout title={`${post.data.title} | All in for Sport`} description={post.data.metaDescription ?? ''}>
+  <article class="page-wrap py-12 lg:py-24">
+    <div class="mx-auto max-w-3xl">
+      <a href={`/updates/${post.data.categoryPlural}/`} class="mb-4 inline-block text-sm text-primary hover:underline">
+        &larr; Back to {post.data.category}
+      </a>
+
+      {imageSrc && (
+        <div class="mb-8 overflow-hidden rounded-2xl">
+          <img
+            src={imageSrc}
+            alt={post.data.featuredImageAltText ?? ''}
+            class="w-full object-cover"
+          />
+        </div>
+      )}
+
+      <header class="mb-8">
+        <span class="text-xs font-bold uppercase tracking-wider text-primary">
+          {post.data.category}
+        </span>
+        <h1 class="mt-2 font-header text-3xl font-bold md:text-4xl lg:text-5xl">
+          {post.data.title}
+        </h1>
+        <div class="mt-4 flex items-center gap-3 text-sm text-white/50">
+          <span>{post.data.author}</span>
+          <span>&middot;</span>
+          <time datetime={post.data.date.toISOString()}>{formattedDate}</time>
+        </div>
+      </header>
+
+      <div class="prose prose-invert prose-lg max-w-none prose-headings:font-header prose-a:text-primary prose-a:no-underline hover:prose-a:underline">
+        <Content />
+      </div>
+    </div>
+  </article>
+</BaseLayout>

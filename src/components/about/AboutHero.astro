@@ -1,0 +1,75 @@
+---
+import Tag from '@components/shared/Tag.astro';
+---
+
+<section class="page-wrap page-section-padding">
+  <div class="flex flex-col justify-between gap-16 lg:flex-row lg:gap-8">
+    <div class="flex w-full flex-col items-center text-center lg:w-6/12 lg:items-start lg:text-left">
+      <Tag>About us</Tag>
+      <h1 class="mt-6 font-header text-4xl font-extrabold leading-[48px] lg:text-5xl lg:leading-[56px]">
+        The Mission: Empowering Through Sport
+      </h1>
+      <p class="mt-8 text-base text-white/50">
+        All In For Sport (AIFS) is a decentralized autonomous organization
+        (DAO) whose mission is to create a coordi-nation to support
+        projects that advance inclusion and empowerment through sport.
+      </p>
+    </div>
+    <div class="relative w-full lg:w-6/12">
+      <img
+        src="/assets/about-hero.png"
+        width="1261"
+        height="1040"
+        alt=""
+        class="left-0 top-0 h-auto lg:absolute lg:min-w-[120%]"
+      />
+    </div>
+  </div>
+  <div class="mt-16 grid grid-cols-1 gap-8 text-left lg:mt-32 lg:w-7/12 lg:grid-cols-2">
+    <div class="flex gap-3">
+      <img
+        src="/assets/icons/chip.png"
+        width="24"
+        height="24"
+        alt=""
+        class="h-8 w-auto"
+      />
+      <div class="flex flex-col">
+        <p class="text-lg font-medium">Innovative Funding</p>
+        <p class="max-w-prose text-sm text-white/50">
+          Exploring web3 tech to create perpetual funding for community
+          initiatives, shifting power dynamics.
+        </p>
+      </div>
+    </div>
+    <div class="flex gap-3">
+      <img
+        src="/assets/icons/command.png"
+        width="24"
+        height="24"
+        alt=""
+        class="h-7 w-auto"
+      />
+      <div class="flex flex-col">
+        <p class="text-lg font-medium">Empowering Communities</p>
+        <p class="max-w-prose text-sm text-white/50">
+          Supporting grassroots, community-led sports initiatives,
+          unlocking their true potential.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="page-wrap page-section-padding relative flex flex-col gap-2 text-center">
+  <div class="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-8 rounded-full bg-[#5A6DED] blur-[100px]"></div>
+  <h2 class="font-header text-5xl font-extrabold leading-[64px]">
+    Sprung from Krause House
+  </h2>
+  <p class="text-white/50">
+    AIFS was born out of Krause House, a DAO seeking to harness the power
+    of web3 to empower fans to purchase and operate an NBA Team. Governed
+    by a community of fans, the basketball lovers and purists, Krause
+    House aims to write the consensus rules that will bring the first
+    fan-governed team to the NBA.
+  </p>
+</section>

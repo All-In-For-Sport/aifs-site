@@ -1,0 +1,47 @@
+---
+import Button from '@components/shared/Button.astro';
+---
+
+<section class="page-wrap page-section-padding relative grid grid-cols-1 gap-8 lg:grid-cols-2">
+  <div class="absolute left-0 right-0 -z-20 mx-auto my-auto block h-[200px] w-[200px] -translate-y-20 rounded-full bg-[#5A6DED] blur-[75px] lg:-translate-y-2"></div>
+  <div class="relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-dark-text bg-background px-8 py-14 shadow-lg">
+    <h5 class="text-2xl">Follow our Journey</h5>
+    <p class="text-sm text-white/50">
+      We&apos;re holding a series of gatherings to learn how emerging
+      technologies can support grassroots sports initiatives. Join an
+      upcoming event or check out our stream library to find out more about
+      the awesome projects in our network.
+    </p>
+    <div class="flex w-full flex-col gap-4 pt-2">
+      <Button href="https://lu.ma/aifs" variant="small">Event Calendar</Button>
+      <Button href="https://watch.allinforsport.org" variant="small">Stream Archive</Button>
+    </div>
+    <img
+      class="absolute -right-32 -top-32 h-56 w-56"
+      src="/assets/shapes/shape8.png"
+      width="250"
+      height="250"
+      alt=""
+    />
+  </div>
+  <div class="relative flex flex-col items-start gap-4 overflow-hidden rounded-2xl border border-dark-text bg-background px-8 py-14 shadow-lg">
+    <h5 class="text-2xl">Join Our Community</h5>
+    <p class="text-sm text-white/50">
+      We invite you to come play with us and be part of this transformative
+      journey. Together, we will prove that we humans are much more
+      connected than we are different, and that sport is the unifying piece
+      that can bring us together.
+    </p>
+    <div class="flex w-full flex-col gap-4 pt-2">
+      <Button href="https://discord.com/invite/HyeK5hf4vR" variant="small">Join Discord</Button>
+      <Button href="https://t.me/+CW0_qRG6S5g1MmJh" variant="small">Join Telegram</Button>
+    </div>
+    <img
+      class="absolute -right-32 -top-32 h-56 w-56 sm:-right-28 sm:-top-28"
+      src="/assets/shapes/shape7.png"
+      width="250"
+      height="250"
+      alt=""
+    />
+  </div>
+</section>

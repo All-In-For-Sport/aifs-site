@@ -1,0 +1,36 @@
+@import "tailwindcss";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --color-primary: #2AA0F6;
+  --color-secondary: #F301F8;
+  --color-background: #111111;
+  --color-dark-text: #242424;
+  --color-bluegrey: #1f2937;
+
+  --font-header: 'Red Hat Display', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+
+  --breakpoint-xs: 420px;
+}
+
+.page-wrap {
+  @apply mx-auto max-w-7xl px-4 sm:px-6 lg:px-24;
+}
+
+.page-section-padding {
+  @apply py-12 lg:py-24;
+}
+
+.background-image {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+  background-image: url('/noise.webp');
+  background-repeat: repeat;
+  opacity: 0.03;
+}

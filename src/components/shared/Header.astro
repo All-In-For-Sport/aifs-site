@@ -1,0 +1,117 @@
+---
+const navLinks = [
+  { label: 'About', href: '/about/' },
+  { label: 'Updates', href: '/updates/' },
+];
+---
+
+<header class="page-wrap relative z-50 flex items-center justify-between py-6">
+  <a href="/" class="flex items-center">
+    <img src="/logo.png" alt="All in for Sport" class="h-8 w-auto" />
+  </a>
+
+  <nav class="hidden items-center gap-8 md:flex" aria-label="Main navigation">
+    {navLinks.map(link => (
+      <a href={link.href} class="text-sm font-medium text-white/70 transition hover:text-white">
+        {link.label}
+      </a>
+    ))}
+    <a href="/#contactUs" class="rounded-full bg-primary px-6 py-2.5 text-sm font-bold text-dark-text transition hover:opacity-90">
+      Contact Us
+    </a>
+  </nav>
+
+  <button
+    id="menu-toggle"
+    class="flex items-center justify-center md:hidden"
+    aria-expanded="false"
+    aria-controls="mobile-menu"
+    aria-label="Open menu"
+  >
+    <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+      <path id="menu-icon-open" stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+      <path id="menu-icon-close" class="hidden" stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+    </svg>
+  </button>
+
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 z-40 hidden flex-col bg-background/95 backdrop-blur-sm"
+    aria-hidden="true"
+  >
+    <div class="flex items-center justify-between px-4 py-6 sm:px-6 lg:px-24">
+      <a href="/" class="flex items-center">
+        <img src="/logo.png" alt="All in for Sport" class="h-8 w-auto" />
+      </a>
+      <button
+        id="menu-close"
+        class="flex items-center justify-center"
+        aria-label="Close menu"
+      >
+        <svg class="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+    </div>
+    <nav class="flex flex-col items-center gap-8 pt-12" aria-label="Mobile navigation">
+      {navLinks.map(link => (
+        <a href={link.href} class="text-2xl font-medium text-white/70 transition hover:text-white">
+          {link.label}
+        </a>
+      ))}
+      <a href="/#contactUs" class="rounded-full bg-primary px-8 py-3 text-lg font-bold text-dark-text transition hover:opacity-90">
+        Contact Us
+      </a>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.getElementById('menu-toggle');
+  const menu = document.getElementById('mobile-menu');
+  const closeBtn = document.getElementById('menu-close');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  function openMenu() {
+    menu?.classList.remove('hidden');
+    menu?.classList.add('flex');
+    menu?.setAttribute('aria-hidden', 'false');
+    toggle?.setAttribute('aria-expanded', 'true');
+    toggle?.setAttribute('aria-label', 'Close menu');
+    iconOpen?.classList.add('hidden');
+    iconClose?.classList.remove('hidden');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu?.classList.add('hidden');
+    menu?.classList.remove('flex');
+    menu?.setAttribute('aria-hidden', 'true');
+    toggle?.setAttribute('aria-expanded', 'false');
+    toggle?.setAttribute('aria-label', 'Open menu');
+    iconOpen?.classList.remove('hidden');
+    iconClose?.classList.add('hidden');
+    document.body.style.overflow = '';
+  }
+
+  toggle?.addEventListener('click', () => {
+    const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+    isOpen ? closeMenu() : openMenu();
+  });
+
+  closeBtn?.addEventListener('click', closeMenu);
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeMenu();
+  });
+
+  menu?.addEventListener('click', (e) => {
+    if (e.target === menu) closeMenu();
+  });
+
+  // Close on nav link click
+  menu?.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', closeMenu);
+  });
+</script>

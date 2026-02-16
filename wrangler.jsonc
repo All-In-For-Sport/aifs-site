@@ -1,0 +1,15 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "aifs-site",
+  "account_id": "c36c9a59f6251430c514f4fff55c3f4a",
+  "compatibility_date": "2025-12-01",
+  "assets": {
+    "directory": "./dist"
+  },
+  "routes": [
+    {
+      "pattern": "allinforsport.superbenefit.dev",
+      "custom_domain": true
+    }
+  ]
+}

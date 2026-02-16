@@ -8,7 +8,7 @@
   },
   "routes": [
     {
-      "pattern": "allinforsport.org",
+      "pattern": "allinforsport.superbenefit.dev",
       "custom_domain": true
     }
   ]

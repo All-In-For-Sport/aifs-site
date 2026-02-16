@@ -1,0 +1,54 @@
+---
+const socials = [
+  { label: 'Discord', href: 'https://discord.gg/E3FhRAqsmM', icon: 'discord' },
+  { label: 'Telegram', href: 'https://t.me/allinforsport', icon: 'telegram' },
+  { label: 'X', href: 'https://x.com/allinforsport', icon: 'x' },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/allinforsport', icon: 'linkedin' },
+];
+
+const community = [
+  { label: 'Discussion', href: 'https://discuss.allinforsport.org/' },
+  { label: 'Badges', href: 'https://app.hatsprotocol.xyz/trees/10/1?compact=true' },
+  { label: 'Voting', href: 'https://snapshot.org/#/allinforsport.eth' },
+  { label: 'OpenSea', href: 'https://opensea.io/AllInForSport' },
+  { label: 'State', href: 'https://allinforsport.org/state' },
+];
+---
+
+<footer class="page-wrap py-12 lg:py-24">
+  <div class="flex flex-col gap-12 lg:flex-row lg:justify-between">
+    <div class="flex flex-col gap-4">
+      <a href="/">
+        <img src="/logo.png" alt="All in for Sport" class="h-8 w-auto" />
+      </a>
+      <p class="max-w-xs text-sm text-white/50">
+        A Coordi-nation for grassroots sports projects
+      </p>
+    </div>
+
+    <div class="flex gap-16">
+      <div class="flex flex-col gap-3">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-white/30">Socials</h3>
+        {socials.map(s => (
+          <a href={s.href} target="_blank" rel="noopener noreferrer" class="text-sm text-white/70 transition hover:text-white">
+            {s.label}
+          </a>
+        ))}
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <h3 class="text-sm font-bold uppercase tracking-wider text-white/30">Community</h3>
+        {community.map(c => (
+          <a href={c.href} target="_blank" rel="noopener noreferrer" class="text-sm text-white/70 transition hover:text-white">
+            {c.label}
+          </a>
+        ))}
+      </div>
+    </div>
+  </div>
+
+  <div class="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 sm:flex-row">
+    <p class="text-sm text-white/30">&copy; {new Date().getFullYear()} All in for Sport. All rights reserved.</p>
+    <a href="/privacy/" class="text-sm text-white/30 transition hover:text-white/50">Privacy Policy</a>
+  </div>
+</footer>

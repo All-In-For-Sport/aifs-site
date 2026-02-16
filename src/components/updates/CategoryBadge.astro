@@ -1,0 +1,21 @@
+---
+interface Props {
+  category: string;
+  href: string;
+  active?: boolean;
+}
+
+const { category, href, active = false } = Astro.props;
+---
+
+<a
+  href={href}
+  class:list={[
+    'rounded-full px-4 py-2 text-sm font-bold transition',
+    active
+      ? 'bg-primary text-dark-text'
+      : 'bg-gray-800 text-white/70 hover:bg-gray-700 hover:text-white',
+  ]}
+>
+  {category}
+</a>

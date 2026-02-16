@@ -1,0 +1,67 @@
+<section class="z-20 flex w-full items-start justify-center">
+  <div class="relative h-full w-full">
+    <div class="absolute inset-0 -z-20 mx-auto h-full w-full">
+      <div class="max-w-screen sticky top-0 flex min-h-screen w-full items-center justify-center overflow-visible py-12">
+        <div class="absolute left-0 right-0 top-0 mx-auto my-auto h-full w-full translate-y-16 rounded-full bg-[#5A6DED] blur-[200px] md:h-[600px] md:w-[600px] md:blur-[100px]"></div>
+      </div>
+    </div>
+    <div class="sticky top-0 flex min-h-[50vh] w-full items-center justify-center overflow-visible pt-12">
+      <div id="video-container" class="group relative w-full origin-center scale-[0.85] cursor-pointer overflow-clip rounded-2xl bg-opacity-40 transition-transform duration-500">
+        <video
+          id="hero-video"
+          class="size-full origin-center transform"
+          disablepictureinpicture
+          disableremoteplayback
+          controls
+        >
+          <source
+            src="https://res.cloudinary.com/fastwebsiteswales/video/upload/v1737379255/aifs/aifs_introduction_gzytr9.mp4"
+            type="video/mp4"
+          />
+        </video>
+        <div id="play-overlay" class="pointer-events-none absolute left-0 top-0 flex size-full items-center justify-center">
+          <div class="relative z-10 rounded-full bg-[#606060]/40 p-5 text-white transition-all group-hover:scale-110">
+            <svg class="h-8 w-8" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M8 5v14l11-7z" />
+            </svg>
+          </div>
+        </div>
+        <img
+          id="video-thumbnail"
+          src="/assets/video-thumbnail.jpeg"
+          alt="basketball player jumping for a slam dunk"
+          class="pointer-events-none absolute inset-0 size-full object-cover transition-opacity duration-300"
+        />
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const container = document.getElementById('video-container');
+  const video = document.getElementById('hero-video') as HTMLVideoElement;
+  const overlay = document.getElementById('play-overlay');
+  const thumbnail = document.getElementById('video-thumbnail');
+
+  // Scale animation on scroll
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const ratio = Math.min(entry.intersectionRatio, 1);
+          const scale = 0.85 + ratio * 0.15;
+          if (container) container.style.transform = `scale(${scale})`;
+        }
+      });
+    },
+    { threshold: Array.from({ length: 20 }, (_, i) => i / 20) }
+  );
+
+  if (container) observer.observe(container);
+
+  // Hide overlay and thumbnail on play
+  video?.addEventListener('play', () => {
+    overlay?.classList.add('opacity-0');
+    thumbnail?.classList.add('opacity-0');
+  });
+</script>

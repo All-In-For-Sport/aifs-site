@@ -1,0 +1,35 @@
+---
+interface Props {
+  categories: { label: string; pluralSlug: string }[];
+  active?: string;
+}
+
+const { categories, active } = Astro.props;
+---
+
+<nav class="flex flex-wrap gap-3" aria-label="Filter by category">
+  <a
+    href="/updates/"
+    class:list={[
+      'rounded-full px-4 py-2 text-sm font-bold transition',
+      !active
+        ? 'bg-primary text-dark-text'
+        : 'bg-gray-800 text-white/70 hover:bg-gray-700 hover:text-white',
+    ]}
+  >
+    All
+  </a>
+  {categories.map((cat) => (
+    <a
+      href={`/updates/${cat.pluralSlug}/`}
+      class:list={[
+        'rounded-full px-4 py-2 text-sm font-bold transition',
+        active === cat.pluralSlug
+          ? 'bg-primary text-dark-text'
+          : 'bg-gray-800 text-white/70 hover:bg-gray-700 hover:text-white',
+      ]}
+    >
+      {cat.label}
+    </a>
+  ))}
+</nav>

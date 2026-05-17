@@ -4,7 +4,7 @@ import sitemap from '@astrojs/sitemap';
 import tailwindcss from '@tailwindcss/vite';
 
 export default defineConfig({
-  site: 'https://allinforsport.superbenefit.dev',
+  site: 'https://allinforsport.org',
   output: 'static',
   trailingSlash: 'always',
   integrations: [mdx(), sitemap()],

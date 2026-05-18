@@ -18,9 +18,9 @@ const posts = (await getCollection('updates', ({ data }) => data.isFeatured && d
           {post.data.featuredImage && (
             <div class="h-48 w-full overflow-hidden">
               <img
-                src={`/updates/${post.data.featuredImage}`}
+                src={post.data.featuredImage.startsWith('http') ? post.data.featuredImage : `/updates/${post.data.featuredImage}`}
                 alt={post.data.featuredImageAltText ?? ''}
-                class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                class="h-full w-full object-cover object-[center_15%] transition duration-300 group-hover:scale-105"
               />
             </div>
           )}

@@ -1,9 +1,9 @@
 import { defineCollection } from 'astro:content';
-import { glob } from 'astro/loaders';
 import { z } from 'astro/zod';
+import { updatesCompositeLoader } from './loaders/composite';
 
 const updates = defineCollection({
-  loader: glob({ pattern: '**/*.mdx', base: './src/content/updates' }),
+  loader: updatesCompositeLoader(),
   schema: z.object({
     title: z.string(),
     metaDescription: z.string().optional(),

@@ -20,9 +20,11 @@ const formattedDate = new Date(post.data.date).toLocaleDateString('en-US', {
   day: 'numeric',
 });
 
-// Featured images are stored in public/updates/ — frontmatter only has the filename
+// Support both local filenames (public/updates/) and absolute CDN URLs (Substack)
 const imageSrc = post.data.featuredImage
-  ? `/updates/${post.data.featuredImage}`
+  ? post.data.featuredImage.startsWith('http')
+    ? post.data.featuredImage
+    : `/updates/${post.data.featuredImage}`
   : undefined;
 ---
 
@@ -35,7 +37,7 @@ const imageSrc = post.data.featuredImage
       <img
         src={imageSrc}
         alt={post.data.featuredImageAltText ?? ''}
-        class="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+        class="h-full w-full object-cover object-[center_15%] transition duration-300 group-hover:scale-105"
       />
     </div>
   )}

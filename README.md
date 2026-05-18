@@ -2,297 +2,185 @@
 
 > A Coordi-nation for grassroots sports projects
 
-All in for Sport is a network of projects supporting community-led initiatives that advance inclusion and empowerment through sport. This repository contains the official website built with Next.js, showcasing our mission, projects, and community updates.
+All in for Sport is a network of projects supporting community-led initiatives that advance inclusion and empowerment through sport. This repository contains the official website built with Astro, showcasing our mission, projects, and community updates.
 
-## 🌐 Live Site
+## Live Site
 
 Visit us at [allinforsport.org](https://allinforsport.org)
 
-## ✨ Features
+## Features
 
-- **📝 MDX-based Content Management** - Dynamic blog/updates system powered by Contentlayer
-- **👤 ENS Avatar Integration** - Automatic author avatar fetching from Ethereum Name Service
-- **🎨 Modern Design** - Responsive UI with Tailwind CSS and custom brand styling
-- **📧 Contact Forms** - Integrated contact system with Formspark
-- **🖼️ Optimized Images** - Advanced image optimization for fast static sites
-- **🚀 Static Site Generation** - Full SSG for optimal performance and hosting flexibility
-- **🎯 Feature Flags** - Toggle features via environment variables
-- **🌍 Social Integration** - Connected with Discord, Telegram, X, LinkedIn, and Web3 platforms
+- **MDX-based Content** — Blog/updates system powered by Astro Content Collections with Zod schemas
+- **ENS Avatar Integration** — Automatic author avatar fetching from Ethereum Name Service
+- **Modern Design** — Responsive UI with Tailwind CSS v4 and custom brand styling
+- **Contact Form** — Cloudflare Email Service integration via Worker API route
+- **OG Image Generation** — Build-time Open Graph images via satori + sharp
+- **Static Site Generation** — Full SSG for optimal performance
+- **View Transitions** — Smooth SPA-style page transitions with built-in prefetch
+- **Cloudflare Fonts** — Privacy-first font delivery served from own domain
+- **Security Headers** — CSP, HSTS, and permissive policy enforced at the edge
 
-## 🛠️ Technology Stack
+## Technology Stack
 
-- **Framework:** [Next.js 14](https://nextjs.org/) with App Router
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS with custom theme
-- **Content:** Contentlayer for MDX processing
-- **Forms:** Formspark integration
-- **Blockchain:** viem for ENS resolution
-- **Fonts:** Red Hat Display (headers) & DM Sans (body)
-- **Image Optimization:** next-export-optimize-images
-- **Package Manager:** pnpm
+| Layer | Technology |
+|-------|-----------|
+| Framework | [Astro 6](https://astro.build/) (static output) |
+| Language | TypeScript (strict) |
+| Styling | [Tailwind CSS v4](https://tailwindcss.com/) with `@tailwindcss/vite` |
+| Content | MDX via `astro:content` with Zod validation |
+| Fonts | Red Hat Display & DM Sans (via Google Fonts, rewritten by Cloudflare Fonts) |
+| Deployment | [Cloudflare Workers](https://workers.cloudflare.com/) with Workers Assets |
+| Email | Cloudflare Email Service (`env.EMAIL.send()`) |
+| Analytics | [Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) (auto-injected) |
+| Runtime | Node 22 (build only — Workers serve static output) |
+| Package manager | npm |
+| Formatting | [Prettier](https://prettier.io/) with `prettier-plugin-astro` |
 
-## 📋 Prerequisites
+## Quick Start
 
-- Node.js 18+
-- pnpm (recommended) or npm
+### Prerequisites
 
-## 🚀 Quick Start
+- Node.js 22+
+- npm
+- Cloudflare account (for deployment)
 
 ### Installation
 
 ```bash
-# Clone the repository
 git clone https://github.com/All-In-For-Sport/aifs-site.git
 cd aifs-site
-
-# Install dependencies
-pnpm install
+npm install
 ```
 
 ### Environment Variables
 
-Create a `.env.local` file in the root directory:
+Copy `.env.example` to `.env` and fill in your values:
 
 ```env
 # Feature Flags
-NEXT_PUBLIC_FEATURE_BLOG=true
+PUBLIC_FEATURE_BLOG=true
 
-# Formspark Contact Form
-NEXT_PUBLIC_FORMSPARK_FORM_ID=your_formspark_form_id
-
-# Alchemy API for ENS Avatars (optional, for author avatars)
-NEXT_PUBLIC_ALCHEMY_API_KEY=your_alchemy_api_key
+# Alchemy API for ENS Avatars (optional)
+PUBLIC_ALCHEMY_API_KEY=your_alchemy_api_key
 ```
 
 ### Development
 
 ```bash
-# Start development server
-pnpm dev
-
-# Open http://localhost:3000 in your browser
+npm run dev          # Start dev server (http://localhost:4321)
+npm run build        # Production build to dist/
+npm run preview      # Preview with Wrangler
+npm run typecheck    # TypeScript type checking (astro check)
+npm run format       # Format with Prettier
 ```
 
-### Build
+### Deployment
 
 ```bash
-# Build for production
-pnpm build
-
-# Preview production build locally
-pnpm preview
+npm run deploy       # Build + deploy to Cloudflare Workers
 ```
 
-### Code Quality
-
-```bash
-# Run ESLint
-pnpm lint
-
-# Format code with Prettier
-pnpm format
-```
-
-## 📁 Project Structure
+## Project Structure
 
 ```
 aifs-site/
-├── app/                    # Next.js App Router
-│   ├── about/             # About page and components
-│   ├── features/          # Feature flag system
-│   ├── home/              # Homepage components
-│   ├── privacy/           # Privacy/Terms page
-│   ├── services/          # ENS and other services
-│   ├── shared/            # Shared components (Header, Footer, etc.)
-│   ├── updates/           # Blog/updates system
-│   ├── layout.tsx         # Root layout
-│   ├── page.tsx           # Homepage
-│   ├── siteMeta.ts        # Site links and metadata
-│   └── globals.css        # Global styles
-├── public/                # Static assets
-│   └── assets/            # Images and media
-├── updates/               # MDX content files
-├── contentlayer.config.ts # Contentlayer configuration
-├── next.config.js         # Next.js configuration
-├── tailwind.config.ts     # Tailwind CSS configuration
-└── types.ts               # TypeScript type definitions
+├── src/
+│   ├── components/          # UI components
+│   │   ├── about/           # About page sections
+│   │   ├── home/            # Homepage sections (Hero, Contact, Video, etc.)
+│   │   ├── shared/          # Shared components (Header, Footer, BaseHead)
+│   │   └── updates/         # Blog/updates components
+│   ├── content/             # MDX content files
+│   │   └── updates/         # Blog posts and events
+│   ├── content.config.ts    # Astro Content Collections schema
+│   ├── data/                # Static data (projects, site links)
+│   ├── index.ts             # Cloudflare Worker entrypoint
+│   ├── layouts/             # Page layouts (BaseLayout)
+│   ├── pages/               # Routes
+│   │   ├── about/           # /about
+│   │   ├── og/              # /og/[slug].png (build-time OG images)
+│   │   ├── privacy/         # /privacy
+│   │   ├── updates/         # /updates/[category]/[slug]
+│   │   └── index.astro      # /
+│   └── styles/              # Global CSS + Tailwind
+├── astro.config.ts          # Astro configuration
+├── wrangler.jsonc           # Cloudflare Workers configuration
+├── package.json             # Dependencies and scripts
+└── .env.example             # Environment variable template
 ```
 
-## 📝 Content Management
+## Content Management
 
 ### Creating Blog Posts/Updates
 
-1. Create an MDX file in the `/updates` directory
-2. Add required frontmatter:
+Create an MDX file in `src/content/updates/`:
 
 ```mdx
 ---
 title: Your Post Title
 author: Author Name
-authorEns: author.eth                    # Optional: ENS name
-authorEnsAvatar: true                    # Optional: Show ENS avatar
-category: event                          # event, article, etc.
-categoryPlural: events                   # Plural form for URLs
-group: Group Name                        # Optional: Project group
-featuredImage: image.webp                # Optional: Featured image
-featuredImageAltText: Image description  # Optional: Alt text
-date: 2024-01-01                        # Publication date
-isPublished: true                        # Visibility
-isFeatured: true                         # Show on homepage
-metaDescription: SEO description         # Optional: Custom meta
+authorEns: author.eth              # Optional: ENS name
+authorEnsAvatar: true              # Optional: Show ENS avatar
+category: event                    # event, article, etc.
+categoryPlural: events             # Plural form for URLs
+group: Group Name                  # Optional: Project group
+featuredImage: image.webp          # Optional: Featured image
+featuredImageAltText: Alt text     # Optional: Alt text
+date: 2024-01-01                   # Publication date
+isPublished: true                  # Visibility
+isFeatured: true                   # Show on homepage
+metaDescription: SEO description   # Optional: Custom meta
 ---
 
 Your content here...
 ```
 
-3. Place images in `/public/updates/`
-4. Posts are automatically generated at `/updates/{categoryPlural}/{filename}`
+Posts auto-generate at `/updates/{categoryPlural}/{filename}`.
 
 ### Content Categories
 
-Posts are organized by category:
-- **Events** - Upcoming and past events
-- **Articles** - Blog posts and news
+- **Events** — Upcoming and past events
+- **Articles** — Blog posts and news
 - Custom categories can be added as needed
 
 ### Featured Posts
 
-Set `isFeatured: true` to display posts on the homepage (when `NEXT_PUBLIC_FEATURE_BLOG=true`)
+Set `isFeatured: true` to display posts on the homepage (requires `PUBLIC_FEATURE_BLOG=true`).
 
-## 🎨 Customization
+## Architecture
 
-### Brand Colors
+### Worker Entrypoint (`src/index.ts`)
 
-Edit `tailwind.config.ts`:
+The Worker processes all requests before static assets:
 
-```ts
-colors: {
-  primary: "#2AA0F6",      // Primary blue
-  secondary: "#F301F8",    // Secondary magenta
-  background: "#111111",   // Dark background
-  darkText: "#242424",     // Dark text
-  bluegrey: "#1f2937",     // Blue-grey accent
-}
-```
+- **Security headers**: CSP, HSTS (`max-age=63072000; includeSubDomains; preload`), `X-Frame-Options: DENY`, `X-Content-Type-Options: nosniff`, `Referrer-Policy`, `Permissions-Policy`
+- **Email API**: `POST /api/contact` → `env.EMAIL.send()` from `submissions@hosting.allinforsport.org` to `contact@allinforsport.org`
+- **CORS**: Restricted to `https://allinforsport.org`
+- **Static assets**: Proxied via `env.ASSETS.fetch()`
 
-### Fonts
+### Font Strategy
 
-Configured in `app/layout.tsx`:
-- **Headers:** Red Hat Display
-- **Body:** DM Sans
+Google Fonts `<link>` tags are rewritten at the edge by [Cloudflare Fonts](https://developers.cloudflare.com/speed/optimization/content/fonts/) to serve from `/cf-fonts/` on the same domain — no third-party font requests, compliant with `font-src 'self'` CSP.
 
-### Feature Flags
+### Analytics
 
-Control features via environment variables in `app/features/getFeatures.ts`:
+[Cloudflare Web Analytics](https://www.cloudflare.com/web-analytics/) auto-injects the RUM beacon for proxied traffic — no manual snippet needed. Data reports to `/cdn-cgi/rum` on the same domain, covered by `connect-src 'self'`.
 
-```ts
-export function getFeatures() {
-  const BLOG = process.env.NEXT_PUBLIC_FEATURE_BLOG === "true";
-  return { BLOG };
-}
-```
+### View Transitions
 
-## 🔗 Integrations & Links
+Astro's `<ClientRouter />` enables SPA-style page transitions with automatic link prefetching on hover. No full-page reloads between routes.
 
-The site integrates with multiple platforms (configured in `app/siteMeta.ts`):
+## Integrations & Links
 
-- **Community:**
-  - Discord: Community discussions
-  - Telegram: Updates and announcements
-  - X (Twitter): Social media
-  - LinkedIn: Professional network
+Configured in `src/data/site-meta.ts`:
 
-- **Web3:**
-  - Hats Protocol: Role management
-  - OpenSea: NFT collection
-  - Snapshot: Governance voting
-  - ENS: Ethereum Name Service for author profiles
+- **Community**: Discord, Telegram, X (Twitter), LinkedIn
+- **Web3**: Hats Protocol, OpenSea, Snapshot, ENS
+- **Other**: Discussion Forum, Luma Events, Bonfire Streams
 
-- **Other:**
-  - Discussion Forum: discuss.allinforsport.org
-  - Events: Luma calendar integration
-  - Stream Archive: Bonfire recordings
+## License
 
-## 🚢 Deployment
-
-This site is configured for static export:
-
-```bash
-# Build static site
-pnpm build
-
-# Output directory
-out/
-```
-
-The `out/` directory contains the complete static site ready for deployment to:
-- Vercel
-- Netlify
-- GitHub Pages
-- Any static hosting service
-- IPFS/Fleek for decentralized hosting
-
-### Build Process
-
-1. Next.js builds pages
-2. Contentlayer processes MDX files
-3. next-export-optimize-images optimizes images
-4. Static HTML/CSS/JS exported to `/out`
-
-## 🎯 Key Technical Decisions
-
-### Why Static Export?
-- **Performance:** Pre-rendered pages load instantly
-- **Hosting Flexibility:** Deploy anywhere
-- **Cost Effective:** No server required
-- **Web3 Ready:** Easy IPFS deployment
-
-### Why Contentlayer?
-- **Type Safety:** Auto-generated TypeScript types
-- **Developer Experience:** MDX with React components
-- **Build Time Processing:** Fast runtime performance
-- **Flexible Schema:** Easy content modeling
-
-### Why ENS Integration?
-- **Web3 Native:** Align with decentralized community
-- **Author Attribution:** Verifiable identities
-- **Avatar System:** Automatic profile images
-
-## 🤝 Contributing
-
-We welcome contributions! Here's how you can help:
-
-1. **Content Contributions:** Add blog posts via MDX files
-2. **Bug Reports:** Open issues for bugs
-3. **Feature Requests:** Suggest improvements
-4. **Code Contributions:** Submit pull requests
-
-### Development Workflow
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Run `pnpm format` and `pnpm lint`
-5. Submit a pull request
-
-## 📄 License
-
-This project is open source. Please check with the All in for Sport team for specific licensing terms.
-
-## 🆘 Support
-
-- **Website:** [allinforsport.org](https://allinforsport.org)
-- **Discord:** [Join our community](https://discord.com/invite/HyeK5hf4vR)
-- **Telegram:** [Get updates](https://t.me/+CW0_qRG6S5g1MmJh)
-- **X:** [@allinforsport](https://x.com/allinforsport)
-
-## 🙏 Acknowledgments
-
-Built with support from:
-- Krause House
-- Project Backboard
-- Word 2 The Wise Festival
-- The broader Web3 and grassroots sports communities
+This project is open source. Check with the All in for Sport team for specific licensing terms.
 
 ---
 

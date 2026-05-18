@@ -19,3 +19,6 @@ npm-debug.log*
 
 # cloudflare
 .wrangler
+
+# session artifacts
+.tmp/

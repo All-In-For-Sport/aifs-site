@@ -97,20 +97,21 @@
 <script>
   const form = document.getElementById('contact-form') as HTMLFormElement;
   const status = document.getElementById('form-status');
-  const FORM_ID = import.meta.env.PUBLIC_FORMSPARK_FORM_ID;
+  const submitBtn = form?.querySelector('button[type="submit"]') as HTMLButtonElement;
 
   form?.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!form || !status) return;
+
     const formData = new FormData(form);
-    const submitBtn = form.querySelector('button[type="submit"]') as HTMLButtonElement;
 
     try {
       submitBtn.disabled = true;
       submitBtn.textContent = 'Sending...';
 
-      await fetch(`https://submit-form.com/${FORM_ID}`, {
+      const res = await fetch('/api/contact', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
           name: formData.get('name'),
           email: formData.get('email'),
@@ -118,16 +119,19 @@
         }),
       });
 
-      if (status) {
-        status.textContent = 'Message sent! Our team will be in touch shortly.';
-        status.className = 'text-sm text-green-400';
+      const data = (await res.json()) as { message?: string; error?: string };
+
+      if (res.ok) {
+        status.textContent = data.message ?? null;
+        status.className = 'text-sm font-medium text-green-400';
+        form.reset();
+      } else {
+        status.textContent = data.error ?? null;
+        status.className = 'text-sm font-medium text-red-400';
       }
-      form.reset();
     } catch {
-      if (status) {
-        status.textContent = 'Something went wrong. Please try again.';
-        status.className = 'text-sm text-red-400';
-      }
+      status.textContent = 'Something went wrong. Please try again.';
+      status.className = 'text-sm font-medium text-red-400';
     } finally {
       submitBtn.disabled = false;
       submitBtn.textContent = 'Submit';
